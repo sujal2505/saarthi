@@ -312,20 +312,3 @@ See [`docs/architecture.md`](docs/architecture.md) for:
 | QA Test Checklist | [`docs/qa-checklist.md`](docs/qa-checklist.md) |
 | API Contract | [`shared/api-contracts/api_contract.md`](shared/api-contracts/api_contract.md) |
 | ML Data README | [`ml/README.md`](ml/README.md) |
-
----
-
-## Team
-
-Built at a 36-hour hackathon by Team Saarthi.
-
-| Role | Responsibility |
-|---|---|
-| Laptop 1 | Frontend — React, TypeScript, Vite, all 8 screens |
-| Laptop 2 | Backend — FastAPI, financial logic, database |
-| Laptop 3 | Data and ML — synthetic data, scoring, segmentation |
-| Laptop 4 | Architecture, documentation, QA, integration |
-
----
-
-> *Saarthi* (सारथी) means **guide** or **charioteer** in Hindi — the one who helps you navigate your journey. In the Mahabharata, Lord Krishna served as Arjuna's Saarthi — not to fight for him, but to guide him wisely. That is exactly what this platform aims to do for every customer in Bharat.
