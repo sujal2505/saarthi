@@ -1,0 +1,324 @@
+[
+  {
+    "score": 81,
+    "label": "Stable",
+    "change": 0,
+    "components": {
+      "income_stability": 100,
+      "savings": 100,
+      "expense_management": 63,
+      "debt_burden": 65,
+      "repayment_behavior": 100,
+      "liquidity": 39
+    },
+    "component_explanations": {
+      "income_stability": "Income has been consistent over the past months.",
+      "savings": "Savings rate of 34% is strong, above the recommended 20%.",
+      "expense_management": "Expenses are at 66% of income. Manage discretionary spending. Note: Expenses increased by 12% recently.",
+      "debt_burden": "EMI burden is low at 16% of income. Well within safe limits.",
+      "repayment_behavior": "All EMI payments are current. Excellent repayment record.",
+      "liquidity": "Emergency fund appears very limited. Prioritize building a financial safety net."
+    },
+    "positive_factors": [
+      "Income has remained stable over the review period.",
+      "Savings rate is healthy at 34%.",
+      "All EMI payments are up to date."
+    ],
+    "risk_factors": [
+      "Limited emergency reserves increase vulnerability to shocks.",
+      "Household expenses have increased recently — review recurring costs."
+    ],
+    "plain_explanation": "Your financial health score is 81 out of 100, rated as 'Stable'. The score reflects your income patterns, spending discipline, savings habits, debt obligations, and repayment track record. Key strength: Income has remained stable over the review period. Area to watch: Limited emergency reserves increase vulnerability to shocks.",
+    "customer_id": "cust_001"
+  },
+  {
+    "score": 28,
+    "label": "At Risk",
+    "change": 0,
+    "components": {
+      "income_stability": 93,
+      "savings": 0,
+      "expense_management": 0,
+      "debt_burden": 12,
+      "repayment_behavior": 50,
+      "liquidity": 0
+    },
+    "component_explanations": {
+      "income_stability": "Income has been consistent over the past months.",
+      "savings": "No savings activity detected in the past months.",
+      "expense_management": "Expenses are high at 125% of income. Reducing non-essentials is advised.",
+      "debt_burden": "EMI burden is high at 42% of income. Exceeds the recommended 30% threshold.",
+      "repayment_behavior": "1 of 2 loan(s) have overdue payments. This impacts your credit profile.",
+      "liquidity": "Emergency fund appears very limited. Prioritize building a financial safety net."
+    },
+    "positive_factors": [
+      "Income has remained stable over the review period."
+    ],
+    "risk_factors": [
+      "Savings rate is below recommended levels.",
+      "EMI obligations are high relative to income.",
+      "Overdue loans may affect creditworthiness.",
+      "Limited emergency reserves increase vulnerability to shocks."
+    ],
+    "plain_explanation": "Your financial health score is 28 out of 100, rated as 'At Risk'. The score reflects your income patterns, spending discipline, savings habits, debt obligations, and repayment track record. Key strength: Income has remained stable over the review period. Area to watch: Savings rate is below recommended levels.",
+    "customer_id": "cust_002"
+  },
+  {
+    "score": 93,
+    "label": "Excellent",
+    "change": 0,
+    "components": {
+      "income_stability": 100,
+      "savings": 100,
+      "expense_management": 89,
+      "debt_burden": 100,
+      "repayment_behavior": 100,
+      "liquidity": 51
+    },
+    "component_explanations": {
+      "income_stability": "Income has been consistent over the past months.",
+      "savings": "Savings rate of 45% is strong, above the recommended 20%.",
+      "expense_management": "Expenses are well-controlled at 55% of income.",
+      "debt_burden": "No active EMI obligations. Strong financial flexibility.",
+      "repayment_behavior": "No loan history. Score reflects no repayment risk.",
+      "liquidity": "Emergency fund covers ~1.8 month(s). Building this further is advised."
+    },
+    "positive_factors": [
+      "Income has remained stable over the review period.",
+      "Savings rate is healthy at 45%.",
+      "All EMI payments are up to date.",
+      "Debt burden is within safe limits.",
+      "Expenses are well-managed relative to income."
+    ],
+    "risk_factors": [
+      "No major risks identified at this time."
+    ],
+    "plain_explanation": "Your financial health score is 93 out of 100, rated as 'Excellent'. The score reflects your income patterns, spending discipline, savings habits, debt obligations, and repayment track record. Key strength: Income has remained stable over the review period. Area to watch: No major risks identified at this time.",
+    "customer_id": "cust_003"
+  },
+  {
+    "score": 62,
+    "label": "Moderate",
+    "change": 0,
+    "components": {
+      "income_stability": 100,
+      "savings": 26,
+      "expense_management": 0,
+      "debt_burden": 100,
+      "repayment_behavior": 100,
+      "liquidity": 20
+    },
+    "component_explanations": {
+      "income_stability": "Income has been consistent over the past months.",
+      "savings": "Savings rate of 6% is low. Building an emergency buffer is important.",
+      "expense_management": "Expenses are high at 97% of income. Reducing non-essentials is advised.",
+      "debt_burden": "No active EMI obligations. Strong financial flexibility.",
+      "repayment_behavior": "No loan history. Score reflects no repayment risk.",
+      "liquidity": "Emergency fund appears very limited. Prioritize building a financial safety net."
+    },
+    "positive_factors": [
+      "Income has remained stable over the review period.",
+      "All EMI payments are up to date.",
+      "Debt burden is within safe limits."
+    ],
+    "risk_factors": [
+      "Savings rate is below recommended levels.",
+      "Limited emergency reserves increase vulnerability to shocks."
+    ],
+    "plain_explanation": "Your financial health score is 62 out of 100, rated as 'Moderate'. The score reflects your income patterns, spending discipline, savings habits, debt obligations, and repayment track record. Key strength: Income has remained stable over the review period. Area to watch: Savings rate is below recommended levels.",
+    "customer_id": "cust_004"
+  },
+  {
+    "score": 44,
+    "label": "Needs Attention",
+    "change": 0,
+    "components": {
+      "income_stability": 85,
+      "savings": 5,
+      "expense_management": 0,
+      "debt_burden": 48,
+      "repayment_behavior": 100,
+      "liquidity": 10
+    },
+    "component_explanations": {
+      "income_stability": "Income has been consistent over the past months.",
+      "savings": "Savings rate of 1% is low. Building an emergency buffer is important.",
+      "expense_management": "Expenses are high at 107% of income. Reducing non-essentials is advised.",
+      "debt_burden": "EMI burden is moderate at 25% of income. Monitor for new obligations.",
+      "repayment_behavior": "All EMI payments are current. Excellent repayment record.",
+      "liquidity": "Emergency fund appears very limited. Prioritize building a financial safety net."
+    },
+    "positive_factors": [
+      "Income has remained stable over the review period.",
+      "All EMI payments are up to date."
+    ],
+    "risk_factors": [
+      "Savings rate is below recommended levels.",
+      "EMI obligations are high relative to income.",
+      "Limited emergency reserves increase vulnerability to shocks."
+    ],
+    "plain_explanation": "Your financial health score is 44 out of 100, rated as 'Needs Attention'. The score reflects your income patterns, spending discipline, savings habits, debt obligations, and repayment track record. Key strength: Income has remained stable over the review period. Area to watch: Savings rate is below recommended levels.",
+    "customer_id": "cust_005"
+  },
+  {
+    "score": 95,
+    "label": "Excellent",
+    "change": 0,
+    "components": {
+      "income_stability": 100,
+      "savings": 100,
+      "expense_management": 99,
+      "debt_burden": 100,
+      "repayment_behavior": 100,
+      "liquidity": 55
+    },
+    "component_explanations": {
+      "income_stability": "Income has been consistent over the past months.",
+      "savings": "Savings rate of 51% is strong, above the recommended 20%.",
+      "expense_management": "Expenses are well-controlled at 49% of income.",
+      "debt_burden": "No active EMI obligations. Strong financial flexibility.",
+      "repayment_behavior": "No loan history. Score reflects no repayment risk.",
+      "liquidity": "Emergency fund covers ~2.1 month(s). Building this further is advised."
+    },
+    "positive_factors": [
+      "Income has remained stable over the review period.",
+      "Savings rate is healthy at 51%.",
+      "All EMI payments are up to date.",
+      "Debt burden is within safe limits.",
+      "Expenses are well-managed relative to income."
+    ],
+    "risk_factors": [
+      "No major risks identified at this time."
+    ],
+    "plain_explanation": "Your financial health score is 95 out of 100, rated as 'Excellent'. The score reflects your income patterns, spending discipline, savings habits, debt obligations, and repayment track record. Key strength: Income has remained stable over the review period. Area to watch: No major risks identified at this time.",
+    "customer_id": "cust_006"
+  },
+  {
+    "score": 58,
+    "label": "Moderate",
+    "change": 0,
+    "components": {
+      "income_stability": 82,
+      "savings": 63,
+      "expense_management": 19,
+      "debt_burden": 47,
+      "repayment_behavior": 100,
+      "liquidity": 20
+    },
+    "component_explanations": {
+      "income_stability": "Income has been consistent over the past months.",
+      "savings": "Savings rate of 16% is moderate. There is room to save more.",
+      "expense_management": "Expenses are high at 87% of income. Reducing non-essentials is advised.",
+      "debt_burden": "EMI burden is moderate at 25% of income. Monitor for new obligations.",
+      "repayment_behavior": "All EMI payments are current. Excellent repayment record.",
+      "liquidity": "Emergency fund appears very limited. Prioritize building a financial safety net."
+    },
+    "positive_factors": [
+      "Income has remained stable over the review period.",
+      "All EMI payments are up to date."
+    ],
+    "risk_factors": [
+      "EMI obligations are high relative to income.",
+      "Limited emergency reserves increase vulnerability to shocks."
+    ],
+    "plain_explanation": "Your financial health score is 58 out of 100, rated as 'Moderate'. The score reflects your income patterns, spending discipline, savings habits, debt obligations, and repayment track record. Key strength: Income has remained stable over the review period. Area to watch: EMI obligations are high relative to income.",
+    "customer_id": "cust_007"
+  },
+  {
+    "score": 78,
+    "label": "Stable",
+    "change": 0,
+    "components": {
+      "income_stability": 100,
+      "savings": 100,
+      "expense_management": 55,
+      "debt_burden": 56,
+      "repayment_behavior": 100,
+      "liquidity": 38
+    },
+    "component_explanations": {
+      "income_stability": "Income has been consistent over the past months.",
+      "savings": "Savings rate of 28% is strong, above the recommended 20%.",
+      "expense_management": "Expenses are at 72% of income. Manage discretionary spending.",
+      "debt_burden": "EMI burden is low at 19% of income. Well within safe limits.",
+      "repayment_behavior": "All EMI payments are current. Excellent repayment record.",
+      "liquidity": "Emergency fund appears very limited. Prioritize building a financial safety net."
+    },
+    "positive_factors": [
+      "Income has remained stable over the review period.",
+      "Savings rate is healthy at 28%.",
+      "All EMI payments are up to date."
+    ],
+    "risk_factors": [
+      "Limited emergency reserves increase vulnerability to shocks."
+    ],
+    "plain_explanation": "Your financial health score is 78 out of 100, rated as 'Stable'. The score reflects your income patterns, spending discipline, savings habits, debt obligations, and repayment track record. Key strength: Income has remained stable over the review period. Area to watch: Limited emergency reserves increase vulnerability to shocks.",
+    "customer_id": "cust_008"
+  },
+  {
+    "score": 94,
+    "label": "Excellent",
+    "change": 0,
+    "components": {
+      "income_stability": 100,
+      "savings": 100,
+      "expense_management": 99,
+      "debt_burden": 100,
+      "repayment_behavior": 100,
+      "liquidity": 41
+    },
+    "component_explanations": {
+      "income_stability": "Income has been consistent over the past months.",
+      "savings": "Savings rate of 53% is strong, above the recommended 20%.",
+      "expense_management": "Expenses are well-controlled at 47% of income. Note: Expenses increased by 15% recently.",
+      "debt_burden": "No active EMI obligations. Strong financial flexibility.",
+      "repayment_behavior": "No loan history. Score reflects no repayment risk.",
+      "liquidity": "Emergency fund appears very limited. Prioritize building a financial safety net."
+    },
+    "positive_factors": [
+      "Income has remained stable over the review period.",
+      "Savings rate is healthy at 53%.",
+      "All EMI payments are up to date.",
+      "Debt burden is within safe limits.",
+      "Expenses are well-managed relative to income."
+    ],
+    "risk_factors": [
+      "Limited emergency reserves increase vulnerability to shocks.",
+      "Household expenses have increased recently — review recurring costs."
+    ],
+    "plain_explanation": "Your financial health score is 94 out of 100, rated as 'Excellent'. The score reflects your income patterns, spending discipline, savings habits, debt obligations, and repayment track record. Key strength: Income has remained stable over the review period. Area to watch: Limited emergency reserves increase vulnerability to shocks.",
+    "customer_id": "cust_009"
+  },
+  {
+    "score": 91,
+    "label": "Excellent",
+    "change": 0,
+    "components": {
+      "income_stability": 100,
+      "savings": 100,
+      "expense_management": 100,
+      "debt_burden": 73,
+      "repayment_behavior": 100,
+      "liquidity": 60
+    },
+    "component_explanations": {
+      "income_stability": "Income has been consistent over the past months.",
+      "savings": "Savings rate of 54% is strong, above the recommended 20%.",
+      "expense_management": "Expenses are well-controlled at 46% of income.",
+      "debt_burden": "EMI burden is low at 13% of income. Well within safe limits.",
+      "repayment_behavior": "All EMI payments are current. Excellent repayment record.",
+      "liquidity": "Emergency fund covers ~2.5 month(s). Building this further is advised."
+    },
+    "positive_factors": [
+      "Income has remained stable over the review period.",
+      "Savings rate is healthy at 54%.",
+      "All EMI payments are up to date.",
+      "Expenses are well-managed relative to income."
+    ],
+    "risk_factors": [
+      "No major risks identified at this time."
+    ],
+    "plain_explanation": "Your financial health score is 91 out of 100, rated as 'Excellent'. The score reflects your income patterns, spending discipline, savings habits, debt obligations, and repayment track record. Key strength: Income has remained stable over the review period. Area to watch: No major risks identified at this time.",
+    "customer_id": "cust_010"
+  }
+]

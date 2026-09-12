@@ -1,0 +1,407 @@
+{
+  "cust_001": [
+    {
+      "id": "alert_8ab118b6",
+      "customer_id": "cust_001",
+      "type": "cash_flow",
+      "severity": "medium",
+      "title": "Your Monthly Expenses Are Rising",
+      "description": "Household spending increased by approximately 12% recently.",
+      "evidence": "Expense surge of 12% observed in recent months.",
+      "recommended_action": "Review recurring expenses to identify what has increased.",
+      "secondary_action": "Talk to support"
+    },
+    {
+      "id": "alert_3736c9c5",
+      "customer_id": "cust_001",
+      "type": "unusual_spending",
+      "severity": "medium",
+      "title": "Unusual Healthcare Spending",
+      "description": "This Healthcare transaction of ₹1,080 is significantly higher than your usual spending in this category.",
+      "evidence": "Amount ₹1,080 is 2.8x the typical ₹391 for Healthcare (z-score: 2.5).",
+      "recommended_action": "Review this transaction and confirm it was made by you.",
+      "secondary_action": "Flag this transaction for review"
+    },
+    {
+      "id": "alert_a2e311d2",
+      "customer_id": "cust_001",
+      "type": "expense_surge",
+      "severity": "high",
+      "title": "UPI Transfer Spending Increased by 99%",
+      "description": "Your UPI Transfer spending increased by 99% in 2025-09. This may warrant review.",
+      "evidence": "UPI Transfer spending rose from ₹1,036 to ₹2,065 (99% increase).",
+      "recommended_action": "Review your UPI Transfer expenses for this month.",
+      "secondary_action": "Talk to support"
+    },
+    {
+      "id": "alert_4224035d",
+      "customer_id": "cust_001",
+      "type": "expense_surge",
+      "severity": "high",
+      "title": "Healthcare Spending Increased by 1381%",
+      "description": "Your Healthcare spending increased by 1381% in 2025-10. This may warrant review.",
+      "evidence": "Healthcare spending rose from ₹100 to ₹1,481 (1381% increase).",
+      "recommended_action": "Review your Healthcare expenses for this month.",
+      "secondary_action": "Talk to support"
+    }
+  ],
+  "cust_002": [
+    {
+      "id": "alert_1f3a71bf",
+      "customer_id": "cust_002",
+      "type": "cash_flow",
+      "severity": "critical",
+      "title": "Monthly Cash Flow Is Negative",
+      "description": "Your average monthly expenses and EMIs exceed your income. This requires urgent attention.",
+      "evidence": "Average net cash flow: ₹-7,492/month",
+      "recommended_action": "Review and reduce non-essential expenses immediately.",
+      "secondary_action": "Talk to support"
+    },
+    {
+      "id": "alert_e96ff5c3",
+      "customer_id": "cust_002",
+      "type": "emi_risk",
+      "severity": "critical",
+      "title": "Overdue Loan Payment Detected",
+      "description": "You have 1 loan(s) with overdue payments. This may impact your credit profile.",
+      "evidence": "1 overdue loan(s) on record.",
+      "recommended_action": "Contact your lender immediately to discuss payment options or restructuring.",
+      "secondary_action": "Talk to support"
+    },
+    {
+      "id": "alert_ec5ec4a2",
+      "customer_id": "cust_002",
+      "type": "unusual_spending",
+      "severity": "medium",
+      "title": "Unusual Entertainment Spending",
+      "description": "This Entertainment transaction of ₹582 is significantly higher than your usual spending in this category.",
+      "evidence": "Amount ₹582 is 2.9x the typical ₹203 for Entertainment (z-score: 2.6).",
+      "recommended_action": "Review this transaction and confirm it was made by you.",
+      "secondary_action": "Flag this transaction for review"
+    },
+    {
+      "id": "alert_1211e092",
+      "customer_id": "cust_002",
+      "type": "expense_surge",
+      "severity": "medium",
+      "title": "Transport Spending Increased by 69%",
+      "description": "Your Transport spending increased by 69% in 2025-09. This may warrant review.",
+      "evidence": "Transport spending rose from ₹1,456 to ₹2,456 (69% increase).",
+      "recommended_action": "Review your Transport expenses for this month.",
+      "secondary_action": "Talk to support"
+    },
+    {
+      "id": "alert_d44d117c",
+      "customer_id": "cust_002",
+      "type": "expense_surge",
+      "severity": "high",
+      "title": "Healthcare Spending Increased by 508%",
+      "description": "Your Healthcare spending increased by 508% in 2025-10. This may warrant review.",
+      "evidence": "Healthcare spending rose from ₹257 to ₹1,563 (508% increase).",
+      "recommended_action": "Review your Healthcare expenses for this month.",
+      "secondary_action": "Talk to support"
+    }
+  ],
+  "cust_003": [
+    {
+      "id": "alert_e57ac6a7",
+      "customer_id": "cust_003",
+      "type": "unusual_spending",
+      "severity": "medium",
+      "title": "Unusual Healthcare Spending",
+      "description": "This Healthcare transaction of ₹1,044 is significantly higher than your usual spending in this category.",
+      "evidence": "Amount ₹1,044 is 4.8x the typical ₹216 for Healthcare (z-score: 2.5).",
+      "recommended_action": "Review this transaction and confirm it was made by you.",
+      "secondary_action": "Flag this transaction for review"
+    },
+    {
+      "id": "alert_6168a236",
+      "customer_id": "cust_003",
+      "type": "unusual_spending",
+      "severity": "high",
+      "title": "Unusual UPI Transfer Spending",
+      "description": "This UPI Transfer transaction of ₹1,736 is significantly higher than your usual spending in this category.",
+      "evidence": "Amount ₹1,736 is 6.3x the typical ₹276 for UPI Transfer (z-score: 3.1).",
+      "recommended_action": "Review this transaction and confirm it was made by you.",
+      "secondary_action": "Flag this transaction for review"
+    },
+    {
+      "id": "alert_4237f330",
+      "customer_id": "cust_003",
+      "type": "unusual_spending",
+      "severity": "medium",
+      "title": "Unusual Entertainment Spending",
+      "description": "This Entertainment transaction of ₹262 is significantly higher than your usual spending in this category.",
+      "evidence": "Amount ₹262 is 2.6x the typical ₹100 for Entertainment (z-score: 2.2).",
+      "recommended_action": "Review this transaction and confirm it was made by you.",
+      "secondary_action": "Flag this transaction for review"
+    }
+  ],
+  "cust_004": [
+    {
+      "id": "alert_934ab114",
+      "customer_id": "cust_004",
+      "type": "unusual_spending",
+      "severity": "medium",
+      "title": "Unusual Healthcare Spending",
+      "description": "This Healthcare transaction of ₹582 is significantly higher than your usual spending in this category.",
+      "evidence": "Amount ₹582 is 4.0x the typical ₹145 for Healthcare (z-score: 2.4).",
+      "recommended_action": "Review this transaction and confirm it was made by you.",
+      "secondary_action": "Flag this transaction for review"
+    },
+    {
+      "id": "alert_7a54e0f4",
+      "customer_id": "cust_004",
+      "type": "unusual_spending",
+      "severity": "medium",
+      "title": "Unusual Transport Spending",
+      "description": "This Transport transaction of ₹1,985 is significantly higher than your usual spending in this category.",
+      "evidence": "Amount ₹1,985 is 2.9x the typical ₹677 for Transport (z-score: 2.4).",
+      "recommended_action": "Review this transaction and confirm it was made by you.",
+      "secondary_action": "Flag this transaction for review"
+    },
+    {
+      "id": "alert_8869ab4b",
+      "customer_id": "cust_004",
+      "type": "unusual_spending",
+      "severity": "medium",
+      "title": "Unusual Entertainment Spending",
+      "description": "This Entertainment transaction of ₹2,479 is significantly higher than your usual spending in this category.",
+      "evidence": "Amount ₹2,479 is 4.0x the typical ₹618 for Entertainment (z-score: 2.8).",
+      "recommended_action": "Review this transaction and confirm it was made by you.",
+      "secondary_action": "Flag this transaction for review"
+    }
+  ],
+  "cust_005": [
+    {
+      "id": "alert_3d2f0848",
+      "customer_id": "cust_005",
+      "type": "cash_flow",
+      "severity": "critical",
+      "title": "Monthly Cash Flow Is Negative",
+      "description": "Your average monthly expenses and EMIs exceed your income. This requires urgent attention.",
+      "evidence": "Average net cash flow: ₹-1,259/month",
+      "recommended_action": "Review and reduce non-essential expenses immediately.",
+      "secondary_action": "Talk to support"
+    },
+    {
+      "id": "alert_bf6dd8b7",
+      "customer_id": "cust_005",
+      "type": "unusual_spending",
+      "severity": "medium",
+      "title": "Unusual UPI Transfer Spending",
+      "description": "This UPI Transfer transaction of ₹1,178 is significantly higher than your usual spending in this category.",
+      "evidence": "Amount ₹1,178 is 2.9x the typical ₹401 for UPI Transfer (z-score: 2.5).",
+      "recommended_action": "Review this transaction and confirm it was made by you.",
+      "secondary_action": "Flag this transaction for review"
+    },
+    {
+      "id": "alert_9366af94",
+      "customer_id": "cust_005",
+      "type": "unusual_spending",
+      "severity": "medium",
+      "title": "Unusual Transport Spending",
+      "description": "This Transport transaction of ₹1,275 is significantly higher than your usual spending in this category.",
+      "evidence": "Amount ₹1,275 is 4.4x the typical ₹287 for Transport (z-score: 2.6).",
+      "recommended_action": "Review this transaction and confirm it was made by you.",
+      "secondary_action": "Flag this transaction for review"
+    },
+    {
+      "id": "alert_faa8f22b",
+      "customer_id": "cust_005",
+      "type": "expense_surge",
+      "severity": "high",
+      "title": "UPI Transfer Spending Increased by 145%",
+      "description": "Your UPI Transfer spending increased by 145% in 2025-08. This may warrant review.",
+      "evidence": "UPI Transfer spending rose from ₹481 to ₹1,178 (145% increase).",
+      "recommended_action": "Review your UPI Transfer expenses for this month.",
+      "secondary_action": "Talk to support"
+    }
+  ],
+  "cust_006": [
+    {
+      "id": "alert_22cf7344",
+      "customer_id": "cust_006",
+      "type": "unusual_spending",
+      "severity": "medium",
+      "title": "Unusual UPI Transfer Spending",
+      "description": "This UPI Transfer transaction of ₹1,220 is significantly higher than your usual spending in this category.",
+      "evidence": "Amount ₹1,220 is 2.0x the typical ₹602 for UPI Transfer (z-score: 2.9).",
+      "recommended_action": "Review this transaction and confirm it was made by you.",
+      "secondary_action": "Flag this transaction for review"
+    },
+    {
+      "id": "alert_e2e7e9d4",
+      "customer_id": "cust_006",
+      "type": "unusual_spending",
+      "severity": "high",
+      "title": "Unusual Transport Spending",
+      "description": "This Transport transaction of ₹1,249 is significantly higher than your usual spending in this category.",
+      "evidence": "Amount ₹1,249 is 3.2x the typical ₹394 for Transport (z-score: 3.5).",
+      "recommended_action": "Review this transaction and confirm it was made by you.",
+      "secondary_action": "Flag this transaction for review"
+    },
+    {
+      "id": "alert_2663646c",
+      "customer_id": "cust_006",
+      "type": "unusual_spending",
+      "severity": "medium",
+      "title": "Unusual Shopping Spending",
+      "description": "This Shopping transaction of ₹2,174 is significantly higher than your usual spending in this category.",
+      "evidence": "Amount ₹2,174 is 2.8x the typical ₹789 for Shopping (z-score: 2.5).",
+      "recommended_action": "Review this transaction and confirm it was made by you.",
+      "secondary_action": "Flag this transaction for review"
+    }
+  ],
+  "cust_007": [
+    {
+      "id": "alert_61b02863",
+      "customer_id": "cust_007",
+      "type": "unusual_spending",
+      "severity": "medium",
+      "title": "Unusual UPI Transfer Spending",
+      "description": "This UPI Transfer transaction of ₹716 is significantly higher than your usual spending in this category.",
+      "evidence": "Amount ₹716 is 3.7x the typical ₹191 for UPI Transfer (z-score: 2.5).",
+      "recommended_action": "Review this transaction and confirm it was made by you.",
+      "secondary_action": "Flag this transaction for review"
+    },
+    {
+      "id": "alert_24924b37",
+      "customer_id": "cust_007",
+      "type": "expense_surge",
+      "severity": "medium",
+      "title": "Groceries Spending Increased by 44%",
+      "description": "Your Groceries spending increased by 44% in 2025-08. This may warrant review.",
+      "evidence": "Groceries spending rose from ₹3,948 to ₹5,677 (44% increase).",
+      "recommended_action": "Review your Groceries expenses for this month.",
+      "secondary_action": "Talk to support"
+    },
+    {
+      "id": "alert_7ae577f5",
+      "customer_id": "cust_007",
+      "type": "expense_surge",
+      "severity": "high",
+      "title": "Utilities Spending Increased by 362%",
+      "description": "Your Utilities spending increased by 362% in 2025-09. This may warrant review.",
+      "evidence": "Utilities spending rose from ₹253 to ₹1,168 (362% increase).",
+      "recommended_action": "Review your Utilities expenses for this month.",
+      "secondary_action": "Talk to support"
+    }
+  ],
+  "cust_008": [
+    {
+      "id": "alert_fce0af84",
+      "customer_id": "cust_008",
+      "type": "unusual_spending",
+      "severity": "medium",
+      "title": "Unusual Healthcare Spending",
+      "description": "This Healthcare transaction of ₹516 is significantly higher than your usual spending in this category.",
+      "evidence": "Amount ₹516 is 4.0x the typical ₹129 for Healthcare (z-score: 2.8).",
+      "recommended_action": "Review this transaction and confirm it was made by you.",
+      "secondary_action": "Flag this transaction for review"
+    },
+    {
+      "id": "alert_e3c2fa47",
+      "customer_id": "cust_008",
+      "type": "unusual_spending",
+      "severity": "medium",
+      "title": "Unusual Entertainment Spending",
+      "description": "This Entertainment transaction of ₹448 is significantly higher than your usual spending in this category.",
+      "evidence": "Amount ₹448 is 1.7x the typical ₹262 for Entertainment (z-score: 2.3).",
+      "recommended_action": "Review this transaction and confirm it was made by you.",
+      "secondary_action": "Flag this transaction for review"
+    },
+    {
+      "id": "alert_8f509b2b",
+      "customer_id": "cust_008",
+      "type": "unusual_spending",
+      "severity": "medium",
+      "title": "Unusual Shopping Spending",
+      "description": "This Shopping transaction of ₹2,154 is significantly higher than your usual spending in this category.",
+      "evidence": "Amount ₹2,154 is 2.8x the typical ₹782 for Shopping (z-score: 2.9).",
+      "recommended_action": "Review this transaction and confirm it was made by you.",
+      "secondary_action": "Flag this transaction for review"
+    }
+  ],
+  "cust_009": [
+    {
+      "id": "alert_a167eae2",
+      "customer_id": "cust_009",
+      "type": "cash_flow",
+      "severity": "medium",
+      "title": "Your Monthly Expenses Are Rising",
+      "description": "Household spending increased by approximately 15% recently.",
+      "evidence": "Expense surge of 15% observed in recent months.",
+      "recommended_action": "Review recurring expenses to identify what has increased.",
+      "secondary_action": "Talk to support"
+    },
+    {
+      "id": "alert_5d4310d5",
+      "customer_id": "cust_009",
+      "type": "unusual_spending",
+      "severity": "medium",
+      "title": "Unusual Shopping Spending",
+      "description": "This Shopping transaction of ₹2,362 is significantly higher than your usual spending in this category.",
+      "evidence": "Amount ₹2,362 is 4.2x the typical ₹565 for Shopping (z-score: 2.1).",
+      "recommended_action": "Review this transaction and confirm it was made by you.",
+      "secondary_action": "Flag this transaction for review"
+    },
+    {
+      "id": "alert_304f2b17",
+      "customer_id": "cust_009",
+      "type": "unusual_spending",
+      "severity": "medium",
+      "title": "Unusual Entertainment Spending",
+      "description": "This Entertainment transaction of ₹636 is significantly higher than your usual spending in this category.",
+      "evidence": "Amount ₹636 is 2.8x the typical ₹223 for Entertainment (z-score: 2.5).",
+      "recommended_action": "Review this transaction and confirm it was made by you.",
+      "secondary_action": "Flag this transaction for review"
+    },
+    {
+      "id": "alert_877e645d",
+      "customer_id": "cust_009",
+      "type": "unusual_spending",
+      "severity": "high",
+      "title": "Unusual Transport Spending",
+      "description": "This Transport transaction of ₹1,280 is significantly higher than your usual spending in this category.",
+      "evidence": "Amount ₹1,280 is 4.0x the typical ₹321 for Transport (z-score: 3.3).",
+      "recommended_action": "Review this transaction and confirm it was made by you.",
+      "secondary_action": "Flag this transaction for review"
+    }
+  ],
+  "cust_010": [
+    {
+      "id": "alert_ef714ce3",
+      "customer_id": "cust_010",
+      "type": "unusual_spending",
+      "severity": "medium",
+      "title": "Unusual Entertainment Spending",
+      "description": "This Entertainment transaction of ₹1,334 is significantly higher than your usual spending in this category.",
+      "evidence": "Amount ₹1,334 is 3.4x the typical ₹390 for Entertainment (z-score: 2.8).",
+      "recommended_action": "Review this transaction and confirm it was made by you.",
+      "secondary_action": "Flag this transaction for review"
+    },
+    {
+      "id": "alert_3c440a42",
+      "customer_id": "cust_010",
+      "type": "unusual_spending",
+      "severity": "high",
+      "title": "Unusual UPI Transfer Spending",
+      "description": "This UPI Transfer transaction of ₹2,397 is significantly higher than your usual spending in this category.",
+      "evidence": "Amount ₹2,397 is 3.0x the typical ₹802 for UPI Transfer (z-score: 3.0).",
+      "recommended_action": "Review this transaction and confirm it was made by you.",
+      "secondary_action": "Flag this transaction for review"
+    },
+    {
+      "id": "alert_e7ffd364",
+      "customer_id": "cust_010",
+      "type": "expense_surge",
+      "severity": "medium",
+      "title": "Utilities Spending Increased by 44%",
+      "description": "Your Utilities spending increased by 44% in 2025-09. This may warrant review.",
+      "evidence": "Utilities spending rose from ₹1,879 to ₹2,710 (44% increase).",
+      "recommended_action": "Review your Utilities expenses for this month.",
+      "secondary_action": "Talk to support"
+    }
+  ]
+}

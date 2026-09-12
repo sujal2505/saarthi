@@ -1,0 +1,9 @@
+{
+  "name": "saarthi-monorepo",
+  "private": true,
+  "scripts": {
+    "dev": "npm run --prefix apps/web dev",
+    "build": "npm run --prefix apps/web build",
+    "lint": "npm run --prefix apps/web lint"
+  }
+}

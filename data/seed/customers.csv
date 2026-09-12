@@ -1,0 +1,11 @@
+customer_id,name,age,city,state,customer_segment,preferred_language,occupation,monthly_income,dependents,financial_goal,consent_status
+cust_001,Ananya Verma,28,Indore,Madhya Pradesh,Stable Planner,hi,School Teacher,58000,2,Emergency Fund,given
+cust_002,Ramesh Patil,35,Nashik,Maharashtra,EMI Stressed,mr,Auto Driver,32000,4,Debt Reduction,given
+cust_003,Meena Devi,31,Varanasi,Uttar Pradesh,Growing Saver,hi,Tailor,25000,1,Education Savings,given
+cust_004,Arjun Kumar,24,Patna,Bihar,High Discretionary Spender,hi,Delivery Executive,22000,0,First Investment,given
+cust_005,Sunita Rao,42,Vijayawada,Andhra Pradesh,Cash Flow Constrained,te,Street Vendor,18000,3,Home Repair,given
+cust_006,Priya Sharma,26,Jaipur,Rajasthan,Stable Planner,hi,Nurse,45000,1,Festival Savings,given
+cust_007,Mohan Das,50,Coimbatore,Tamil Nadu,Irregular Income,ta,Farmer,14000,5,Crop Insurance,given
+cust_008,Kavitha Nair,33,Thrissur,Kerala,Growing Saver,ml,Beautician,36000,2,Education Loan Repayment,given
+cust_009,Rahul Gupta,29,Kanpur,Uttar Pradesh,New to Digital,hi,Shopkeeper,28000,2,Business Expansion,given
+cust_010,Deepa Pillai,38,Madurai,Tamil Nadu,Stable Planner,ta,Government Employee,62000,3,Retirement Planning,given

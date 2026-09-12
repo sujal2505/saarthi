@@ -1,0 +1,8 @@
+goal_id,customer_id,goal_type,target_amount,current_amount,target_date,monthly_contribution
+goal_001,cust_001,Emergency Fund,100000,32000,2026-12-31,5000
+goal_002,cust_003,Education Savings,150000,45000,2028-06-30,4000
+goal_003,cust_006,Festival Savings,30000,18000,2025-10-15,8000
+goal_004,cust_010,Retirement Fund,2000000,650000,2032-12-31,12000
+goal_005,cust_005,Home Repair,80000,5000,2027-03-31,2000
+goal_006,cust_009,Business Expansion,100000,12000,2027-06-30,2000
+goal_007,cust_004,First Investment,50000,3000,2027-01-01,1000

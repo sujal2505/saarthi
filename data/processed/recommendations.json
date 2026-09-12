@@ -1,0 +1,289 @@
+[
+  {
+    "customer_id": "cust_001",
+    "recommendation_type": "protection",
+    "title": "Term Insurance",
+    "product": "Term Life Insurance",
+    "category": "Protection",
+    "description": "Affordable life insurance to protect financial dependents.",
+    "customer_benefit": "Ensures your family is financially protected in case of emergency.",
+    "recommended_amount": 5800000,
+    "estimated_emi": 580,
+    "confidence": 0.87,
+    "why": [
+      "You have 2 dependents who depend on your income.",
+      "Term insurance is one of the most important financial protections for your family.",
+      "Your current savings allow for a modest insurance premium."
+    ],
+    "not_recommended": [
+      "investment_starter"
+    ],
+    "not_recommended_reason": "Protection comes before investment, especially for households with dependents.",
+    "suitability_constraints": [
+      "This recommendation is based on synthetic data for demonstration purposes.",
+      "Actual eligibility depends on credit bureau data and bank policies."
+    ],
+    "requires_human_review": false,
+    "loan_suppressed": false,
+    "disclaimer": "This is financial guidance, not a loan approval or financial advice. Please consult with a certified financial advisor before making borrowing decisions."
+  },
+  {
+    "customer_id": "cust_002",
+    "recommendation_type": "support",
+    "title": "Loan Restructuring Support",
+    "product": "EMI Relief or Restructuring",
+    "category": "Support",
+    "description": "Speak with a financial advisor to explore EMI restructuring options.",
+    "customer_benefit": "Reduces monthly EMI pressure and prevents default risk.",
+    "recommended_amount": null,
+    "estimated_emi": null,
+    "confidence": 0.95,
+    "why": [
+      "You have overdue loan obligations that need immediate attention.",
+      "Taking additional debt now would increase financial risk.",
+      "Speaking with an advisor could help restructure your EMI burden."
+    ],
+    "not_recommended": [
+      "personal_loan",
+      "credit_card",
+      "investment_starter"
+    ],
+    "not_recommended_reason": "Borrowing more or investing while repayments are overdue increases financial risk. Stabilizing existing obligations is the priority.",
+    "suitability_constraints": [
+      "This recommendation is based on synthetic data for demonstration purposes.",
+      "Actual eligibility depends on credit bureau data and bank policies."
+    ],
+    "requires_human_review": true,
+    "loan_suppressed": true,
+    "disclaimer": "This is financial guidance, not a loan approval or financial advice. Please consult with a certified financial advisor before making borrowing decisions."
+  },
+  {
+    "customer_id": "cust_003",
+    "recommendation_type": "loan",
+    "title": "Education Loan",
+    "product": "Education Loan",
+    "category": "Borrowing",
+    "description": "Loan for educational expenses with favorable interest rates.",
+    "customer_benefit": "Invests in future earning potential without depleting savings.",
+    "recommended_amount": 159000,
+    "estimated_emi": 7500.0,
+    "confidence": 0.82,
+    "why": [
+      "Your financial health score supports responsible borrowing.",
+      "Education loans have favorable interest rates and tax benefits.",
+      "Your current EMI burden of 0% leaves room for an additional EMI."
+    ],
+    "not_recommended": [
+      "personal_loan",
+      "investment_starter"
+    ],
+    "not_recommended_reason": "A personal loan for education would carry higher interest than an education-specific loan.",
+    "suitability_constraints": [
+      "This recommendation is based on synthetic data for demonstration purposes.",
+      "Actual eligibility depends on credit bureau data and bank policies."
+    ],
+    "requires_human_review": false,
+    "loan_suppressed": false,
+    "disclaimer": "This is financial guidance, not a loan approval or financial advice. Please consult with a certified financial advisor before making borrowing decisions."
+  },
+  {
+    "customer_id": "cust_004",
+    "recommendation_type": "savings",
+    "title": "Build a Stronger Emergency Buffer",
+    "product": "Emergency Savings Plan",
+    "category": "Savings",
+    "description": "A dedicated savings account or recurring deposit to cover 3–6 months of expenses.",
+    "customer_benefit": "Protects you from unexpected expenses without needing a loan.",
+    "recommended_amount": 13200,
+    "estimated_emi": 1100,
+    "confidence": 0.91,
+    "why": [
+      "Your emergency fund covers only ~0.0 months of expenses.",
+      "An emergency buffer is the most important financial safety net.",
+      "Building savings first reduces the need for emergency borrowing."
+    ],
+    "not_recommended": [
+      "personal_loan",
+      "investment_starter"
+    ],
+    "not_recommended_reason": "Without an emergency buffer, unexpected expenses may force high-cost emergency borrowing. Build savings first.",
+    "suitability_constraints": [
+      "This recommendation is based on synthetic data for demonstration purposes.",
+      "Actual eligibility depends on credit bureau data and bank policies."
+    ],
+    "requires_human_review": false,
+    "loan_suppressed": true,
+    "disclaimer": "This is financial guidance, not a loan approval or financial advice. Please consult with a certified financial advisor before making borrowing decisions."
+  },
+  {
+    "customer_id": "cust_005",
+    "recommendation_type": "support",
+    "title": "Loan Restructuring Support",
+    "product": "EMI Relief or Restructuring",
+    "category": "Support",
+    "description": "Speak with a financial advisor to explore EMI restructuring options.",
+    "customer_benefit": "Reduces monthly EMI pressure and prevents default risk.",
+    "recommended_amount": null,
+    "estimated_emi": null,
+    "confidence": 0.95,
+    "why": [
+      "You have overdue loan obligations that need immediate attention.",
+      "Taking additional debt now would increase financial risk.",
+      "Speaking with an advisor could help restructure your EMI burden."
+    ],
+    "not_recommended": [
+      "personal_loan",
+      "credit_card",
+      "investment_starter"
+    ],
+    "not_recommended_reason": "Borrowing more or investing while repayments are overdue increases financial risk. Stabilizing existing obligations is the priority.",
+    "suitability_constraints": [
+      "This recommendation is based on synthetic data for demonstration purposes.",
+      "Actual eligibility depends on credit bureau data and bank policies."
+    ],
+    "requires_human_review": true,
+    "loan_suppressed": true,
+    "disclaimer": "This is financial guidance, not a loan approval or financial advice. Please consult with a certified financial advisor before making borrowing decisions."
+  },
+  {
+    "customer_id": "cust_006",
+    "recommendation_type": "loan",
+    "title": "Personal Loan",
+    "product": "Personal Loan",
+    "category": "Borrowing",
+    "description": "Unsecured loan for personal financial needs.",
+    "customer_benefit": "Provides liquidity for planned or urgent needs at manageable EMI.",
+    "recommended_amount": 287000,
+    "estimated_emi": 13500.0,
+    "confidence": 0.78,
+    "why": [
+      "Your financial health score of 95 supports borrowing.",
+      "EMI burden of 0% is well within safe limits.",
+      "A personal loan can help achieve your financial goal with a manageable repayment plan."
+    ],
+    "not_recommended": [
+      "credit_card"
+    ],
+    "not_recommended_reason": "A structured personal loan has lower and more predictable interest than revolving credit.",
+    "suitability_constraints": [
+      "This recommendation is based on synthetic data for demonstration purposes.",
+      "Actual eligibility depends on credit bureau data and bank policies."
+    ],
+    "requires_human_review": false,
+    "loan_suppressed": false,
+    "disclaimer": "This is financial guidance, not a loan approval or financial advice. Please consult with a certified financial advisor before making borrowing decisions."
+  },
+  {
+    "customer_id": "cust_007",
+    "recommendation_type": "savings",
+    "title": "Goal-Based Savings Plan",
+    "product": "Recurring Deposit / Goal Plan",
+    "category": "Savings",
+    "description": "Regular monthly contribution toward a specific financial goal.",
+    "customer_benefit": "Helps you reach your financial goals systematically.",
+    "recommended_amount": 13440,
+    "estimated_emi": 1120,
+    "confidence": 0.85,
+    "why": [
+      "Your finances are under some pressure right now.",
+      "Building savings is safer than taking on additional debt.",
+      "A goal-based savings plan helps achieve your target systematically."
+    ],
+    "not_recommended": [
+      "personal_loan",
+      "credit_card"
+    ],
+    "not_recommended_reason": "Adding new loan obligations during a period of financial pressure is not recommended. Strengthening savings reduces long-term risk.",
+    "suitability_constraints": [
+      "This recommendation is based on synthetic data for demonstration purposes.",
+      "Actual eligibility depends on credit bureau data and bank policies."
+    ],
+    "requires_human_review": false,
+    "loan_suppressed": true,
+    "disclaimer": "This is financial guidance, not a loan approval or financial advice. Please consult with a certified financial advisor before making borrowing decisions."
+  },
+  {
+    "customer_id": "cust_008",
+    "recommendation_type": "protection",
+    "title": "Term Insurance",
+    "product": "Term Life Insurance",
+    "category": "Protection",
+    "description": "Affordable life insurance to protect financial dependents.",
+    "customer_benefit": "Ensures your family is financially protected in case of emergency.",
+    "recommended_amount": 3600000,
+    "estimated_emi": 360,
+    "confidence": 0.87,
+    "why": [
+      "You have 2 dependents who depend on your income.",
+      "Term insurance is one of the most important financial protections for your family.",
+      "Your current savings allow for a modest insurance premium."
+    ],
+    "not_recommended": [
+      "investment_starter"
+    ],
+    "not_recommended_reason": "Protection comes before investment, especially for households with dependents.",
+    "suitability_constraints": [
+      "This recommendation is based on synthetic data for demonstration purposes.",
+      "Actual eligibility depends on credit bureau data and bank policies."
+    ],
+    "requires_human_review": false,
+    "loan_suppressed": false,
+    "disclaimer": "This is financial guidance, not a loan approval or financial advice. Please consult with a certified financial advisor before making borrowing decisions."
+  },
+  {
+    "customer_id": "cust_009",
+    "recommendation_type": "protection",
+    "title": "Term Insurance",
+    "product": "Term Life Insurance",
+    "category": "Protection",
+    "description": "Affordable life insurance to protect financial dependents.",
+    "customer_benefit": "Ensures your family is financially protected in case of emergency.",
+    "recommended_amount": 2800000,
+    "estimated_emi": 280,
+    "confidence": 0.87,
+    "why": [
+      "You have 2 dependents who depend on your income.",
+      "Term insurance is one of the most important financial protections for your family.",
+      "Your current savings allow for a modest insurance premium."
+    ],
+    "not_recommended": [
+      "investment_starter"
+    ],
+    "not_recommended_reason": "Protection comes before investment, especially for households with dependents.",
+    "suitability_constraints": [
+      "This recommendation is based on synthetic data for demonstration purposes.",
+      "Actual eligibility depends on credit bureau data and bank policies."
+    ],
+    "requires_human_review": false,
+    "loan_suppressed": false,
+    "disclaimer": "This is financial guidance, not a loan approval or financial advice. Please consult with a certified financial advisor before making borrowing decisions."
+  },
+  {
+    "customer_id": "cust_010",
+    "recommendation_type": "protection",
+    "title": "Term Insurance",
+    "product": "Term Life Insurance",
+    "category": "Protection",
+    "description": "Affordable life insurance to protect financial dependents.",
+    "customer_benefit": "Ensures your family is financially protected in case of emergency.",
+    "recommended_amount": 6200000,
+    "estimated_emi": 620,
+    "confidence": 0.87,
+    "why": [
+      "You have 3 dependents who depend on your income.",
+      "Term insurance is one of the most important financial protections for your family.",
+      "Your current savings allow for a modest insurance premium."
+    ],
+    "not_recommended": [
+      "investment_starter"
+    ],
+    "not_recommended_reason": "Protection comes before investment, especially for households with dependents.",
+    "suitability_constraints": [
+      "This recommendation is based on synthetic data for demonstration purposes.",
+      "Actual eligibility depends on credit bureau data and bank policies."
+    ],
+    "requires_human_review": false,
+    "loan_suppressed": false,
+    "disclaimer": "This is financial guidance, not a loan approval or financial advice. Please consult with a certified financial advisor before making borrowing decisions."
+  }
+]

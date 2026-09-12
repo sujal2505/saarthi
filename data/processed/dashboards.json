@@ -1,0 +1,3779 @@
+{
+  "cust_001": {
+    "customer": {
+      "id": "cust_001",
+      "name": "Ananya Verma",
+      "city": "Indore",
+      "state": "Madhya Pradesh",
+      "age": 28,
+      "occupation": "School Teacher",
+      "preferred_language": "hi",
+      "dependents": 2,
+      "financial_goal": "Emergency Fund",
+      "customer_segment": "Growing Saver",
+      "segment_description": "Savings rate is improving month-on-month. Income is steady.",
+      "segment_icon": "📈"
+    },
+    "financial_health": {
+      "score": 81,
+      "label": "Stable",
+      "change": 0,
+      "components": {
+        "income_stability": 100,
+        "savings": 100,
+        "expense_management": 63,
+        "debt_burden": 65,
+        "repayment_behavior": 100,
+        "liquidity": 39
+      },
+      "component_explanations": {
+        "income_stability": "Income has been consistent over the past months.",
+        "savings": "Savings rate of 34% is strong, above the recommended 20%.",
+        "expense_management": "Expenses are at 66% of income. Manage discretionary spending. Note: Expenses increased by 12% recently.",
+        "debt_burden": "EMI burden is low at 16% of income. Well within safe limits.",
+        "repayment_behavior": "All EMI payments are current. Excellent repayment record.",
+        "liquidity": "Emergency fund appears very limited. Prioritize building a financial safety net."
+      },
+      "positive_factors": [
+        "Income has remained stable over the review period.",
+        "Savings rate is healthy at 34%.",
+        "All EMI payments are up to date."
+      ],
+      "risk_factors": [
+        "Limited emergency reserves increase vulnerability to shocks.",
+        "Household expenses have increased recently — review recurring costs."
+      ],
+      "plain_explanation": "Your financial health score is 81 out of 100, rated as 'Stable'. The score reflects your income patterns, spending discipline, savings habits, debt obligations, and repayment track record. Key strength: Income has remained stable over the review period. Area to watch: Limited emergency reserves increase vulnerability to shocks."
+    },
+    "cash_flow": {
+      "monthly_income": 58000.0,
+      "avg_monthly_income": 58000.0,
+      "avg_monthly_expenses": 28929.7,
+      "avg_monthly_emi": 9500.09,
+      "avg_monthly_savings": 4693.07,
+      "savings_rate": 33.7,
+      "emi_ratio": 16.4,
+      "last_month": {
+        "month": "2025-12",
+        "income": 58000.0,
+        "expenses": 31449.68,
+        "emi": 9499.39,
+        "savings": 5837.61,
+        "net_cash_flow": 17050.93,
+        "category_breakdown": {
+          "Rent": 11999.41,
+          "Groceries": 7292.25,
+          "Utilities": 2515.51,
+          "Transport": 1682.1,
+          "Healthcare": 1320.44,
+          "Education": 1469.62,
+          "Shopping": 3133.55,
+          "Entertainment": 460.44,
+          "EMI": 9499.39,
+          "Savings": 5837.61,
+          "UPI Transfer": 1576.36
+        }
+      }
+    },
+    "recommendation": {
+      "type": "protection",
+      "title": "Term Insurance",
+      "product": "Term Life Insurance",
+      "category": "Protection",
+      "recommended_amount": 5800000,
+      "estimated_emi": 580,
+      "confidence": 0.87,
+      "why": [
+        "You have 2 dependents who depend on your income.",
+        "Term insurance is one of the most important financial protections for your family.",
+        "Your current savings allow for a modest insurance premium."
+      ],
+      "not_recommended": [
+        "investment_starter"
+      ],
+      "not_recommended_reason": "Protection comes before investment, especially for households with dependents.",
+      "loan_suppressed": false,
+      "requires_human_review": false,
+      "warning": "This is financial guidance, not a loan approval or financial advice. Please consult with a certified financial advisor before making borrowing decisions."
+    },
+    "stress": {
+      "level": "low",
+      "score": 1,
+      "evidence": [
+        "Emergency fund covers only 0.7 months — build this as a priority."
+      ],
+      "confidence": 0.67,
+      "intervention": "There are early signs of financial pressure. Review your recurring expenses and avoid new loan obligations for now."
+    },
+    "alerts": [
+      {
+        "id": "alert_8ab118b6",
+        "customer_id": "cust_001",
+        "type": "cash_flow",
+        "severity": "medium",
+        "title": "Your Monthly Expenses Are Rising",
+        "description": "Household spending increased by approximately 12% recently.",
+        "evidence": "Expense surge of 12% observed in recent months.",
+        "recommended_action": "Review recurring expenses to identify what has increased.",
+        "secondary_action": "Talk to support"
+      },
+      {
+        "id": "alert_3736c9c5",
+        "customer_id": "cust_001",
+        "type": "unusual_spending",
+        "severity": "medium",
+        "title": "Unusual Healthcare Spending",
+        "description": "This Healthcare transaction of ₹1,080 is significantly higher than your usual spending in this category.",
+        "evidence": "Amount ₹1,080 is 2.8x the typical ₹391 for Healthcare (z-score: 2.5).",
+        "recommended_action": "Review this transaction and confirm it was made by you.",
+        "secondary_action": "Flag this transaction for review"
+      },
+      {
+        "id": "alert_a2e311d2",
+        "customer_id": "cust_001",
+        "type": "expense_surge",
+        "severity": "high",
+        "title": "UPI Transfer Spending Increased by 99%",
+        "description": "Your UPI Transfer spending increased by 99% in 2025-09. This may warrant review.",
+        "evidence": "UPI Transfer spending rose from ₹1,036 to ₹2,065 (99% increase).",
+        "recommended_action": "Review your UPI Transfer expenses for this month.",
+        "secondary_action": "Talk to support"
+      },
+      {
+        "id": "alert_4224035d",
+        "customer_id": "cust_001",
+        "type": "expense_surge",
+        "severity": "high",
+        "title": "Healthcare Spending Increased by 1381%",
+        "description": "Your Healthcare spending increased by 1381% in 2025-10. This may warrant review.",
+        "evidence": "Healthcare spending rose from ₹100 to ₹1,481 (1381% increase).",
+        "recommended_action": "Review your Healthcare expenses for this month.",
+        "secondary_action": "Talk to support"
+      }
+    ],
+    "recent_transactions": [
+      {
+        "id": "txn_cust_001_0091",
+        "date": "2025-12-29",
+        "amount": 544.65,
+        "type": "debit",
+        "category": "Healthcare",
+        "merchant": "City Hospital",
+        "description": "Healthcare payment - City Hospital",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_001_0095",
+        "date": "2025-12-29",
+        "amount": 3133.55,
+        "type": "debit",
+        "category": "Shopping",
+        "merchant": "Myntra",
+        "description": "Shopping payment - Myntra",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_001_0088",
+        "date": "2025-12-28",
+        "amount": 2515.51,
+        "type": "debit",
+        "category": "Utilities",
+        "merchant": "Airtel",
+        "description": "Utilities payment - Airtel",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_001_0089",
+        "date": "2025-12-27",
+        "amount": 839.65,
+        "type": "debit",
+        "category": "Transport",
+        "merchant": "Ola",
+        "description": "Transport payment - Ola",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_001_0094",
+        "date": "2025-12-27",
+        "amount": 1469.62,
+        "type": "debit",
+        "category": "Education",
+        "merchant": "Byju's",
+        "description": "Education payment - Byju's",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_001_0099",
+        "date": "2025-12-26",
+        "amount": 733.05,
+        "type": "debit",
+        "category": "UPI Transfer",
+        "merchant": "Google Pay",
+        "description": "UPI Transfer payment - Google Pay",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_001_0093",
+        "date": "2025-12-25",
+        "amount": 299.6,
+        "type": "debit",
+        "category": "Healthcare",
+        "merchant": "City Hospital",
+        "description": "Healthcare payment - City Hospital",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_001_0098",
+        "date": "2025-12-23",
+        "amount": 5837.61,
+        "type": "debit",
+        "category": "Savings",
+        "merchant": "SBI RD",
+        "description": "Savings payment - SBI RD",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_001_0100",
+        "date": "2025-12-22",
+        "amount": 843.31,
+        "type": "debit",
+        "category": "UPI Transfer",
+        "merchant": "Google Pay",
+        "description": "UPI Transfer payment - Google Pay",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_001_0092",
+        "date": "2025-12-09",
+        "amount": 476.19,
+        "type": "debit",
+        "category": "Healthcare",
+        "merchant": "MedPlus",
+        "description": "Healthcare payment - MedPlus",
+        "recurring": true
+      }
+    ],
+    "goals": [
+      {
+        "id": "goal_001",
+        "type": "Emergency Fund",
+        "target_amount": 100000.0,
+        "current_amount": 32000.0,
+        "target_date": "2026-12-31",
+        "monthly_contribution": 5000.0,
+        "progress_pct": 32.0
+      }
+    ],
+    "monthly_trends": [
+      {
+        "month": "2025-07",
+        "income": 58000.0,
+        "expenses": 26733.92,
+        "emi": 9499.09,
+        "savings": 4269.28,
+        "net_cash_flow": 21766.99,
+        "category_breakdown": {
+          "Rent": 12000.79,
+          "Groceries": 5550.21,
+          "Utilities": 2157.17,
+          "Transport": 1301.45,
+          "Healthcare": 624.83,
+          "Education": 1327.19,
+          "Shopping": 1919.28,
+          "Entertainment": 510.72,
+          "EMI": 9499.09,
+          "Savings": 4269.28,
+          "UPI Transfer": 1342.2800000000002
+        }
+      },
+      {
+        "month": "2025-08",
+        "income": 58000.0,
+        "expenses": 27162.67,
+        "emi": 9500.11,
+        "savings": 4547.16,
+        "net_cash_flow": 21337.22,
+        "category_breakdown": {
+          "Rent": 11999.84,
+          "Groceries": 5513.41,
+          "Utilities": 2250.65,
+          "Transport": 1331.46,
+          "Healthcare": 544.58,
+          "Education": 1288.5,
+          "Shopping": 2572.17,
+          "Entertainment": 625.63,
+          "EMI": 9500.11,
+          "Savings": 4547.16,
+          "UPI Transfer": 1036.4299999999998
+        }
+      },
+      {
+        "month": "2025-09",
+        "income": 58000.0,
+        "expenses": 28483.31,
+        "emi": 9499.7,
+        "savings": 5024.89,
+        "net_cash_flow": 20016.99,
+        "category_breakdown": {
+          "Rent": 11999.57,
+          "Groceries": 6046.28,
+          "Utilities": 1939.35,
+          "Transport": 1437.38,
+          "Healthcare": 100.0,
+          "Education": 1461.66,
+          "Shopping": 2953.63,
+          "Entertainment": 480.08000000000004,
+          "EMI": 9499.7,
+          "Savings": 5024.89,
+          "UPI Transfer": 2065.36
+        }
+      },
+      {
+        "month": "2025-10",
+        "income": 58000.0,
+        "expenses": 29055.85,
+        "emi": 9500.65,
+        "savings": 4021.53,
+        "net_cash_flow": 19443.5,
+        "category_breakdown": {
+          "Rent": 11998.31,
+          "Groceries": 5923.33,
+          "Utilities": 2230.07,
+          "Transport": 1362.91,
+          "Healthcare": 1480.6299999999999,
+          "Education": 1847.82,
+          "Shopping": 2083.08,
+          "Entertainment": 647.23,
+          "EMI": 9500.65,
+          "Savings": 4021.53,
+          "UPI Transfer": 1482.47
+        }
+      },
+      {
+        "month": "2025-11",
+        "income": 58000.0,
+        "expenses": 30692.79,
+        "emi": 9501.6,
+        "savings": 4457.97,
+        "net_cash_flow": 17805.61,
+        "category_breakdown": {
+          "Rent": 12001.53,
+          "Groceries": 6986.5,
+          "Utilities": 2672.58,
+          "Transport": 1126.92,
+          "Healthcare": 699.85,
+          "Education": 1707.51,
+          "Shopping": 3571.05,
+          "Entertainment": 680.6700000000001,
+          "EMI": 9501.6,
+          "Savings": 4457.97,
+          "UPI Transfer": 1246.18
+        }
+      },
+      {
+        "month": "2025-12",
+        "income": 58000.0,
+        "expenses": 31449.68,
+        "emi": 9499.39,
+        "savings": 5837.61,
+        "net_cash_flow": 17050.93,
+        "category_breakdown": {
+          "Rent": 11999.41,
+          "Groceries": 7292.25,
+          "Utilities": 2515.51,
+          "Transport": 1682.1,
+          "Healthcare": 1320.44,
+          "Education": 1469.62,
+          "Shopping": 3133.55,
+          "Entertainment": 460.44,
+          "EMI": 9499.39,
+          "Savings": 5837.61,
+          "UPI Transfer": 1576.36
+        }
+      }
+    ],
+    "assistant_context": {
+      "summary": "Ananya Verma has stable income, healthy savings, and manageable EMI obligations. Financial health score: 81/100 (Stable). Primary goal: Emergency Fund.",
+      "stress_level": "low",
+      "loan_suppressed": false
+    }
+  },
+  "cust_002": {
+    "customer": {
+      "id": "cust_002",
+      "name": "Ramesh Patil",
+      "city": "Nashik",
+      "state": "Maharashtra",
+      "age": 35,
+      "occupation": "Auto Driver",
+      "preferred_language": "mr",
+      "dependents": 4,
+      "financial_goal": "Debt Reduction",
+      "customer_segment": "EMI Stressed",
+      "segment_description": "EMI obligations are high relative to income, leaving limited flexibility.",
+      "segment_icon": "🚨"
+    },
+    "financial_health": {
+      "score": 28,
+      "label": "At Risk",
+      "change": 0,
+      "components": {
+        "income_stability": 93,
+        "savings": 0,
+        "expense_management": 0,
+        "debt_burden": 12,
+        "repayment_behavior": 50,
+        "liquidity": 0
+      },
+      "component_explanations": {
+        "income_stability": "Income has been consistent over the past months.",
+        "savings": "No savings activity detected in the past months.",
+        "expense_management": "Expenses are high at 125% of income. Reducing non-essentials is advised.",
+        "debt_burden": "EMI burden is high at 42% of income. Exceeds the recommended 30% threshold.",
+        "repayment_behavior": "1 of 2 loan(s) have overdue payments. This impacts your credit profile.",
+        "liquidity": "Emergency fund appears very limited. Prioritize building a financial safety net."
+      },
+      "positive_factors": [
+        "Income has remained stable over the review period."
+      ],
+      "risk_factors": [
+        "Savings rate is below recommended levels.",
+        "EMI obligations are high relative to income.",
+        "Overdue loans may affect creditworthiness.",
+        "Limited emergency reserves increase vulnerability to shocks."
+      ],
+      "plain_explanation": "Your financial health score is 28 out of 100, rated as 'At Risk'. The score reflects your income patterns, spending discipline, savings habits, debt obligations, and repayment track record. Key strength: Income has remained stable over the review period. Area to watch: Savings rate is below recommended levels."
+    },
+    "cash_flow": {
+      "monthly_income": 32000.0,
+      "avg_monthly_income": 29574.95,
+      "avg_monthly_expenses": 23567.55,
+      "avg_monthly_emi": 13499.39,
+      "avg_monthly_savings": 0.0,
+      "savings_rate": 0.0,
+      "emi_ratio": 42.2,
+      "last_month": {
+        "month": "2025-12",
+        "income": 27418.48,
+        "expenses": 25146.04,
+        "emi": 13500.02,
+        "savings": 0.0,
+        "net_cash_flow": -11227.58,
+        "category_breakdown": {
+          "Rent": 7311.32,
+          "Groceries": 4917.18,
+          "Utilities": 1290.48,
+          "Transport": 2171.09,
+          "Healthcare": 2634.98,
+          "Education": 2150.53,
+          "Shopping": 1430.47,
+          "Entertainment": 687.64,
+          "EMI": 13500.02,
+          "UPI Transfer": 2552.35
+        }
+      }
+    },
+    "recommendation": {
+      "type": "support",
+      "title": "Loan Restructuring Support",
+      "product": "EMI Relief or Restructuring",
+      "category": "Support",
+      "recommended_amount": null,
+      "estimated_emi": null,
+      "confidence": 0.95,
+      "why": [
+        "You have overdue loan obligations that need immediate attention.",
+        "Taking additional debt now would increase financial risk.",
+        "Speaking with an advisor could help restructure your EMI burden."
+      ],
+      "not_recommended": [
+        "personal_loan",
+        "credit_card",
+        "investment_starter"
+      ],
+      "not_recommended_reason": "Borrowing more or investing while repayments are overdue increases financial risk. Stabilizing existing obligations is the priority.",
+      "loan_suppressed": true,
+      "requires_human_review": true,
+      "warning": "This is financial guidance, not a loan approval or financial advice. Please consult with a certified financial advisor before making borrowing decisions."
+    },
+    "stress": {
+      "level": "high",
+      "score": 3,
+      "evidence": [
+        "EMI burden is critical at 42% of income with 1 overdue loan(s).",
+        "Monthly cash flow is negative on average — expenses exceed income.",
+        "Emergency fund is critically low — less than 2 weeks of expenses covered."
+      ],
+      "confidence": 1.0,
+      "intervention": "Your financial situation is under significant pressure. We recommend speaking with a financial counsellor before making any major financial decisions. Saarthi can help you create a recovery plan."
+    },
+    "alerts": [
+      {
+        "id": "alert_1f3a71bf",
+        "customer_id": "cust_002",
+        "type": "cash_flow",
+        "severity": "critical",
+        "title": "Monthly Cash Flow Is Negative",
+        "description": "Your average monthly expenses and EMIs exceed your income. This requires urgent attention.",
+        "evidence": "Average net cash flow: ₹-7,492/month",
+        "recommended_action": "Review and reduce non-essential expenses immediately.",
+        "secondary_action": "Talk to support"
+      },
+      {
+        "id": "alert_e96ff5c3",
+        "customer_id": "cust_002",
+        "type": "emi_risk",
+        "severity": "critical",
+        "title": "Overdue Loan Payment Detected",
+        "description": "You have 1 loan(s) with overdue payments. This may impact your credit profile.",
+        "evidence": "1 overdue loan(s) on record.",
+        "recommended_action": "Contact your lender immediately to discuss payment options or restructuring.",
+        "secondary_action": "Talk to support"
+      },
+      {
+        "id": "alert_ec5ec4a2",
+        "customer_id": "cust_002",
+        "type": "unusual_spending",
+        "severity": "medium",
+        "title": "Unusual Entertainment Spending",
+        "description": "This Entertainment transaction of ₹582 is significantly higher than your usual spending in this category.",
+        "evidence": "Amount ₹582 is 2.9x the typical ₹203 for Entertainment (z-score: 2.6).",
+        "recommended_action": "Review this transaction and confirm it was made by you.",
+        "secondary_action": "Flag this transaction for review"
+      },
+      {
+        "id": "alert_1211e092",
+        "customer_id": "cust_002",
+        "type": "expense_surge",
+        "severity": "medium",
+        "title": "Transport Spending Increased by 69%",
+        "description": "Your Transport spending increased by 69% in 2025-09. This may warrant review.",
+        "evidence": "Transport spending rose from ₹1,456 to ₹2,456 (69% increase).",
+        "recommended_action": "Review your Transport expenses for this month.",
+        "secondary_action": "Talk to support"
+      },
+      {
+        "id": "alert_d44d117c",
+        "customer_id": "cust_002",
+        "type": "expense_surge",
+        "severity": "high",
+        "title": "Healthcare Spending Increased by 508%",
+        "description": "Your Healthcare spending increased by 508% in 2025-10. This may warrant review.",
+        "evidence": "Healthcare spending rose from ₹257 to ₹1,563 (508% increase).",
+        "recommended_action": "Review your Healthcare expenses for this month.",
+        "secondary_action": "Talk to support"
+      }
+    ],
+    "recent_transactions": [
+      {
+        "id": "txn_cust_002_0085",
+        "date": "2025-12-29",
+        "amount": 1052.07,
+        "type": "debit",
+        "category": "Transport",
+        "merchant": "Ola",
+        "description": "Transport payment - Ola",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_002_0086",
+        "date": "2025-12-28",
+        "amount": 1119.02,
+        "type": "debit",
+        "category": "Transport",
+        "merchant": "Fuel Station",
+        "description": "Transport payment - Fuel Station",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_002_0088",
+        "date": "2025-12-27",
+        "amount": 1129.48,
+        "type": "debit",
+        "category": "Healthcare",
+        "merchant": "MedPlus",
+        "description": "Healthcare payment - MedPlus",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_002_0098",
+        "date": "2025-12-27",
+        "amount": 1183.96,
+        "type": "debit",
+        "category": "UPI Transfer",
+        "merchant": "PhonePe",
+        "description": "UPI Transfer payment - PhonePe",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_002_0089",
+        "date": "2025-12-26",
+        "amount": 2150.53,
+        "type": "debit",
+        "category": "Education",
+        "merchant": "School Fee",
+        "description": "Education payment - School Fee",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_002_0092",
+        "date": "2025-12-21",
+        "amount": 739.77,
+        "type": "debit",
+        "category": "Shopping",
+        "merchant": "Amazon",
+        "description": "Shopping payment - Amazon",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_002_0095",
+        "date": "2025-12-21",
+        "amount": 242.75,
+        "type": "debit",
+        "category": "Entertainment",
+        "merchant": "Hotstar",
+        "description": "Entertainment payment - Hotstar",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_002_0082",
+        "date": "2025-12-19",
+        "amount": 7311.32,
+        "type": "debit",
+        "category": "Rent",
+        "merchant": "Landlord Transfer",
+        "description": "Rent payment - Landlord Transfer",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_002_0094",
+        "date": "2025-12-19",
+        "amount": 275.92,
+        "type": "debit",
+        "category": "Entertainment",
+        "merchant": "Hotstar",
+        "description": "Entertainment payment - Hotstar",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_002_0084",
+        "date": "2025-12-17",
+        "amount": 1290.48,
+        "type": "debit",
+        "category": "Utilities",
+        "merchant": "BSNL",
+        "description": "Utilities payment - BSNL",
+        "recurring": true
+      }
+    ],
+    "goals": [],
+    "monthly_trends": [
+      {
+        "month": "2025-07",
+        "income": 31708.34,
+        "expenses": 23079.24,
+        "emi": 13497.56,
+        "savings": 0.0,
+        "net_cash_flow": -4868.46,
+        "category_breakdown": {
+          "Rent": 7278.61,
+          "Groceries": 5456.87,
+          "Utilities": 1753.36,
+          "Transport": 1751.75,
+          "Healthcare": 1637.29,
+          "Education": 2144.55,
+          "Shopping": 919.7,
+          "Entertainment": 403.21,
+          "EMI": 13497.56,
+          "UPI Transfer": 1733.9
+        }
+      },
+      {
+        "month": "2025-08",
+        "income": 27421.83,
+        "expenses": 21814.76,
+        "emi": 13499.83,
+        "savings": 0.0,
+        "net_cash_flow": -7892.76,
+        "category_breakdown": {
+          "Rent": 6684.48,
+          "Groceries": 4789.15,
+          "Utilities": 2088.74,
+          "Transport": 1456.0700000000002,
+          "Healthcare": 1781.94,
+          "Education": 2601.29,
+          "Shopping": 679.45,
+          "Entertainment": 303.21000000000004,
+          "EMI": 13499.83,
+          "UPI Transfer": 1430.43
+        }
+      },
+      {
+        "month": "2025-09",
+        "income": 30530.96,
+        "expenses": 22254.6,
+        "emi": 13500.07,
+        "savings": 0.0,
+        "net_cash_flow": -5223.71,
+        "category_breakdown": {
+          "Rent": 7470.55,
+          "Groceries": 6401.85,
+          "Utilities": 1273.2,
+          "Transport": 2455.86,
+          "Healthcare": 256.98,
+          "Education": 2026.82,
+          "Shopping": 889.52,
+          "Entertainment": 258.95,
+          "EMI": 13500.07,
+          "UPI Transfer": 1220.87
+        }
+      },
+      {
+        "month": "2025-10",
+        "income": 31999.56,
+        "expenses": 24259.73,
+        "emi": 13499.72,
+        "savings": 0.0,
+        "net_cash_flow": -5759.89,
+        "category_breakdown": {
+          "Rent": 7030.4,
+          "Groceries": 6372.12,
+          "Utilities": 1586.43,
+          "Transport": 2066.14,
+          "Healthcare": 1563.28,
+          "Education": 1699.54,
+          "Shopping": 1322.69,
+          "Entertainment": 581.9,
+          "EMI": 13499.72,
+          "UPI Transfer": 2037.23
+        }
+      },
+      {
+        "month": "2025-11",
+        "income": 28370.54,
+        "expenses": 24850.94,
+        "emi": 13499.14,
+        "savings": 0.0,
+        "net_cash_flow": -9979.54,
+        "category_breakdown": {
+          "Rent": 6243.58,
+          "Groceries": 7919.51,
+          "Utilities": 1939.98,
+          "Transport": 2029.3899999999999,
+          "Healthcare": 930.46,
+          "Education": 1916.2,
+          "Shopping": 2097.23,
+          "Entertainment": 372.55,
+          "EMI": 13499.14,
+          "UPI Transfer": 1402.04
+        }
+      },
+      {
+        "month": "2025-12",
+        "income": 27418.48,
+        "expenses": 25146.04,
+        "emi": 13500.02,
+        "savings": 0.0,
+        "net_cash_flow": -11227.58,
+        "category_breakdown": {
+          "Rent": 7311.32,
+          "Groceries": 4917.18,
+          "Utilities": 1290.48,
+          "Transport": 2171.09,
+          "Healthcare": 2634.98,
+          "Education": 2150.53,
+          "Shopping": 1430.47,
+          "Entertainment": 687.64,
+          "EMI": 13500.02,
+          "UPI Transfer": 2552.35
+        }
+      }
+    ],
+    "assistant_context": {
+      "summary": "Ramesh Patil has stable income, moderate savings, and high EMI obligations. Financial health score: 28/100 (At Risk). Primary goal: Debt Reduction.",
+      "stress_level": "high",
+      "loan_suppressed": true
+    }
+  },
+  "cust_003": {
+    "customer": {
+      "id": "cust_003",
+      "name": "Meena Devi",
+      "city": "Varanasi",
+      "state": "Uttar Pradesh",
+      "age": 31,
+      "occupation": "Tailor",
+      "preferred_language": "hi",
+      "dependents": 1,
+      "financial_goal": "Education Savings",
+      "customer_segment": "Growing Saver",
+      "segment_description": "Savings rate is improving month-on-month. Income is steady.",
+      "segment_icon": "📈"
+    },
+    "financial_health": {
+      "score": 93,
+      "label": "Excellent",
+      "change": 0,
+      "components": {
+        "income_stability": 100,
+        "savings": 100,
+        "expense_management": 89,
+        "debt_burden": 100,
+        "repayment_behavior": 100,
+        "liquidity": 51
+      },
+      "component_explanations": {
+        "income_stability": "Income has been consistent over the past months.",
+        "savings": "Savings rate of 45% is strong, above the recommended 20%.",
+        "expense_management": "Expenses are well-controlled at 55% of income.",
+        "debt_burden": "No active EMI obligations. Strong financial flexibility.",
+        "repayment_behavior": "No loan history. Score reflects no repayment risk.",
+        "liquidity": "Emergency fund covers ~1.8 month(s). Building this further is advised."
+      },
+      "positive_factors": [
+        "Income has remained stable over the review period.",
+        "Savings rate is healthy at 45%.",
+        "All EMI payments are up to date.",
+        "Debt burden is within safe limits.",
+        "Expenses are well-managed relative to income."
+      ],
+      "risk_factors": [
+        "No major risks identified at this time."
+      ],
+      "plain_explanation": "Your financial health score is 93 out of 100, rated as 'Excellent'. The score reflects your income patterns, spending discipline, savings habits, debt obligations, and repayment track record. Key strength: Income has remained stable over the review period. Area to watch: No major risks identified at this time."
+    },
+    "cash_flow": {
+      "monthly_income": 25000.0,
+      "avg_monthly_income": 25000.0,
+      "avg_monthly_expenses": 13704.76,
+      "avg_monthly_emi": 0.0,
+      "avg_monthly_savings": 4030.85,
+      "savings_rate": 45.2,
+      "emi_ratio": 0.0,
+      "last_month": {
+        "month": "2025-12",
+        "income": 25000.0,
+        "expenses": 13057.96,
+        "emi": 0.0,
+        "savings": 4116.65,
+        "net_cash_flow": 11942.04,
+        "category_breakdown": {
+          "Rent": 5000.85,
+          "Groceries": 3343.88,
+          "Utilities": 1258.12,
+          "Transport": 834.24,
+          "Healthcare": 389.65,
+          "Education": 626.68,
+          "Shopping": 776.25,
+          "Entertainment": 222.55,
+          "Savings": 4116.65,
+          "UPI Transfer": 605.74
+        }
+      }
+    },
+    "recommendation": {
+      "type": "loan",
+      "title": "Education Loan",
+      "product": "Education Loan",
+      "category": "Borrowing",
+      "recommended_amount": 159000,
+      "estimated_emi": 7500.0,
+      "confidence": 0.82,
+      "why": [
+        "Your financial health score supports responsible borrowing.",
+        "Education loans have favorable interest rates and tax benefits.",
+        "Your current EMI burden of 0% leaves room for an additional EMI."
+      ],
+      "not_recommended": [
+        "personal_loan",
+        "investment_starter"
+      ],
+      "not_recommended_reason": "A personal loan for education would carry higher interest than an education-specific loan.",
+      "loan_suppressed": false,
+      "requires_human_review": false,
+      "warning": "This is financial guidance, not a loan approval or financial advice. Please consult with a certified financial advisor before making borrowing decisions."
+    },
+    "stress": {
+      "level": "none",
+      "score": 0,
+      "evidence": [],
+      "confidence": 0.5,
+      "intervention": "Your finances appear stable. Continue current savings and repayment habits."
+    },
+    "alerts": [
+      {
+        "id": "alert_e57ac6a7",
+        "customer_id": "cust_003",
+        "type": "unusual_spending",
+        "severity": "medium",
+        "title": "Unusual Healthcare Spending",
+        "description": "This Healthcare transaction of ₹1,044 is significantly higher than your usual spending in this category.",
+        "evidence": "Amount ₹1,044 is 4.8x the typical ₹216 for Healthcare (z-score: 2.5).",
+        "recommended_action": "Review this transaction and confirm it was made by you.",
+        "secondary_action": "Flag this transaction for review"
+      },
+      {
+        "id": "alert_6168a236",
+        "customer_id": "cust_003",
+        "type": "unusual_spending",
+        "severity": "high",
+        "title": "Unusual UPI Transfer Spending",
+        "description": "This UPI Transfer transaction of ₹1,736 is significantly higher than your usual spending in this category.",
+        "evidence": "Amount ₹1,736 is 6.3x the typical ₹276 for UPI Transfer (z-score: 3.1).",
+        "recommended_action": "Review this transaction and confirm it was made by you.",
+        "secondary_action": "Flag this transaction for review"
+      },
+      {
+        "id": "alert_4237f330",
+        "customer_id": "cust_003",
+        "type": "unusual_spending",
+        "severity": "medium",
+        "title": "Unusual Entertainment Spending",
+        "description": "This Entertainment transaction of ₹262 is significantly higher than your usual spending in this category.",
+        "evidence": "Amount ₹262 is 2.6x the typical ₹100 for Entertainment (z-score: 2.2).",
+        "recommended_action": "Review this transaction and confirm it was made by you.",
+        "secondary_action": "Flag this transaction for review"
+      }
+    ],
+    "recent_transactions": [
+      {
+        "id": "txn_cust_003_0091",
+        "date": "2025-12-29",
+        "amount": 183.09,
+        "type": "debit",
+        "category": "Healthcare",
+        "merchant": "Jan Aushadhi",
+        "description": "Healthcare payment - Jan Aushadhi",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_003_0094",
+        "date": "2025-12-25",
+        "amount": 222.55,
+        "type": "debit",
+        "category": "Entertainment",
+        "merchant": "YouTube Premium",
+        "description": "Entertainment payment - YouTube Premium",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_003_0095",
+        "date": "2025-12-25",
+        "amount": 4116.65,
+        "type": "debit",
+        "category": "Savings",
+        "merchant": "Post Office RD",
+        "description": "Savings payment - Post Office RD",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_003_0087",
+        "date": "2025-12-23",
+        "amount": 1258.12,
+        "type": "debit",
+        "category": "Utilities",
+        "merchant": "UP Power",
+        "description": "Utilities payment - UP Power",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_003_0090",
+        "date": "2025-12-21",
+        "amount": 106.56,
+        "type": "debit",
+        "category": "Healthcare",
+        "merchant": "Jan Aushadhi",
+        "description": "Healthcare payment - Jan Aushadhi",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_003_0097",
+        "date": "2025-12-21",
+        "amount": 163.71,
+        "type": "debit",
+        "category": "UPI Transfer",
+        "merchant": "PhonePe",
+        "description": "UPI Transfer payment - PhonePe",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_003_0085",
+        "date": "2025-12-19",
+        "amount": 5000.85,
+        "type": "debit",
+        "category": "Rent",
+        "merchant": "Landlord Transfer",
+        "description": "Rent payment - Landlord Transfer",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_003_0093",
+        "date": "2025-12-13",
+        "amount": 776.25,
+        "type": "debit",
+        "category": "Shopping",
+        "merchant": "Meesho",
+        "description": "Shopping payment - Meesho",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_003_0089",
+        "date": "2025-12-08",
+        "amount": 100.0,
+        "type": "debit",
+        "category": "Healthcare",
+        "merchant": "Jan Aushadhi",
+        "description": "Healthcare payment - Jan Aushadhi",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_003_0088",
+        "date": "2025-12-06",
+        "amount": 834.24,
+        "type": "debit",
+        "category": "Transport",
+        "merchant": "E-Rickshaw",
+        "description": "Transport payment - E-Rickshaw",
+        "recurring": true
+      }
+    ],
+    "goals": [
+      {
+        "id": "goal_002",
+        "type": "Education Savings",
+        "target_amount": 150000.0,
+        "current_amount": 45000.0,
+        "target_date": "2028-06-30",
+        "monthly_contribution": 4000.0,
+        "progress_pct": 30.0
+      }
+    ],
+    "monthly_trends": [
+      {
+        "month": "2025-07",
+        "income": 25000.0,
+        "expenses": 14437.55,
+        "emi": 0.0,
+        "savings": 3770.74,
+        "net_cash_flow": 10562.45,
+        "category_breakdown": {
+          "Rent": 5000.47,
+          "Groceries": 3037.4,
+          "Utilities": 1042.71,
+          "Transport": 682.96,
+          "Healthcare": 1044.11,
+          "Education": 938.78,
+          "Shopping": 699.66,
+          "Entertainment": 255.14,
+          "Savings": 3770.74,
+          "UPI Transfer": 1736.32
+        }
+      },
+      {
+        "month": "2025-08",
+        "income": 25000.0,
+        "expenses": 13855.47,
+        "emi": 0.0,
+        "savings": 4059.97,
+        "net_cash_flow": 11144.53,
+        "category_breakdown": {
+          "Rent": 5001.0,
+          "Groceries": 3443.14,
+          "Utilities": 991.99,
+          "Transport": 767.72,
+          "Healthcare": 426.54,
+          "Education": 1059.84,
+          "Shopping": 1356.64,
+          "Entertainment": 119.22,
+          "Savings": 4059.97,
+          "UPI Transfer": 689.3799999999999
+        }
+      },
+      {
+        "month": "2025-09",
+        "income": 25000.0,
+        "expenses": 14024.93,
+        "emi": 0.0,
+        "savings": 4669.89,
+        "net_cash_flow": 10975.07,
+        "category_breakdown": {
+          "Rent": 4999.78,
+          "Groceries": 3303.07,
+          "Utilities": 1152.3,
+          "Transport": 963.95,
+          "Healthcare": 627.38,
+          "Education": 723.43,
+          "Shopping": 1246.76,
+          "Entertainment": 300.0,
+          "Savings": 4669.89,
+          "UPI Transfer": 708.26
+        }
+      },
+      {
+        "month": "2025-10",
+        "income": 25000.0,
+        "expenses": 12975.66,
+        "emi": 0.0,
+        "savings": 3708.4,
+        "net_cash_flow": 12024.34,
+        "category_breakdown": {
+          "Rent": 4999.85,
+          "Groceries": 3591.03,
+          "Utilities": 956.47,
+          "Transport": 665.52,
+          "Healthcare": 483.6,
+          "Education": 759.53,
+          "Shopping": 448.84000000000003,
+          "Entertainment": 300.0,
+          "Savings": 3708.4,
+          "UPI Transfer": 770.8199999999999
+        }
+      },
+      {
+        "month": "2025-11",
+        "income": 25000.0,
+        "expenses": 13876.99,
+        "emi": 0.0,
+        "savings": 3859.47,
+        "net_cash_flow": 11123.01,
+        "category_breakdown": {
+          "Rent": 5000.75,
+          "Groceries": 3356.49,
+          "Utilities": 1256.0,
+          "Transport": 734.4,
+          "Healthcare": 601.5799999999999,
+          "Education": 856.72,
+          "Shopping": 960.4999999999999,
+          "Entertainment": 261.51,
+          "Savings": 3859.47,
+          "UPI Transfer": 849.04
+        }
+      },
+      {
+        "month": "2025-12",
+        "income": 25000.0,
+        "expenses": 13057.96,
+        "emi": 0.0,
+        "savings": 4116.65,
+        "net_cash_flow": 11942.04,
+        "category_breakdown": {
+          "Rent": 5000.85,
+          "Groceries": 3343.88,
+          "Utilities": 1258.12,
+          "Transport": 834.24,
+          "Healthcare": 389.65,
+          "Education": 626.68,
+          "Shopping": 776.25,
+          "Entertainment": 222.55,
+          "Savings": 4116.65,
+          "UPI Transfer": 605.74
+        }
+      }
+    ],
+    "assistant_context": {
+      "summary": "Meena Devi has stable income, healthy savings, and manageable EMI obligations. Financial health score: 93/100 (Excellent). Primary goal: Education Savings.",
+      "stress_level": "none",
+      "loan_suppressed": false
+    }
+  },
+  "cust_004": {
+    "customer": {
+      "id": "cust_004",
+      "name": "Arjun Kumar",
+      "city": "Patna",
+      "state": "Bihar",
+      "age": 24,
+      "occupation": "Delivery Executive",
+      "preferred_language": "hi",
+      "dependents": 0,
+      "financial_goal": "First Investment",
+      "customer_segment": "Cash Flow Constrained",
+      "segment_description": "Limited income with high essential expense burden leaves little room for savings.",
+      "segment_icon": "⚠️"
+    },
+    "financial_health": {
+      "score": 62,
+      "label": "Moderate",
+      "change": 0,
+      "components": {
+        "income_stability": 100,
+        "savings": 26,
+        "expense_management": 0,
+        "debt_burden": 100,
+        "repayment_behavior": 100,
+        "liquidity": 20
+      },
+      "component_explanations": {
+        "income_stability": "Income has been consistent over the past months.",
+        "savings": "Savings rate of 6% is low. Building an emergency buffer is important.",
+        "expense_management": "Expenses are high at 97% of income. Reducing non-essentials is advised.",
+        "debt_burden": "No active EMI obligations. Strong financial flexibility.",
+        "repayment_behavior": "No loan history. Score reflects no repayment risk.",
+        "liquidity": "Emergency fund appears very limited. Prioritize building a financial safety net."
+      },
+      "positive_factors": [
+        "Income has remained stable over the review period.",
+        "All EMI payments are up to date.",
+        "Debt burden is within safe limits."
+      ],
+      "risk_factors": [
+        "Savings rate is below recommended levels.",
+        "Limited emergency reserves increase vulnerability to shocks."
+      ],
+      "plain_explanation": "Your financial health score is 62 out of 100, rated as 'Moderate'. The score reflects your income patterns, spending discipline, savings habits, debt obligations, and repayment track record. Key strength: Income has remained stable over the review period. Area to watch: Savings rate is below recommended levels."
+    },
+    "cash_flow": {
+      "monthly_income": 22000.0,
+      "avg_monthly_income": 22000.0,
+      "avg_monthly_expenses": 21351.66,
+      "avg_monthly_emi": 0.0,
+      "avg_monthly_savings": 0.0,
+      "savings_rate": 6.5,
+      "emi_ratio": 0.0,
+      "last_month": {
+        "month": "2025-12",
+        "income": 22000.0,
+        "expenses": 26461.48,
+        "emi": 0.0,
+        "savings": 0.0,
+        "net_cash_flow": -4461.48,
+        "category_breakdown": {
+          "Rent": 5998.6,
+          "Groceries": 2987.75,
+          "Utilities": 1390.62,
+          "Transport": 1861.37,
+          "Shopping": 9658.2,
+          "Entertainment": 2479.19,
+          "UPI Transfer": 1500.1,
+          "Healthcare": 585.65
+        }
+      }
+    },
+    "recommendation": {
+      "type": "savings",
+      "title": "Build a Stronger Emergency Buffer",
+      "product": "Emergency Savings Plan",
+      "category": "Savings",
+      "recommended_amount": 13200,
+      "estimated_emi": 1100,
+      "confidence": 0.91,
+      "why": [
+        "Your emergency fund covers only ~0.0 months of expenses.",
+        "An emergency buffer is the most important financial safety net.",
+        "Building savings first reduces the need for emergency borrowing."
+      ],
+      "not_recommended": [
+        "personal_loan",
+        "investment_starter"
+      ],
+      "not_recommended_reason": "Without an emergency buffer, unexpected expenses may force high-cost emergency borrowing. Build savings first.",
+      "loan_suppressed": true,
+      "requires_human_review": false,
+      "warning": "This is financial guidance, not a loan approval or financial advice. Please consult with a certified financial advisor before making borrowing decisions."
+    },
+    "stress": {
+      "level": "medium",
+      "score": 2,
+      "evidence": [
+        "Emergency fund is critically low — less than 2 weeks of expenses covered."
+      ],
+      "confidence": 0.67,
+      "intervention": "Your finances need attention. Consider reducing discretionary spending and focus on building an emergency buffer before taking on new debt."
+    },
+    "alerts": [
+      {
+        "id": "alert_934ab114",
+        "customer_id": "cust_004",
+        "type": "unusual_spending",
+        "severity": "medium",
+        "title": "Unusual Healthcare Spending",
+        "description": "This Healthcare transaction of ₹582 is significantly higher than your usual spending in this category.",
+        "evidence": "Amount ₹582 is 4.0x the typical ₹145 for Healthcare (z-score: 2.4).",
+        "recommended_action": "Review this transaction and confirm it was made by you.",
+        "secondary_action": "Flag this transaction for review"
+      },
+      {
+        "id": "alert_7a54e0f4",
+        "customer_id": "cust_004",
+        "type": "unusual_spending",
+        "severity": "medium",
+        "title": "Unusual Transport Spending",
+        "description": "This Transport transaction of ₹1,985 is significantly higher than your usual spending in this category.",
+        "evidence": "Amount ₹1,985 is 2.9x the typical ₹677 for Transport (z-score: 2.4).",
+        "recommended_action": "Review this transaction and confirm it was made by you.",
+        "secondary_action": "Flag this transaction for review"
+      },
+      {
+        "id": "alert_8869ab4b",
+        "customer_id": "cust_004",
+        "type": "unusual_spending",
+        "severity": "medium",
+        "title": "Unusual Entertainment Spending",
+        "description": "This Entertainment transaction of ₹2,479 is significantly higher than your usual spending in this category.",
+        "evidence": "Amount ₹2,479 is 4.0x the typical ₹618 for Entertainment (z-score: 2.8).",
+        "recommended_action": "Review this transaction and confirm it was made by you.",
+        "secondary_action": "Flag this transaction for review"
+      }
+    ],
+    "recent_transactions": [
+      {
+        "id": "txn_cust_004_0077",
+        "date": "2025-12-26",
+        "amount": 165.89,
+        "type": "debit",
+        "category": "Healthcare",
+        "merchant": "MedPlus",
+        "description": "Healthcare payment - MedPlus",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_004_0066",
+        "date": "2025-12-23",
+        "amount": 5998.6,
+        "type": "debit",
+        "category": "Rent",
+        "merchant": "Landlord Transfer",
+        "description": "Rent payment - Landlord Transfer",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_004_0071",
+        "date": "2025-12-23",
+        "amount": 4956.73,
+        "type": "debit",
+        "category": "Shopping",
+        "merchant": "Amazon",
+        "description": "Shopping payment - Amazon",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_004_0067",
+        "date": "2025-12-21",
+        "amount": 2987.75,
+        "type": "debit",
+        "category": "Groceries",
+        "merchant": "Swiggy",
+        "description": "Groceries payment - Swiggy",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_004_0072",
+        "date": "2025-12-18",
+        "amount": 1217.77,
+        "type": "debit",
+        "category": "Shopping",
+        "merchant": "Myntra",
+        "description": "Shopping payment - Myntra",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_004_0075",
+        "date": "2025-12-18",
+        "amount": 1500.1,
+        "type": "debit",
+        "category": "UPI Transfer",
+        "merchant": "PhonePe",
+        "description": "UPI Transfer payment - PhonePe",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_004_0069",
+        "date": "2025-12-14",
+        "amount": 1205.01,
+        "type": "debit",
+        "category": "Transport",
+        "merchant": "Ola",
+        "description": "Transport payment - Ola",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_004_0070",
+        "date": "2025-12-11",
+        "amount": 656.36,
+        "type": "debit",
+        "category": "Transport",
+        "merchant": "Fuel",
+        "description": "Transport payment - Fuel",
+        "recurring": false
+      },
+      {
+        "id": "txn_cust_004_0074",
+        "date": "2025-12-09",
+        "amount": 2479.19,
+        "type": "debit",
+        "category": "Entertainment",
+        "merchant": "Netflix",
+        "description": "Entertainment payment - Netflix",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_004_0073",
+        "date": "2025-12-08",
+        "amount": 3483.7,
+        "type": "debit",
+        "category": "Shopping",
+        "merchant": "Myntra",
+        "description": "Shopping payment - Myntra",
+        "recurring": true
+      }
+    ],
+    "goals": [
+      {
+        "id": "goal_007",
+        "type": "First Investment",
+        "target_amount": 50000.0,
+        "current_amount": 3000.0,
+        "target_date": "2027-01-01",
+        "monthly_contribution": 1000.0,
+        "progress_pct": 6.0
+      }
+    ],
+    "monthly_trends": [
+      {
+        "month": "2025-07",
+        "income": 22000.0,
+        "expenses": 20436.7,
+        "emi": 0.0,
+        "savings": 0.0,
+        "net_cash_flow": 1563.3,
+        "category_breakdown": {
+          "Rent": 5999.84,
+          "Groceries": 2901.42,
+          "Utilities": 949.32,
+          "Transport": 868.38,
+          "Shopping": 6187.6,
+          "Entertainment": 1764.35,
+          "UPI Transfer": 1665.79,
+          "Healthcare": 100.0
+        }
+      },
+      {
+        "month": "2025-08",
+        "income": 22000.0,
+        "expenses": 18862.47,
+        "emi": 0.0,
+        "savings": 0.0,
+        "net_cash_flow": 3137.53,
+        "category_breakdown": {
+          "Rent": 6000.69,
+          "Groceries": 2138.61,
+          "Utilities": 1216.22,
+          "Transport": 1133.75,
+          "Shopping": 4349.49,
+          "Entertainment": 782.01,
+          "UPI Transfer": 2659.49,
+          "Healthcare": 582.21
+        }
+      },
+      {
+        "month": "2025-09",
+        "income": 22000.0,
+        "expenses": 22216.47,
+        "emi": 0.0,
+        "savings": 0.0,
+        "net_cash_flow": -216.47,
+        "category_breakdown": {
+          "Rent": 6000.89,
+          "Groceries": 3550.89,
+          "Utilities": 896.06,
+          "Transport": 1985.28,
+          "Shopping": 5992.6,
+          "Entertainment": 1505.8200000000002,
+          "UPI Transfer": 2184.93,
+          "Healthcare": 100.0
+        }
+      },
+      {
+        "month": "2025-10",
+        "income": 22000.0,
+        "expenses": 21536.41,
+        "emi": 0.0,
+        "savings": 0.0,
+        "net_cash_flow": 463.59,
+        "category_breakdown": {
+          "Rent": 5998.86,
+          "Groceries": 3533.09,
+          "Utilities": 795.64,
+          "Transport": 1734.06,
+          "Shopping": 4127.69,
+          "Entertainment": 2245.98,
+          "UPI Transfer": 2747.8199999999997,
+          "Healthcare": 353.27
+        }
+      },
+      {
+        "month": "2025-11",
+        "income": 22000.0,
+        "expenses": 18596.43,
+        "emi": 0.0,
+        "savings": 0.0,
+        "net_cash_flow": 3403.57,
+        "category_breakdown": {
+          "Rent": 6000.51,
+          "Groceries": 3462.01,
+          "Utilities": 788.37,
+          "Transport": 1113.6,
+          "Shopping": 4848.129999999999,
+          "Entertainment": 1828.1399999999999,
+          "UPI Transfer": 232.19,
+          "Healthcare": 323.48
+        }
+      },
+      {
+        "month": "2025-12",
+        "income": 22000.0,
+        "expenses": 26461.48,
+        "emi": 0.0,
+        "savings": 0.0,
+        "net_cash_flow": -4461.48,
+        "category_breakdown": {
+          "Rent": 5998.6,
+          "Groceries": 2987.75,
+          "Utilities": 1390.62,
+          "Transport": 1861.37,
+          "Shopping": 9658.2,
+          "Entertainment": 2479.19,
+          "UPI Transfer": 1500.1,
+          "Healthcare": 585.65
+        }
+      }
+    ],
+    "assistant_context": {
+      "summary": "Arjun Kumar has stable income, moderate savings, and manageable EMI obligations. Financial health score: 62/100 (Moderate). Primary goal: First Investment.",
+      "stress_level": "medium",
+      "loan_suppressed": true
+    }
+  },
+  "cust_005": {
+    "customer": {
+      "id": "cust_005",
+      "name": "Sunita Rao",
+      "city": "Vijayawada",
+      "state": "Andhra Pradesh",
+      "age": 42,
+      "occupation": "Street Vendor",
+      "preferred_language": "te",
+      "dependents": 3,
+      "financial_goal": "Home Repair",
+      "customer_segment": "Cash Flow Constrained",
+      "segment_description": "Limited income with high essential expense burden leaves little room for savings.",
+      "segment_icon": "⚠️"
+    },
+    "financial_health": {
+      "score": 44,
+      "label": "Needs Attention",
+      "change": 0,
+      "components": {
+        "income_stability": 85,
+        "savings": 5,
+        "expense_management": 0,
+        "debt_burden": 48,
+        "repayment_behavior": 100,
+        "liquidity": 10
+      },
+      "component_explanations": {
+        "income_stability": "Income has been consistent over the past months.",
+        "savings": "Savings rate of 1% is low. Building an emergency buffer is important.",
+        "expense_management": "Expenses are high at 107% of income. Reducing non-essentials is advised.",
+        "debt_burden": "EMI burden is moderate at 25% of income. Monitor for new obligations.",
+        "repayment_behavior": "All EMI payments are current. Excellent repayment record.",
+        "liquidity": "Emergency fund appears very limited. Prioritize building a financial safety net."
+      },
+      "positive_factors": [
+        "Income has remained stable over the review period.",
+        "All EMI payments are up to date."
+      ],
+      "risk_factors": [
+        "Savings rate is below recommended levels.",
+        "EMI obligations are high relative to income.",
+        "Limited emergency reserves increase vulnerability to shocks."
+      ],
+      "plain_explanation": "Your financial health score is 44 out of 100, rated as 'Needs Attention'. The score reflects your income patterns, spending discipline, savings habits, debt obligations, and repayment track record. Key strength: Income has remained stable over the review period. Area to watch: Savings rate is below recommended levels."
+    },
+    "cash_flow": {
+      "monthly_income": 18000.0,
+      "avg_monthly_income": 18654.47,
+      "avg_monthly_expenses": 15413.94,
+      "avg_monthly_emi": 4499.86,
+      "avg_monthly_savings": 0.0,
+      "savings_rate": 1.2,
+      "emi_ratio": 25.0,
+      "last_month": {
+        "month": "2025-12",
+        "income": 20010.52,
+        "expenses": 17052.14,
+        "emi": 4498.82,
+        "savings": 0.0,
+        "net_cash_flow": -1540.44,
+        "category_breakdown": {
+          "Rent": 4147.67,
+          "Groceries": 6118.27,
+          "Utilities": 1954.45,
+          "Transport": 625.0500000000001,
+          "Healthcare": 2253.08,
+          "Education": 1130.3,
+          "EMI": 4498.82,
+          "UPI Transfer": 823.3199999999999
+        }
+      }
+    },
+    "recommendation": {
+      "type": "support",
+      "title": "Loan Restructuring Support",
+      "product": "EMI Relief or Restructuring",
+      "category": "Support",
+      "recommended_amount": null,
+      "estimated_emi": null,
+      "confidence": 0.95,
+      "why": [
+        "You have overdue loan obligations that need immediate attention.",
+        "Taking additional debt now would increase financial risk.",
+        "Speaking with an advisor could help restructure your EMI burden."
+      ],
+      "not_recommended": [
+        "personal_loan",
+        "credit_card",
+        "investment_starter"
+      ],
+      "not_recommended_reason": "Borrowing more or investing while repayments are overdue increases financial risk. Stabilizing existing obligations is the priority.",
+      "loan_suppressed": true,
+      "requires_human_review": true,
+      "warning": "This is financial guidance, not a loan approval or financial advice. Please consult with a certified financial advisor before making borrowing decisions."
+    },
+    "stress": {
+      "level": "high",
+      "score": 3,
+      "evidence": [
+        "Monthly cash flow is negative on average — expenses exceed income.",
+        "Emergency fund is critically low — less than 2 weeks of expenses covered."
+      ],
+      "confidence": 0.83,
+      "intervention": "Your financial situation is under significant pressure. We recommend speaking with a financial counsellor before making any major financial decisions. Saarthi can help you create a recovery plan."
+    },
+    "alerts": [
+      {
+        "id": "alert_3d2f0848",
+        "customer_id": "cust_005",
+        "type": "cash_flow",
+        "severity": "critical",
+        "title": "Monthly Cash Flow Is Negative",
+        "description": "Your average monthly expenses and EMIs exceed your income. This requires urgent attention.",
+        "evidence": "Average net cash flow: ₹-1,259/month",
+        "recommended_action": "Review and reduce non-essential expenses immediately.",
+        "secondary_action": "Talk to support"
+      },
+      {
+        "id": "alert_bf6dd8b7",
+        "customer_id": "cust_005",
+        "type": "unusual_spending",
+        "severity": "medium",
+        "title": "Unusual UPI Transfer Spending",
+        "description": "This UPI Transfer transaction of ₹1,178 is significantly higher than your usual spending in this category.",
+        "evidence": "Amount ₹1,178 is 2.9x the typical ₹401 for UPI Transfer (z-score: 2.5).",
+        "recommended_action": "Review this transaction and confirm it was made by you.",
+        "secondary_action": "Flag this transaction for review"
+      },
+      {
+        "id": "alert_9366af94",
+        "customer_id": "cust_005",
+        "type": "unusual_spending",
+        "severity": "medium",
+        "title": "Unusual Transport Spending",
+        "description": "This Transport transaction of ₹1,275 is significantly higher than your usual spending in this category.",
+        "evidence": "Amount ₹1,275 is 4.4x the typical ₹287 for Transport (z-score: 2.6).",
+        "recommended_action": "Review this transaction and confirm it was made by you.",
+        "secondary_action": "Flag this transaction for review"
+      },
+      {
+        "id": "alert_faa8f22b",
+        "customer_id": "cust_005",
+        "type": "expense_surge",
+        "severity": "high",
+        "title": "UPI Transfer Spending Increased by 145%",
+        "description": "Your UPI Transfer spending increased by 145% in 2025-08. This may warrant review.",
+        "evidence": "UPI Transfer spending rose from ₹481 to ₹1,178 (145% increase).",
+        "recommended_action": "Review your UPI Transfer expenses for this month.",
+        "secondary_action": "Talk to support"
+      }
+    ],
+    "recent_transactions": [
+      {
+        "id": "txn_cust_005_0060",
+        "date": "2025-12-24",
+        "amount": 6118.27,
+        "type": "debit",
+        "category": "Groceries",
+        "merchant": "Local Market",
+        "description": "Groceries payment - Local Market",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_005_0061",
+        "date": "2025-12-24",
+        "amount": 1954.45,
+        "type": "debit",
+        "category": "Utilities",
+        "merchant": "APEPDCL",
+        "description": "Utilities payment - APEPDCL",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_005_0066",
+        "date": "2025-12-24",
+        "amount": 903.93,
+        "type": "debit",
+        "category": "Healthcare",
+        "merchant": "District Hospital",
+        "description": "Healthcare payment - District Hospital",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_005_0068",
+        "date": "2025-12-22",
+        "amount": 1130.3,
+        "type": "debit",
+        "category": "Education",
+        "merchant": "School Fee",
+        "description": "Education payment - School Fee",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_005_0064",
+        "date": "2025-12-19",
+        "amount": 195.71,
+        "type": "debit",
+        "category": "Transport",
+        "merchant": "Bus",
+        "description": "Transport payment - Bus",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_005_0070",
+        "date": "2025-12-18",
+        "amount": 577.14,
+        "type": "debit",
+        "category": "UPI Transfer",
+        "merchant": "PhonePe",
+        "description": "UPI Transfer payment - PhonePe",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_005_0063",
+        "date": "2025-12-17",
+        "amount": 285.87,
+        "type": "debit",
+        "category": "Transport",
+        "merchant": "Auto",
+        "description": "Transport payment - Auto",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_005_0062",
+        "date": "2025-12-09",
+        "amount": 143.47,
+        "type": "debit",
+        "category": "Transport",
+        "merchant": "Auto",
+        "description": "Transport payment - Auto",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_005_0071",
+        "date": "2025-12-07",
+        "amount": 246.18,
+        "type": "debit",
+        "category": "UPI Transfer",
+        "merchant": "PhonePe",
+        "description": "UPI Transfer payment - PhonePe",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_005_0069",
+        "date": "2025-12-06",
+        "amount": 4498.82,
+        "type": "debit",
+        "category": "EMI",
+        "merchant": "MFI EMI",
+        "description": "EMI payment - MFI EMI",
+        "recurring": true
+      }
+    ],
+    "goals": [
+      {
+        "id": "goal_005",
+        "type": "Home Repair",
+        "target_amount": 80000.0,
+        "current_amount": 5000.0,
+        "target_date": "2027-03-31",
+        "monthly_contribution": 2000.0,
+        "progress_pct": 6.2
+      }
+    ],
+    "monthly_trends": [
+      {
+        "month": "2025-07",
+        "income": 18104.72,
+        "expenses": 15536.54,
+        "emi": 4502.15,
+        "savings": 0.0,
+        "net_cash_flow": -1933.97,
+        "category_breakdown": {
+          "Rent": 4269.68,
+          "Groceries": 4791.33,
+          "Utilities": 2013.27,
+          "Transport": 616.91,
+          "Healthcare": 1926.11,
+          "Education": 1438.03,
+          "EMI": 4502.15,
+          "UPI Transfer": 481.21
+        }
+      },
+      {
+        "month": "2025-08",
+        "income": 21540.87,
+        "expenses": 16630.36,
+        "emi": 4499.9,
+        "savings": 0.0,
+        "net_cash_flow": 410.61,
+        "category_breakdown": {
+          "Rent": 4102.42,
+          "Groceries": 6387.22,
+          "Utilities": 1258.5,
+          "Transport": 695.4000000000001,
+          "Healthcare": 1129.36,
+          "Education": 1879.38,
+          "EMI": 4499.9,
+          "UPI Transfer": 1178.08
+        }
+      },
+      {
+        "month": "2025-09",
+        "income": 17625.11,
+        "expenses": 13815.35,
+        "emi": 4498.38,
+        "savings": 0.0,
+        "net_cash_flow": -688.62,
+        "category_breakdown": {
+          "Rent": 4005.64,
+          "Groceries": 5444.84,
+          "Utilities": 1434.96,
+          "Transport": 467.48,
+          "Healthcare": 100.0,
+          "Education": 1543.91,
+          "EMI": 4498.38,
+          "UPI Transfer": 818.52
+        }
+      },
+      {
+        "month": "2025-10",
+        "income": 20880.41,
+        "expenses": 15465.3,
+        "emi": 4499.16,
+        "savings": 0.0,
+        "net_cash_flow": 915.95,
+        "category_breakdown": {
+          "Rent": 4057.65,
+          "Groceries": 6123.91,
+          "Utilities": 1598.73,
+          "Transport": 898.1,
+          "Healthcare": 200.0,
+          "Education": 1764.52,
+          "EMI": 4499.16,
+          "UPI Transfer": 822.39
+        }
+      },
+      {
+        "month": "2025-11",
+        "income": 13765.2,
+        "expenses": 13983.94,
+        "emi": 4500.74,
+        "savings": 0.0,
+        "net_cash_flow": -4719.48,
+        "category_breakdown": {
+          "Rent": 3827.02,
+          "Groceries": 3672.61,
+          "Utilities": 1458.98,
+          "Transport": 1275.1,
+          "Healthcare": 1640.73,
+          "Education": 1436.37,
+          "EMI": 4500.74,
+          "UPI Transfer": 673.13
+        }
+      },
+      {
+        "month": "2025-12",
+        "income": 20010.52,
+        "expenses": 17052.14,
+        "emi": 4498.82,
+        "savings": 0.0,
+        "net_cash_flow": -1540.44,
+        "category_breakdown": {
+          "Rent": 4147.67,
+          "Groceries": 6118.27,
+          "Utilities": 1954.45,
+          "Transport": 625.0500000000001,
+          "Healthcare": 2253.08,
+          "Education": 1130.3,
+          "EMI": 4498.82,
+          "UPI Transfer": 823.3199999999999
+        }
+      }
+    ],
+    "assistant_context": {
+      "summary": "Sunita Rao has stable income, moderate savings, and manageable EMI obligations. Financial health score: 44/100 (Needs Attention). Primary goal: Home Repair.",
+      "stress_level": "high",
+      "loan_suppressed": true
+    }
+  },
+  "cust_006": {
+    "customer": {
+      "id": "cust_006",
+      "name": "Priya Sharma",
+      "city": "Jaipur",
+      "state": "Rajasthan",
+      "age": 26,
+      "occupation": "Nurse",
+      "preferred_language": "hi",
+      "dependents": 1,
+      "financial_goal": "Festival Savings",
+      "customer_segment": "Stable Planner",
+      "segment_description": "Consistent income, controlled expenses, regular savings, and manageable debt.",
+      "segment_icon": "📊"
+    },
+    "financial_health": {
+      "score": 95,
+      "label": "Excellent",
+      "change": 0,
+      "components": {
+        "income_stability": 100,
+        "savings": 100,
+        "expense_management": 99,
+        "debt_burden": 100,
+        "repayment_behavior": 100,
+        "liquidity": 55
+      },
+      "component_explanations": {
+        "income_stability": "Income has been consistent over the past months.",
+        "savings": "Savings rate of 51% is strong, above the recommended 20%.",
+        "expense_management": "Expenses are well-controlled at 49% of income.",
+        "debt_burden": "No active EMI obligations. Strong financial flexibility.",
+        "repayment_behavior": "No loan history. Score reflects no repayment risk.",
+        "liquidity": "Emergency fund covers ~2.1 month(s). Building this further is advised."
+      },
+      "positive_factors": [
+        "Income has remained stable over the review period.",
+        "Savings rate is healthy at 51%.",
+        "All EMI payments are up to date.",
+        "Debt burden is within safe limits.",
+        "Expenses are well-managed relative to income."
+      ],
+      "risk_factors": [
+        "No major risks identified at this time."
+      ],
+      "plain_explanation": "Your financial health score is 95 out of 100, rated as 'Excellent'. The score reflects your income patterns, spending discipline, savings habits, debt obligations, and repayment track record. Key strength: Income has remained stable over the review period. Area to watch: No major risks identified at this time."
+    },
+    "cash_flow": {
+      "monthly_income": 45000.0,
+      "avg_monthly_income": 45000.0,
+      "avg_monthly_expenses": 22059.07,
+      "avg_monthly_emi": 0.0,
+      "avg_monthly_savings": 7834.0,
+      "savings_rate": 51.0,
+      "emi_ratio": 0.0,
+      "last_month": {
+        "month": "2025-12",
+        "income": 45000.0,
+        "expenses": 22367.77,
+        "emi": 0.0,
+        "savings": 8252.58,
+        "net_cash_flow": 22632.23,
+        "category_breakdown": {
+          "Rent": 9999.96,
+          "Groceries": 4794.83,
+          "Utilities": 1808.44,
+          "Transport": 1121.51,
+          "Healthcare": 583.8199999999999,
+          "Shopping": 1543.61,
+          "Entertainment": 696.19,
+          "Savings": 8252.58,
+          "UPI Transfer": 1819.4099999999999
+        }
+      }
+    },
+    "recommendation": {
+      "type": "loan",
+      "title": "Personal Loan",
+      "product": "Personal Loan",
+      "category": "Borrowing",
+      "recommended_amount": 287000,
+      "estimated_emi": 13500.0,
+      "confidence": 0.78,
+      "why": [
+        "Your financial health score of 95 supports borrowing.",
+        "EMI burden of 0% is well within safe limits.",
+        "A personal loan can help achieve your financial goal with a manageable repayment plan."
+      ],
+      "not_recommended": [
+        "credit_card"
+      ],
+      "not_recommended_reason": "A structured personal loan has lower and more predictable interest than revolving credit.",
+      "loan_suppressed": false,
+      "requires_human_review": false,
+      "warning": "This is financial guidance, not a loan approval or financial advice. Please consult with a certified financial advisor before making borrowing decisions."
+    },
+    "stress": {
+      "level": "none",
+      "score": 0,
+      "evidence": [],
+      "confidence": 0.5,
+      "intervention": "Your finances appear stable. Continue current savings and repayment habits."
+    },
+    "alerts": [
+      {
+        "id": "alert_22cf7344",
+        "customer_id": "cust_006",
+        "type": "unusual_spending",
+        "severity": "medium",
+        "title": "Unusual UPI Transfer Spending",
+        "description": "This UPI Transfer transaction of ₹1,220 is significantly higher than your usual spending in this category.",
+        "evidence": "Amount ₹1,220 is 2.0x the typical ₹602 for UPI Transfer (z-score: 2.9).",
+        "recommended_action": "Review this transaction and confirm it was made by you.",
+        "secondary_action": "Flag this transaction for review"
+      },
+      {
+        "id": "alert_e2e7e9d4",
+        "customer_id": "cust_006",
+        "type": "unusual_spending",
+        "severity": "high",
+        "title": "Unusual Transport Spending",
+        "description": "This Transport transaction of ₹1,249 is significantly higher than your usual spending in this category.",
+        "evidence": "Amount ₹1,249 is 3.2x the typical ₹394 for Transport (z-score: 3.5).",
+        "recommended_action": "Review this transaction and confirm it was made by you.",
+        "secondary_action": "Flag this transaction for review"
+      },
+      {
+        "id": "alert_2663646c",
+        "customer_id": "cust_006",
+        "type": "unusual_spending",
+        "severity": "medium",
+        "title": "Unusual Shopping Spending",
+        "description": "This Shopping transaction of ₹2,174 is significantly higher than your usual spending in this category.",
+        "evidence": "Amount ₹2,174 is 2.8x the typical ₹789 for Shopping (z-score: 2.5).",
+        "recommended_action": "Review this transaction and confirm it was made by you.",
+        "secondary_action": "Flag this transaction for review"
+      }
+    ],
+    "recent_transactions": [
+      {
+        "id": "txn_cust_006_0092",
+        "date": "2025-12-28",
+        "amount": 309.01,
+        "type": "debit",
+        "category": "Entertainment",
+        "merchant": "Netflix",
+        "description": "Entertainment payment - Netflix",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_006_0090",
+        "date": "2025-12-27",
+        "amount": 1543.61,
+        "type": "debit",
+        "category": "Shopping",
+        "merchant": "Myntra",
+        "description": "Shopping payment - Myntra",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_006_0086",
+        "date": "2025-12-24",
+        "amount": 311.45,
+        "type": "debit",
+        "category": "Transport",
+        "merchant": "Bus",
+        "description": "Transport payment - Bus",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_006_0091",
+        "date": "2025-12-24",
+        "amount": 144.75,
+        "type": "debit",
+        "category": "Entertainment",
+        "merchant": "PVR",
+        "description": "Entertainment payment - PVR",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_006_0084",
+        "date": "2025-12-23",
+        "amount": 353.35,
+        "type": "debit",
+        "category": "Transport",
+        "merchant": "Ola",
+        "description": "Transport payment - Ola",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_006_0097",
+        "date": "2025-12-23",
+        "amount": 627.33,
+        "type": "debit",
+        "category": "UPI Transfer",
+        "merchant": "PhonePe",
+        "description": "UPI Transfer payment - PhonePe",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_006_0094",
+        "date": "2025-12-20",
+        "amount": 8252.58,
+        "type": "debit",
+        "category": "Savings",
+        "merchant": "PPF",
+        "description": "Savings payment - PPF",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_006_0096",
+        "date": "2025-12-20",
+        "amount": 616.68,
+        "type": "debit",
+        "category": "UPI Transfer",
+        "merchant": "PhonePe",
+        "description": "UPI Transfer payment - PhonePe",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_006_0081",
+        "date": "2025-12-17",
+        "amount": 9999.96,
+        "type": "debit",
+        "category": "Rent",
+        "merchant": "Landlord Transfer",
+        "description": "Rent payment - Landlord Transfer",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_006_0082",
+        "date": "2025-12-16",
+        "amount": 4794.83,
+        "type": "debit",
+        "category": "Groceries",
+        "merchant": "Local Market",
+        "description": "Groceries payment - Local Market",
+        "recurring": true
+      }
+    ],
+    "goals": [
+      {
+        "id": "goal_003",
+        "type": "Festival Savings",
+        "target_amount": 30000.0,
+        "current_amount": 18000.0,
+        "target_date": "2025-10-15",
+        "monthly_contribution": 8000.0,
+        "progress_pct": 60.0
+      }
+    ],
+    "monthly_trends": [
+      {
+        "month": "2025-07",
+        "income": 45000.0,
+        "expenses": 23227.43,
+        "emi": 0.0,
+        "savings": 8508.44,
+        "net_cash_flow": 21772.57,
+        "category_breakdown": {
+          "Rent": 9999.9,
+          "Groceries": 4498.38,
+          "Utilities": 2083.97,
+          "Transport": 1022.56,
+          "Healthcare": 599.88,
+          "Shopping": 2188.3199999999997,
+          "Entertainment": 1032.09,
+          "Savings": 8508.44,
+          "UPI Transfer": 1802.33
+        }
+      },
+      {
+        "month": "2025-08",
+        "income": 45000.0,
+        "expenses": 22220.24,
+        "emi": 0.0,
+        "savings": 7554.13,
+        "net_cash_flow": 22779.76,
+        "category_breakdown": {
+          "Rent": 10000.1,
+          "Groceries": 4148.86,
+          "Utilities": 1968.77,
+          "Transport": 1359.4899999999998,
+          "Healthcare": 821.3399999999999,
+          "Shopping": 1839.77,
+          "Entertainment": 426.89,
+          "Savings": 7554.13,
+          "UPI Transfer": 1655.02
+        }
+      },
+      {
+        "month": "2025-09",
+        "income": 45000.0,
+        "expenses": 21164.68,
+        "emi": 0.0,
+        "savings": 7548.38,
+        "net_cash_flow": 23835.32,
+        "category_breakdown": {
+          "Rent": 9999.58,
+          "Groceries": 4772.38,
+          "Utilities": 1763.82,
+          "Transport": 1333.96,
+          "Healthcare": 300.0,
+          "Shopping": 1576.3400000000001,
+          "Entertainment": 817.05,
+          "Savings": 7548.38,
+          "UPI Transfer": 601.55
+        }
+      },
+      {
+        "month": "2025-10",
+        "income": 45000.0,
+        "expenses": 20237.38,
+        "emi": 0.0,
+        "savings": 7558.25,
+        "net_cash_flow": 24762.62,
+        "category_breakdown": {
+          "Rent": 10002.65,
+          "Groceries": 4193.8,
+          "Utilities": 1545.61,
+          "Transport": 1248.68,
+          "Healthcare": 845.1300000000001,
+          "Shopping": 1079.3899999999999,
+          "Entertainment": 501.92,
+          "Savings": 7558.25,
+          "UPI Transfer": 820.2
+        }
+      },
+      {
+        "month": "2025-11",
+        "income": 45000.0,
+        "expenses": 23136.89,
+        "emi": 0.0,
+        "savings": 7582.2,
+        "net_cash_flow": 21863.11,
+        "category_breakdown": {
+          "Rent": 10000.82,
+          "Groceries": 4301.9,
+          "Utilities": 1818.84,
+          "Transport": 1134.39,
+          "Healthcare": 592.85,
+          "Shopping": 2915.19,
+          "Entertainment": 897.1,
+          "Savings": 7582.2,
+          "UPI Transfer": 1475.8
+        }
+      },
+      {
+        "month": "2025-12",
+        "income": 45000.0,
+        "expenses": 22367.77,
+        "emi": 0.0,
+        "savings": 8252.58,
+        "net_cash_flow": 22632.23,
+        "category_breakdown": {
+          "Rent": 9999.96,
+          "Groceries": 4794.83,
+          "Utilities": 1808.44,
+          "Transport": 1121.51,
+          "Healthcare": 583.8199999999999,
+          "Shopping": 1543.61,
+          "Entertainment": 696.19,
+          "Savings": 8252.58,
+          "UPI Transfer": 1819.4099999999999
+        }
+      }
+    ],
+    "assistant_context": {
+      "summary": "Priya Sharma has stable income, healthy savings, and manageable EMI obligations. Financial health score: 95/100 (Excellent). Primary goal: Festival Savings.",
+      "stress_level": "none",
+      "loan_suppressed": false
+    }
+  },
+  "cust_007": {
+    "customer": {
+      "id": "cust_007",
+      "name": "Mohan Das",
+      "city": "Coimbatore",
+      "state": "Tamil Nadu",
+      "age": 50,
+      "occupation": "Farmer",
+      "preferred_language": "ta",
+      "dependents": 5,
+      "financial_goal": "Crop Insurance",
+      "customer_segment": "Stable Planner",
+      "segment_description": "Consistent income, controlled expenses, regular savings, and manageable debt.",
+      "segment_icon": "📊"
+    },
+    "financial_health": {
+      "score": 58,
+      "label": "Moderate",
+      "change": 0,
+      "components": {
+        "income_stability": 82,
+        "savings": 63,
+        "expense_management": 19,
+        "debt_burden": 47,
+        "repayment_behavior": 100,
+        "liquidity": 20
+      },
+      "component_explanations": {
+        "income_stability": "Income has been consistent over the past months.",
+        "savings": "Savings rate of 16% is moderate. There is room to save more.",
+        "expense_management": "Expenses are high at 87% of income. Reducing non-essentials is advised.",
+        "debt_burden": "EMI burden is moderate at 25% of income. Monitor for new obligations.",
+        "repayment_behavior": "All EMI payments are current. Excellent repayment record.",
+        "liquidity": "Emergency fund appears very limited. Prioritize building a financial safety net."
+      },
+      "positive_factors": [
+        "Income has remained stable over the review period.",
+        "All EMI payments are up to date."
+      ],
+      "risk_factors": [
+        "EMI obligations are high relative to income.",
+        "Limited emergency reserves increase vulnerability to shocks."
+      ],
+      "plain_explanation": "Your financial health score is 58 out of 100, rated as 'Moderate'. The score reflects your income patterns, spending discipline, savings habits, debt obligations, and repayment track record. Key strength: Income has remained stable over the review period. Area to watch: EMI obligations are high relative to income."
+    },
+    "cash_flow": {
+      "monthly_income": 14000.0,
+      "avg_monthly_income": 13211.67,
+      "avg_monthly_expenses": 7978.35,
+      "avg_monthly_emi": 3500.04,
+      "avg_monthly_savings": 0.0,
+      "savings_rate": 15.7,
+      "emi_ratio": 25.0,
+      "last_month": {
+        "month": "2025-12",
+        "income": 15448.18,
+        "expenses": 5200.26,
+        "emi": 3501.22,
+        "savings": 0.0,
+        "net_cash_flow": 6746.7,
+        "category_breakdown": {
+          "Groceries": 2293.68,
+          "Utilities": 308.36,
+          "Transport": 901.73,
+          "Healthcare": 100.0,
+          "Education": 999.99,
+          "EMI": 3501.22,
+          "UPI Transfer": 596.5
+        }
+      }
+    },
+    "recommendation": {
+      "type": "savings",
+      "title": "Goal-Based Savings Plan",
+      "product": "Recurring Deposit / Goal Plan",
+      "category": "Savings",
+      "recommended_amount": 13440,
+      "estimated_emi": 1120,
+      "confidence": 0.85,
+      "why": [
+        "Your finances are under some pressure right now.",
+        "Building savings is safer than taking on additional debt.",
+        "A goal-based savings plan helps achieve your target systematically."
+      ],
+      "not_recommended": [
+        "personal_loan",
+        "credit_card"
+      ],
+      "not_recommended_reason": "Adding new loan obligations during a period of financial pressure is not recommended. Strengthening savings reduces long-term risk.",
+      "loan_suppressed": true,
+      "requires_human_review": false,
+      "warning": "This is financial guidance, not a loan approval or financial advice. Please consult with a certified financial advisor before making borrowing decisions."
+    },
+    "stress": {
+      "level": "medium",
+      "score": 2,
+      "evidence": [
+        "Emergency fund is critically low — less than 2 weeks of expenses covered."
+      ],
+      "confidence": 0.67,
+      "intervention": "Your finances need attention. Consider reducing discretionary spending and focus on building an emergency buffer before taking on new debt."
+    },
+    "alerts": [
+      {
+        "id": "alert_61b02863",
+        "customer_id": "cust_007",
+        "type": "unusual_spending",
+        "severity": "medium",
+        "title": "Unusual UPI Transfer Spending",
+        "description": "This UPI Transfer transaction of ₹716 is significantly higher than your usual spending in this category.",
+        "evidence": "Amount ₹716 is 3.7x the typical ₹191 for UPI Transfer (z-score: 2.5).",
+        "recommended_action": "Review this transaction and confirm it was made by you.",
+        "secondary_action": "Flag this transaction for review"
+      },
+      {
+        "id": "alert_24924b37",
+        "customer_id": "cust_007",
+        "type": "expense_surge",
+        "severity": "medium",
+        "title": "Groceries Spending Increased by 44%",
+        "description": "Your Groceries spending increased by 44% in 2025-08. This may warrant review.",
+        "evidence": "Groceries spending rose from ₹3,948 to ₹5,677 (44% increase).",
+        "recommended_action": "Review your Groceries expenses for this month.",
+        "secondary_action": "Talk to support"
+      },
+      {
+        "id": "alert_7ae577f5",
+        "customer_id": "cust_007",
+        "type": "expense_surge",
+        "severity": "high",
+        "title": "Utilities Spending Increased by 362%",
+        "description": "Your Utilities spending increased by 362% in 2025-09. This may warrant review.",
+        "evidence": "Utilities spending rose from ₹253 to ₹1,168 (362% increase).",
+        "recommended_action": "Review your Utilities expenses for this month.",
+        "secondary_action": "Talk to support"
+      }
+    ],
+    "recent_transactions": [
+      {
+        "id": "txn_cust_007_0050",
+        "date": "2025-12-28",
+        "amount": 2293.68,
+        "type": "debit",
+        "category": "Groceries",
+        "merchant": "Local Market",
+        "description": "Groceries payment - Local Market",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_007_0056",
+        "date": "2025-12-28",
+        "amount": 178.85,
+        "type": "debit",
+        "category": "UPI Transfer",
+        "merchant": "PhonePe",
+        "description": "UPI Transfer payment - PhonePe",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_007_0053",
+        "date": "2025-12-21",
+        "amount": 100.0,
+        "type": "debit",
+        "category": "Healthcare",
+        "merchant": "Vaidya",
+        "description": "Healthcare payment - Vaidya",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_007_0058",
+        "date": "2025-12-21",
+        "amount": 204.04,
+        "type": "debit",
+        "category": "UPI Transfer",
+        "merchant": "PhonePe",
+        "description": "UPI Transfer payment - PhonePe",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_007_0055",
+        "date": "2025-12-10",
+        "amount": 3501.22,
+        "type": "debit",
+        "category": "EMI",
+        "merchant": "Kisan Credit Card",
+        "description": "EMI payment - Kisan Credit Card",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_007_0051",
+        "date": "2025-12-09",
+        "amount": 308.36,
+        "type": "debit",
+        "category": "Utilities",
+        "merchant": "TANGEDCO",
+        "description": "Utilities payment - TANGEDCO",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_007_0052",
+        "date": "2025-12-08",
+        "amount": 901.73,
+        "type": "debit",
+        "category": "Transport",
+        "merchant": "Bus",
+        "description": "Transport payment - Bus",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_007_0057",
+        "date": "2025-12-06",
+        "amount": 213.61,
+        "type": "debit",
+        "category": "UPI Transfer",
+        "merchant": "PhonePe",
+        "description": "UPI Transfer payment - PhonePe",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_007_0054",
+        "date": "2025-12-02",
+        "amount": 999.99,
+        "type": "debit",
+        "category": "Education",
+        "merchant": "School Fee",
+        "description": "Education payment - School Fee",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_007_0049",
+        "date": "2025-12-01",
+        "amount": 15448.18,
+        "type": "credit",
+        "category": "Salary",
+        "merchant": "Farmer Salary",
+        "description": "Salary credit Dec 2025",
+        "recurring": true
+      }
+    ],
+    "goals": [],
+    "monthly_trends": [
+      {
+        "month": "2025-07",
+        "income": 11725.97,
+        "expenses": 6859.98,
+        "emi": 3499.96,
+        "savings": 0.0,
+        "net_cash_flow": 1366.03,
+        "category_breakdown": {
+          "Groceries": 3948.04,
+          "Utilities": 405.89,
+          "Transport": 937.81,
+          "Healthcare": 852.51,
+          "EMI": 3499.96,
+          "UPI Transfer": 715.73
+        }
+      },
+      {
+        "month": "2025-08",
+        "income": 15412.5,
+        "expenses": 10926.85,
+        "emi": 3499.1,
+        "savings": 0.0,
+        "net_cash_flow": 986.55,
+        "category_breakdown": {
+          "Education": 2402.07,
+          "Groceries": 5677.25,
+          "Utilities": 252.59,
+          "Transport": 488.67,
+          "Healthcare": 1570.89,
+          "EMI": 3499.1,
+          "UPI Transfer": 535.3800000000001
+        }
+      },
+      {
+        "month": "2025-09",
+        "income": 15252.6,
+        "expenses": 7657.23,
+        "emi": 3501.17,
+        "savings": 0.0,
+        "net_cash_flow": 4094.2,
+        "category_breakdown": {
+          "Groceries": 3150.51,
+          "Utilities": 1167.6,
+          "Transport": 633.94,
+          "Healthcare": 1644.34,
+          "Education": 960.84,
+          "EMI": 3501.17,
+          "UPI Transfer": 100.0
+        }
+      },
+      {
+        "month": "2025-10",
+        "income": 10440.01,
+        "expenses": 8700.8,
+        "emi": 3499.95,
+        "savings": 0.0,
+        "net_cash_flow": -1760.74,
+        "category_breakdown": {
+          "Groceries": 2497.97,
+          "Utilities": 875.74,
+          "Transport": 642.09,
+          "Healthcare": 3351.11,
+          "Education": 1233.89,
+          "EMI": 3499.95,
+          "UPI Transfer": 100.0
+        }
+      },
+      {
+        "month": "2025-11",
+        "income": 10990.75,
+        "expenses": 8524.98,
+        "emi": 3498.85,
+        "savings": 0.0,
+        "net_cash_flow": -1033.08,
+        "category_breakdown": {
+          "Groceries": 3166.63,
+          "Utilities": 1489.1,
+          "Transport": 747.76,
+          "Healthcare": 1487.94,
+          "Education": 1219.42,
+          "EMI": 3498.85,
+          "UPI Transfer": 414.13
+        }
+      },
+      {
+        "month": "2025-12",
+        "income": 15448.18,
+        "expenses": 5200.26,
+        "emi": 3501.22,
+        "savings": 0.0,
+        "net_cash_flow": 6746.7,
+        "category_breakdown": {
+          "Groceries": 2293.68,
+          "Utilities": 308.36,
+          "Transport": 901.73,
+          "Healthcare": 100.0,
+          "Education": 999.99,
+          "EMI": 3501.22,
+          "UPI Transfer": 596.5
+        }
+      }
+    ],
+    "assistant_context": {
+      "summary": "Mohan Das has stable income, healthy savings, and manageable EMI obligations. Financial health score: 58/100 (Moderate). Primary goal: Crop Insurance.",
+      "stress_level": "medium",
+      "loan_suppressed": true
+    }
+  },
+  "cust_008": {
+    "customer": {
+      "id": "cust_008",
+      "name": "Kavitha Nair",
+      "city": "Thrissur",
+      "state": "Kerala",
+      "age": 33,
+      "occupation": "Beautician",
+      "preferred_language": "ml",
+      "dependents": 2,
+      "financial_goal": "Education Loan Repayment",
+      "customer_segment": "Stable Planner",
+      "segment_description": "Consistent income, controlled expenses, regular savings, and manageable debt.",
+      "segment_icon": "📊"
+    },
+    "financial_health": {
+      "score": 78,
+      "label": "Stable",
+      "change": 0,
+      "components": {
+        "income_stability": 100,
+        "savings": 100,
+        "expense_management": 55,
+        "debt_burden": 56,
+        "repayment_behavior": 100,
+        "liquidity": 38
+      },
+      "component_explanations": {
+        "income_stability": "Income has been consistent over the past months.",
+        "savings": "Savings rate of 28% is strong, above the recommended 20%.",
+        "expense_management": "Expenses are at 72% of income. Manage discretionary spending.",
+        "debt_burden": "EMI burden is low at 19% of income. Well within safe limits.",
+        "repayment_behavior": "All EMI payments are current. Excellent repayment record.",
+        "liquidity": "Emergency fund appears very limited. Prioritize building a financial safety net."
+      },
+      "positive_factors": [
+        "Income has remained stable over the review period.",
+        "Savings rate is healthy at 28%.",
+        "All EMI payments are up to date."
+      ],
+      "risk_factors": [
+        "Limited emergency reserves increase vulnerability to shocks."
+      ],
+      "plain_explanation": "Your financial health score is 78 out of 100, rated as 'Stable'. The score reflects your income patterns, spending discipline, savings habits, debt obligations, and repayment track record. Key strength: Income has remained stable over the review period. Area to watch: Limited emergency reserves increase vulnerability to shocks."
+    },
+    "cash_flow": {
+      "monthly_income": 36000.0,
+      "avg_monthly_income": 36000.0,
+      "avg_monthly_expenses": 18907.9,
+      "avg_monthly_emi": 6999.61,
+      "avg_monthly_savings": 2948.81,
+      "savings_rate": 28.0,
+      "emi_ratio": 19.4,
+      "last_month": {
+        "month": "2025-12",
+        "income": 36000.0,
+        "expenses": 19417.26,
+        "emi": 7001.25,
+        "savings": 3000.96,
+        "net_cash_flow": 9581.49,
+        "category_breakdown": {
+          "Rent": 8000.82,
+          "Groceries": 3943.84,
+          "Utilities": 1848.75,
+          "Transport": 974.39,
+          "Healthcare": 200.0,
+          "Shopping": 2388.59,
+          "Entertainment": 601.6700000000001,
+          "EMI": 7001.25,
+          "Savings": 3000.96,
+          "UPI Transfer": 1459.1999999999998
+        }
+      }
+    },
+    "recommendation": {
+      "type": "protection",
+      "title": "Term Insurance",
+      "product": "Term Life Insurance",
+      "category": "Protection",
+      "recommended_amount": 3600000,
+      "estimated_emi": 360,
+      "confidence": 0.87,
+      "why": [
+        "You have 2 dependents who depend on your income.",
+        "Term insurance is one of the most important financial protections for your family.",
+        "Your current savings allow for a modest insurance premium."
+      ],
+      "not_recommended": [
+        "investment_starter"
+      ],
+      "not_recommended_reason": "Protection comes before investment, especially for households with dependents.",
+      "loan_suppressed": false,
+      "requires_human_review": false,
+      "warning": "This is financial guidance, not a loan approval or financial advice. Please consult with a certified financial advisor before making borrowing decisions."
+    },
+    "stress": {
+      "level": "low",
+      "score": 1,
+      "evidence": [
+        "Emergency fund covers only 0.7 months — build this as a priority."
+      ],
+      "confidence": 0.67,
+      "intervention": "There are early signs of financial pressure. Review your recurring expenses and avoid new loan obligations for now."
+    },
+    "alerts": [
+      {
+        "id": "alert_fce0af84",
+        "customer_id": "cust_008",
+        "type": "unusual_spending",
+        "severity": "medium",
+        "title": "Unusual Healthcare Spending",
+        "description": "This Healthcare transaction of ₹516 is significantly higher than your usual spending in this category.",
+        "evidence": "Amount ₹516 is 4.0x the typical ₹129 for Healthcare (z-score: 2.8).",
+        "recommended_action": "Review this transaction and confirm it was made by you.",
+        "secondary_action": "Flag this transaction for review"
+      },
+      {
+        "id": "alert_e3c2fa47",
+        "customer_id": "cust_008",
+        "type": "unusual_spending",
+        "severity": "medium",
+        "title": "Unusual Entertainment Spending",
+        "description": "This Entertainment transaction of ₹448 is significantly higher than your usual spending in this category.",
+        "evidence": "Amount ₹448 is 1.7x the typical ₹262 for Entertainment (z-score: 2.3).",
+        "recommended_action": "Review this transaction and confirm it was made by you.",
+        "secondary_action": "Flag this transaction for review"
+      },
+      {
+        "id": "alert_8f509b2b",
+        "customer_id": "cust_008",
+        "type": "unusual_spending",
+        "severity": "medium",
+        "title": "Unusual Shopping Spending",
+        "description": "This Shopping transaction of ₹2,154 is significantly higher than your usual spending in this category.",
+        "evidence": "Amount ₹2,154 is 2.8x the typical ₹782 for Shopping (z-score: 2.9).",
+        "recommended_action": "Review this transaction and confirm it was made by you.",
+        "secondary_action": "Flag this transaction for review"
+      }
+    ],
+    "recent_transactions": [
+      {
+        "id": "txn_cust_008_0100",
+        "date": "2025-12-29",
+        "amount": 7001.25,
+        "type": "debit",
+        "category": "EMI",
+        "merchant": "SBI Education Loan EMI",
+        "description": "EMI payment - SBI Education Loan EMI",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_008_0101",
+        "date": "2025-12-28",
+        "amount": 3000.96,
+        "type": "debit",
+        "category": "Savings",
+        "merchant": "Kerala Post RD",
+        "description": "Savings payment - Kerala Post RD",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_008_0103",
+        "date": "2025-12-27",
+        "amount": 543.9,
+        "type": "debit",
+        "category": "UPI Transfer",
+        "merchant": "PhonePe",
+        "description": "UPI Transfer payment - PhonePe",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_008_0093",
+        "date": "2025-12-26",
+        "amount": 100.0,
+        "type": "debit",
+        "category": "Healthcare",
+        "merchant": "Apollo Pharmacy",
+        "description": "Healthcare payment - Apollo Pharmacy",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_008_0097",
+        "date": "2025-12-24",
+        "amount": 142.78,
+        "type": "debit",
+        "category": "Entertainment",
+        "merchant": "Spotify",
+        "description": "Entertainment payment - Spotify",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_008_0094",
+        "date": "2025-12-20",
+        "amount": 905.48,
+        "type": "debit",
+        "category": "Shopping",
+        "merchant": "Meesho",
+        "description": "Shopping payment - Meesho",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_008_0096",
+        "date": "2025-12-20",
+        "amount": 761.28,
+        "type": "debit",
+        "category": "Shopping",
+        "merchant": "Meesho",
+        "description": "Shopping payment - Meesho",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_008_0098",
+        "date": "2025-12-20",
+        "amount": 185.78,
+        "type": "debit",
+        "category": "Entertainment",
+        "merchant": "Spotify",
+        "description": "Entertainment payment - Spotify",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_008_0090",
+        "date": "2025-12-19",
+        "amount": 1848.75,
+        "type": "debit",
+        "category": "Utilities",
+        "merchant": "KSEB",
+        "description": "Utilities payment - KSEB",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_008_0088",
+        "date": "2025-12-18",
+        "amount": 8000.82,
+        "type": "debit",
+        "category": "Rent",
+        "merchant": "Landlord Transfer",
+        "description": "Rent payment - Landlord Transfer",
+        "recurring": true
+      }
+    ],
+    "goals": [],
+    "monthly_trends": [
+      {
+        "month": "2025-07",
+        "income": 36000.0,
+        "expenses": 19008.97,
+        "emi": 7000.76,
+        "savings": 2890.66,
+        "net_cash_flow": 9990.27,
+        "category_breakdown": {
+          "Rent": 8000.11,
+          "Groceries": 3844.13,
+          "Utilities": 1443.72,
+          "Transport": 835.3,
+          "Healthcare": 772.6999999999999,
+          "Shopping": 1898.44,
+          "Entertainment": 447.73,
+          "EMI": 7000.76,
+          "Savings": 2890.66,
+          "UPI Transfer": 1766.8400000000001
+        }
+      },
+      {
+        "month": "2025-08",
+        "income": 36000.0,
+        "expenses": 19045.14,
+        "emi": 6998.42,
+        "savings": 3163.3,
+        "net_cash_flow": 9956.44,
+        "category_breakdown": {
+          "Rent": 8000.4,
+          "Groceries": 3625.52,
+          "Utilities": 1611.07,
+          "Transport": 1030.24,
+          "Healthcare": 420.71,
+          "Shopping": 2153.63,
+          "Entertainment": 744.25,
+          "EMI": 6998.42,
+          "Savings": 3163.3,
+          "UPI Transfer": 1459.32
+        }
+      },
+      {
+        "month": "2025-09",
+        "income": 36000.0,
+        "expenses": 19062.07,
+        "emi": 6998.38,
+        "savings": 2997.08,
+        "net_cash_flow": 9939.55,
+        "category_breakdown": {
+          "Rent": 7999.6,
+          "Groceries": 4015.83,
+          "Utilities": 1733.41,
+          "Transport": 1132.31,
+          "Healthcare": 200.0,
+          "Shopping": 2472.02,
+          "Entertainment": 636.13,
+          "EMI": 6998.38,
+          "Savings": 2997.08,
+          "UPI Transfer": 872.77
+        }
+      },
+      {
+        "month": "2025-10",
+        "income": 36000.0,
+        "expenses": 18269.76,
+        "emi": 6999.54,
+        "savings": 2621.79,
+        "net_cash_flow": 10730.7,
+        "category_breakdown": {
+          "Rent": 7999.51,
+          "Groceries": 4069.58,
+          "Utilities": 1309.26,
+          "Transport": 1063.98,
+          "Healthcare": 408.29,
+          "Shopping": 1663.97,
+          "Entertainment": 606.02,
+          "EMI": 6999.54,
+          "Savings": 2621.79,
+          "UPI Transfer": 1149.15
+        }
+      },
+      {
+        "month": "2025-11",
+        "income": 36000.0,
+        "expenses": 18644.21,
+        "emi": 6999.34,
+        "savings": 3019.09,
+        "net_cash_flow": 10356.45,
+        "category_breakdown": {
+          "Rent": 7999.32,
+          "Groceries": 3671.31,
+          "Utilities": 1739.03,
+          "Transport": 1043.0,
+          "Healthcare": 602.89,
+          "Shopping": 1772.22,
+          "Entertainment": 646.91,
+          "EMI": 6999.34,
+          "Savings": 3019.09,
+          "UPI Transfer": 1169.53
+        }
+      },
+      {
+        "month": "2025-12",
+        "income": 36000.0,
+        "expenses": 19417.26,
+        "emi": 7001.25,
+        "savings": 3000.96,
+        "net_cash_flow": 9581.49,
+        "category_breakdown": {
+          "Rent": 8000.82,
+          "Groceries": 3943.84,
+          "Utilities": 1848.75,
+          "Transport": 974.39,
+          "Healthcare": 200.0,
+          "Shopping": 2388.59,
+          "Entertainment": 601.6700000000001,
+          "EMI": 7001.25,
+          "Savings": 3000.96,
+          "UPI Transfer": 1459.1999999999998
+        }
+      }
+    ],
+    "assistant_context": {
+      "summary": "Kavitha Nair has stable income, healthy savings, and manageable EMI obligations. Financial health score: 78/100 (Stable). Primary goal: Education Loan Repayment.",
+      "stress_level": "low",
+      "loan_suppressed": false
+    }
+  },
+  "cust_009": {
+    "customer": {
+      "id": "cust_009",
+      "name": "Rahul Gupta",
+      "city": "Kanpur",
+      "state": "Uttar Pradesh",
+      "age": 29,
+      "occupation": "Shopkeeper",
+      "preferred_language": "hi",
+      "dependents": 2,
+      "financial_goal": "Business Expansion",
+      "customer_segment": "Growing Saver",
+      "segment_description": "Savings rate is improving month-on-month. Income is steady.",
+      "segment_icon": "📈"
+    },
+    "financial_health": {
+      "score": 94,
+      "label": "Excellent",
+      "change": 0,
+      "components": {
+        "income_stability": 100,
+        "savings": 100,
+        "expense_management": 99,
+        "debt_burden": 100,
+        "repayment_behavior": 100,
+        "liquidity": 41
+      },
+      "component_explanations": {
+        "income_stability": "Income has been consistent over the past months.",
+        "savings": "Savings rate of 53% is strong, above the recommended 20%.",
+        "expense_management": "Expenses are well-controlled at 47% of income. Note: Expenses increased by 15% recently.",
+        "debt_burden": "No active EMI obligations. Strong financial flexibility.",
+        "repayment_behavior": "No loan history. Score reflects no repayment risk.",
+        "liquidity": "Emergency fund appears very limited. Prioritize building a financial safety net."
+      },
+      "positive_factors": [
+        "Income has remained stable over the review period.",
+        "Savings rate is healthy at 53%.",
+        "All EMI payments are up to date.",
+        "Debt burden is within safe limits.",
+        "Expenses are well-managed relative to income."
+      ],
+      "risk_factors": [
+        "Limited emergency reserves increase vulnerability to shocks.",
+        "Household expenses have increased recently — review recurring costs."
+      ],
+      "plain_explanation": "Your financial health score is 94 out of 100, rated as 'Excellent'. The score reflects your income patterns, spending discipline, savings habits, debt obligations, and repayment track record. Key strength: Income has remained stable over the review period. Area to watch: Limited emergency reserves increase vulnerability to shocks."
+    },
+    "cash_flow": {
+      "monthly_income": 28000.0,
+      "avg_monthly_income": 28000.0,
+      "avg_monthly_expenses": 13152.01,
+      "avg_monthly_emi": 0.0,
+      "avg_monthly_savings": 2090.56,
+      "savings_rate": 53.0,
+      "emi_ratio": 0.0,
+      "last_month": {
+        "month": "2025-12",
+        "income": 28000.0,
+        "expenses": 16189.26,
+        "emi": 0.0,
+        "savings": 2293.07,
+        "net_cash_flow": 11810.74,
+        "category_breakdown": {
+          "Groceries": 5742.52,
+          "Utilities": 1813.27,
+          "Transport": 1121.17,
+          "Healthcare": 900.17,
+          "Shopping": 1713.09,
+          "Entertainment": 368.67,
+          "UPI Transfer": 4530.37,
+          "Savings": 2293.07
+        }
+      }
+    },
+    "recommendation": {
+      "type": "protection",
+      "title": "Term Insurance",
+      "product": "Term Life Insurance",
+      "category": "Protection",
+      "recommended_amount": 2800000,
+      "estimated_emi": 280,
+      "confidence": 0.87,
+      "why": [
+        "You have 2 dependents who depend on your income.",
+        "Term insurance is one of the most important financial protections for your family.",
+        "Your current savings allow for a modest insurance premium."
+      ],
+      "not_recommended": [
+        "investment_starter"
+      ],
+      "not_recommended_reason": "Protection comes before investment, especially for households with dependents.",
+      "loan_suppressed": false,
+      "requires_human_review": false,
+      "warning": "This is financial guidance, not a loan approval or financial advice. Please consult with a certified financial advisor before making borrowing decisions."
+    },
+    "stress": {
+      "level": "low",
+      "score": 1,
+      "evidence": [
+        "Emergency fund covers only 0.9 months — build this as a priority."
+      ],
+      "confidence": 0.67,
+      "intervention": "There are early signs of financial pressure. Review your recurring expenses and avoid new loan obligations for now."
+    },
+    "alerts": [
+      {
+        "id": "alert_a167eae2",
+        "customer_id": "cust_009",
+        "type": "cash_flow",
+        "severity": "medium",
+        "title": "Your Monthly Expenses Are Rising",
+        "description": "Household spending increased by approximately 15% recently.",
+        "evidence": "Expense surge of 15% observed in recent months.",
+        "recommended_action": "Review recurring expenses to identify what has increased.",
+        "secondary_action": "Talk to support"
+      },
+      {
+        "id": "alert_5d4310d5",
+        "customer_id": "cust_009",
+        "type": "unusual_spending",
+        "severity": "medium",
+        "title": "Unusual Shopping Spending",
+        "description": "This Shopping transaction of ₹2,362 is significantly higher than your usual spending in this category.",
+        "evidence": "Amount ₹2,362 is 4.2x the typical ₹565 for Shopping (z-score: 2.1).",
+        "recommended_action": "Review this transaction and confirm it was made by you.",
+        "secondary_action": "Flag this transaction for review"
+      },
+      {
+        "id": "alert_304f2b17",
+        "customer_id": "cust_009",
+        "type": "unusual_spending",
+        "severity": "medium",
+        "title": "Unusual Entertainment Spending",
+        "description": "This Entertainment transaction of ₹636 is significantly higher than your usual spending in this category.",
+        "evidence": "Amount ₹636 is 2.8x the typical ₹223 for Entertainment (z-score: 2.5).",
+        "recommended_action": "Review this transaction and confirm it was made by you.",
+        "secondary_action": "Flag this transaction for review"
+      },
+      {
+        "id": "alert_877e645d",
+        "customer_id": "cust_009",
+        "type": "unusual_spending",
+        "severity": "high",
+        "title": "Unusual Transport Spending",
+        "description": "This Transport transaction of ₹1,280 is significantly higher than your usual spending in this category.",
+        "evidence": "Amount ₹1,280 is 4.0x the typical ₹321 for Transport (z-score: 3.3).",
+        "recommended_action": "Review this transaction and confirm it was made by you.",
+        "secondary_action": "Flag this transaction for review"
+      }
+    ],
+    "recent_transactions": [
+      {
+        "id": "txn_cust_009_0083",
+        "date": "2025-12-28",
+        "amount": 2293.07,
+        "type": "debit",
+        "category": "Savings",
+        "merchant": "Post Office RD",
+        "description": "Savings payment - Post Office RD",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_009_0076",
+        "date": "2025-12-27",
+        "amount": 491.0,
+        "type": "debit",
+        "category": "Transport",
+        "merchant": "Bus",
+        "description": "Transport payment - Bus",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_009_0078",
+        "date": "2025-12-26",
+        "amount": 900.17,
+        "type": "debit",
+        "category": "Healthcare",
+        "merchant": "Govt Hospital",
+        "description": "Healthcare payment - Govt Hospital",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_009_0080",
+        "date": "2025-12-26",
+        "amount": 100.0,
+        "type": "debit",
+        "category": "Entertainment",
+        "merchant": "YouTube",
+        "description": "Entertainment payment - YouTube",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_009_0075",
+        "date": "2025-12-23",
+        "amount": 1813.27,
+        "type": "debit",
+        "category": "Utilities",
+        "merchant": "KESCO",
+        "description": "Utilities payment - KESCO",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_009_0077",
+        "date": "2025-12-12",
+        "amount": 630.17,
+        "type": "debit",
+        "category": "Transport",
+        "merchant": "Bus",
+        "description": "Transport payment - Bus",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_009_0081",
+        "date": "2025-12-11",
+        "amount": 268.67,
+        "type": "debit",
+        "category": "Entertainment",
+        "merchant": "YouTube",
+        "description": "Entertainment payment - YouTube",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_009_0082",
+        "date": "2025-12-11",
+        "amount": 4530.37,
+        "type": "debit",
+        "category": "UPI Transfer",
+        "merchant": "PhonePe",
+        "description": "UPI Transfer payment - PhonePe",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_009_0079",
+        "date": "2025-12-07",
+        "amount": 1713.09,
+        "type": "debit",
+        "category": "Shopping",
+        "merchant": "Meesho",
+        "description": "Shopping payment - Meesho",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_009_0073",
+        "date": "2025-12-05",
+        "amount": 28000.0,
+        "type": "credit",
+        "category": "Salary",
+        "merchant": "Shopkeeper Salary",
+        "description": "Salary credit Dec 2025",
+        "recurring": true
+      }
+    ],
+    "goals": [
+      {
+        "id": "goal_006",
+        "type": "Business Expansion",
+        "target_amount": 100000.0,
+        "current_amount": 12000.0,
+        "target_date": "2027-06-30",
+        "monthly_contribution": 2000.0,
+        "progress_pct": 12.0
+      }
+    ],
+    "monthly_trends": [
+      {
+        "month": "2025-07",
+        "income": 28000.0,
+        "expenses": 12742.04,
+        "emi": 0.0,
+        "savings": 2219.49,
+        "net_cash_flow": 15257.96,
+        "category_breakdown": {
+          "Groceries": 5167.95,
+          "Utilities": 1066.82,
+          "Transport": 964.42,
+          "Healthcare": 261.26,
+          "Shopping": 564.69,
+          "Entertainment": 345.08000000000004,
+          "UPI Transfer": 4371.82,
+          "Savings": 2219.49
+        }
+      },
+      {
+        "month": "2025-08",
+        "income": 28000.0,
+        "expenses": 13211.48,
+        "emi": 0.0,
+        "savings": 1900.32,
+        "net_cash_flow": 14788.52,
+        "category_breakdown": {
+          "Healthcare": 598.72,
+          "Groceries": 4476.34,
+          "Utilities": 1012.19,
+          "Transport": 910.4200000000001,
+          "Shopping": 2361.88,
+          "Entertainment": 414.59,
+          "UPI Transfer": 3437.34,
+          "Savings": 1900.32
+        }
+      },
+      {
+        "month": "2025-09",
+        "income": 28000.0,
+        "expenses": 12398.61,
+        "emi": 0.0,
+        "savings": 1985.65,
+        "net_cash_flow": 15601.39,
+        "category_breakdown": {
+          "Groceries": 4957.55,
+          "Utilities": 1524.06,
+          "Transport": 853.1499999999999,
+          "Healthcare": 929.88,
+          "Shopping": 803.79,
+          "Entertainment": 669.3,
+          "UPI Transfer": 2660.88,
+          "Savings": 1985.65
+        }
+      },
+      {
+        "month": "2025-10",
+        "income": 28000.0,
+        "expenses": 11706.33,
+        "emi": 0.0,
+        "savings": 2273.57,
+        "net_cash_flow": 16293.67,
+        "category_breakdown": {
+          "Groceries": 4854.12,
+          "Utilities": 823.83,
+          "Transport": 1006.42,
+          "Healthcare": 1138.03,
+          "Shopping": 1171.38,
+          "Entertainment": 635.8,
+          "UPI Transfer": 2076.75,
+          "Savings": 2273.57
+        }
+      },
+      {
+        "month": "2025-11",
+        "income": 28000.0,
+        "expenses": 12664.36,
+        "emi": 0.0,
+        "savings": 1871.26,
+        "net_cash_flow": 15335.64,
+        "category_breakdown": {
+          "Groceries": 5162.63,
+          "Utilities": 1264.28,
+          "Transport": 1280.13,
+          "Healthcare": 547.19,
+          "Shopping": 1184.29,
+          "Entertainment": 437.85,
+          "UPI Transfer": 2787.99,
+          "Savings": 1871.26
+        }
+      },
+      {
+        "month": "2025-12",
+        "income": 28000.0,
+        "expenses": 16189.26,
+        "emi": 0.0,
+        "savings": 2293.07,
+        "net_cash_flow": 11810.74,
+        "category_breakdown": {
+          "Groceries": 5742.52,
+          "Utilities": 1813.27,
+          "Transport": 1121.17,
+          "Healthcare": 900.17,
+          "Shopping": 1713.09,
+          "Entertainment": 368.67,
+          "UPI Transfer": 4530.37,
+          "Savings": 2293.07
+        }
+      }
+    ],
+    "assistant_context": {
+      "summary": "Rahul Gupta has stable income, healthy savings, and manageable EMI obligations. Financial health score: 94/100 (Excellent). Primary goal: Business Expansion.",
+      "stress_level": "low",
+      "loan_suppressed": false
+    }
+  },
+  "cust_010": {
+    "customer": {
+      "id": "cust_010",
+      "name": "Deepa Pillai",
+      "city": "Madurai",
+      "state": "Tamil Nadu",
+      "age": 38,
+      "occupation": "Government Employee",
+      "preferred_language": "ta",
+      "dependents": 3,
+      "financial_goal": "Retirement Planning",
+      "customer_segment": "Stable Planner",
+      "segment_description": "Consistent income, controlled expenses, regular savings, and manageable debt.",
+      "segment_icon": "📊"
+    },
+    "financial_health": {
+      "score": 91,
+      "label": "Excellent",
+      "change": 0,
+      "components": {
+        "income_stability": 100,
+        "savings": 100,
+        "expense_management": 100,
+        "debt_burden": 73,
+        "repayment_behavior": 100,
+        "liquidity": 60
+      },
+      "component_explanations": {
+        "income_stability": "Income has been consistent over the past months.",
+        "savings": "Savings rate of 54% is strong, above the recommended 20%.",
+        "expense_management": "Expenses are well-controlled at 46% of income.",
+        "debt_burden": "EMI burden is low at 13% of income. Well within safe limits.",
+        "repayment_behavior": "All EMI payments are current. Excellent repayment record.",
+        "liquidity": "Emergency fund covers ~2.5 month(s). Building this further is advised."
+      },
+      "positive_factors": [
+        "Income has remained stable over the review period.",
+        "Savings rate is healthy at 54%.",
+        "All EMI payments are up to date.",
+        "Expenses are well-managed relative to income."
+      ],
+      "risk_factors": [
+        "No major risks identified at this time."
+      ],
+      "plain_explanation": "Your financial health score is 91 out of 100, rated as 'Excellent'. The score reflects your income patterns, spending discipline, savings habits, debt obligations, and repayment track record. Key strength: Income has remained stable over the review period. Area to watch: No major risks identified at this time."
+    },
+    "cash_flow": {
+      "monthly_income": 62000.0,
+      "avg_monthly_income": 62000.0,
+      "avg_monthly_expenses": 20285.9,
+      "avg_monthly_emi": 7999.85,
+      "avg_monthly_savings": 12027.23,
+      "savings_rate": 54.4,
+      "emi_ratio": 12.9,
+      "last_month": {
+        "month": "2025-12",
+        "income": 62000.0,
+        "expenses": 19298.35,
+        "emi": 7999.46,
+        "savings": 11431.11,
+        "net_cash_flow": 34702.19,
+        "category_breakdown": {
+          "Groceries": 5636.83,
+          "Utilities": 2555.96,
+          "Transport": 1403.05,
+          "Healthcare": 1779.6399999999999,
+          "Education": 2650.4,
+          "Shopping": 2050.71,
+          "Entertainment": 824.46,
+          "EMI": 7999.46,
+          "Savings": 11431.11,
+          "UPI Transfer": 2397.3
+        }
+      }
+    },
+    "recommendation": {
+      "type": "protection",
+      "title": "Term Insurance",
+      "product": "Term Life Insurance",
+      "category": "Protection",
+      "recommended_amount": 6200000,
+      "estimated_emi": 620,
+      "confidence": 0.87,
+      "why": [
+        "You have 3 dependents who depend on your income.",
+        "Term insurance is one of the most important financial protections for your family.",
+        "Your current savings allow for a modest insurance premium."
+      ],
+      "not_recommended": [
+        "investment_starter"
+      ],
+      "not_recommended_reason": "Protection comes before investment, especially for households with dependents.",
+      "loan_suppressed": false,
+      "requires_human_review": false,
+      "warning": "This is financial guidance, not a loan approval or financial advice. Please consult with a certified financial advisor before making borrowing decisions."
+    },
+    "stress": {
+      "level": "none",
+      "score": 0,
+      "evidence": [],
+      "confidence": 0.5,
+      "intervention": "Your finances appear stable. Continue current savings and repayment habits."
+    },
+    "alerts": [
+      {
+        "id": "alert_ef714ce3",
+        "customer_id": "cust_010",
+        "type": "unusual_spending",
+        "severity": "medium",
+        "title": "Unusual Entertainment Spending",
+        "description": "This Entertainment transaction of ₹1,334 is significantly higher than your usual spending in this category.",
+        "evidence": "Amount ₹1,334 is 3.4x the typical ₹390 for Entertainment (z-score: 2.8).",
+        "recommended_action": "Review this transaction and confirm it was made by you.",
+        "secondary_action": "Flag this transaction for review"
+      },
+      {
+        "id": "alert_3c440a42",
+        "customer_id": "cust_010",
+        "type": "unusual_spending",
+        "severity": "high",
+        "title": "Unusual UPI Transfer Spending",
+        "description": "This UPI Transfer transaction of ₹2,397 is significantly higher than your usual spending in this category.",
+        "evidence": "Amount ₹2,397 is 3.0x the typical ₹802 for UPI Transfer (z-score: 3.0).",
+        "recommended_action": "Review this transaction and confirm it was made by you.",
+        "secondary_action": "Flag this transaction for review"
+      },
+      {
+        "id": "alert_e7ffd364",
+        "customer_id": "cust_010",
+        "type": "expense_surge",
+        "severity": "medium",
+        "title": "Utilities Spending Increased by 44%",
+        "description": "Your Utilities spending increased by 44% in 2025-09. This may warrant review.",
+        "evidence": "Utilities spending rose from ₹1,879 to ₹2,710 (44% increase).",
+        "recommended_action": "Review your Utilities expenses for this month.",
+        "secondary_action": "Talk to support"
+      }
+    ],
+    "recent_transactions": [
+      {
+        "id": "txn_cust_010_0087",
+        "date": "2025-12-29",
+        "amount": 2650.4,
+        "type": "debit",
+        "category": "Education",
+        "merchant": "School Fee",
+        "description": "Education payment - School Fee",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_010_0084",
+        "date": "2025-12-28",
+        "amount": 1403.05,
+        "type": "debit",
+        "category": "Transport",
+        "merchant": "Auto",
+        "description": "Transport payment - Auto",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_010_0090",
+        "date": "2025-12-27",
+        "amount": 244.88,
+        "type": "debit",
+        "category": "Entertainment",
+        "merchant": "PVR",
+        "description": "Entertainment payment - PVR",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_010_0093",
+        "date": "2025-12-23",
+        "amount": 11431.11,
+        "type": "debit",
+        "category": "Savings",
+        "merchant": "SBI RD",
+        "description": "Savings payment - SBI RD",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_010_0091",
+        "date": "2025-12-22",
+        "amount": 389.71,
+        "type": "debit",
+        "category": "Entertainment",
+        "merchant": "PVR",
+        "description": "Entertainment payment - PVR",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_010_0086",
+        "date": "2025-12-19",
+        "amount": 278.82,
+        "type": "debit",
+        "category": "Healthcare",
+        "merchant": "MedPlus",
+        "description": "Healthcare payment - MedPlus",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_010_0083",
+        "date": "2025-12-15",
+        "amount": 2555.96,
+        "type": "debit",
+        "category": "Utilities",
+        "merchant": "TANGEDCO",
+        "description": "Utilities payment - TANGEDCO",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_010_0088",
+        "date": "2025-12-15",
+        "amount": 2050.71,
+        "type": "debit",
+        "category": "Shopping",
+        "merchant": "Amazon",
+        "description": "Shopping payment - Amazon",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_010_0094",
+        "date": "2025-12-14",
+        "amount": 2397.3,
+        "type": "debit",
+        "category": "UPI Transfer",
+        "merchant": "Google Pay",
+        "description": "UPI Transfer payment - Google Pay",
+        "recurring": true
+      },
+      {
+        "id": "txn_cust_010_0082",
+        "date": "2025-12-07",
+        "amount": 5636.83,
+        "type": "debit",
+        "category": "Groceries",
+        "merchant": "DMart",
+        "description": "Groceries payment - DMart",
+        "recurring": true
+      }
+    ],
+    "goals": [
+      {
+        "id": "goal_004",
+        "type": "Retirement Fund",
+        "target_amount": 2000000.0,
+        "current_amount": 650000.0,
+        "target_date": "2032-12-31",
+        "monthly_contribution": 12000.0,
+        "progress_pct": 32.5
+      }
+    ],
+    "monthly_trends": [
+      {
+        "month": "2025-07",
+        "income": 62000.0,
+        "expenses": 19255.25,
+        "emi": 8000.64,
+        "savings": 12568.28,
+        "net_cash_flow": 34744.11,
+        "category_breakdown": {
+          "Groceries": 5745.94,
+          "Utilities": 1734.81,
+          "Transport": 1476.97,
+          "Healthcare": 3002.7,
+          "Education": 2528.28,
+          "Shopping": 2617.46,
+          "Entertainment": 813.25,
+          "EMI": 8000.64,
+          "Savings": 12568.28,
+          "UPI Transfer": 1335.84
+        }
+      },
+      {
+        "month": "2025-08",
+        "income": 62000.0,
+        "expenses": 19945.14,
+        "emi": 7998.7,
+        "savings": 12267.48,
+        "net_cash_flow": 34056.16,
+        "category_breakdown": {
+          "Groceries": 6694.45,
+          "Utilities": 1878.84,
+          "Transport": 1566.3400000000001,
+          "Healthcare": 1847.08,
+          "Education": 2436.42,
+          "Shopping": 2830.18,
+          "Entertainment": 1036.14,
+          "EMI": 7998.7,
+          "Savings": 12267.48,
+          "UPI Transfer": 1655.69
+        }
+      },
+      {
+        "month": "2025-09",
+        "income": 62000.0,
+        "expenses": 21280.14,
+        "emi": 8001.43,
+        "savings": 12181.14,
+        "net_cash_flow": 32718.43,
+        "category_breakdown": {
+          "Groceries": 6030.63,
+          "Utilities": 2709.57,
+          "Transport": 1432.51,
+          "Healthcare": 1920.93,
+          "Education": 2726.24,
+          "Shopping": 2872.05,
+          "Entertainment": 1067.45,
+          "EMI": 8001.43,
+          "Savings": 12181.14,
+          "UPI Transfer": 2520.76
+        }
+      },
+      {
+        "month": "2025-10",
+        "income": 62000.0,
+        "expenses": 21511.09,
+        "emi": 7999.79,
+        "savings": 12506.41,
+        "net_cash_flow": 32489.12,
+        "category_breakdown": {
+          "Groceries": 6273.71,
+          "Utilities": 2514.72,
+          "Transport": 1255.08,
+          "Healthcare": 2261.9,
+          "Education": 2189.7,
+          "Shopping": 3434.84,
+          "Entertainment": 1376.97,
+          "EMI": 7999.79,
+          "Savings": 12506.41,
+          "UPI Transfer": 2204.17
+        }
+      },
+      {
+        "month": "2025-11",
+        "income": 62000.0,
+        "expenses": 20425.46,
+        "emi": 7999.11,
+        "savings": 11208.93,
+        "net_cash_flow": 33575.43,
+        "category_breakdown": {
+          "Groceries": 6635.31,
+          "Utilities": 2792.52,
+          "Transport": 1144.93,
+          "Healthcare": 1271.39,
+          "Education": 2635.83,
+          "Shopping": 2906.66,
+          "Entertainment": 1334.4,
+          "EMI": 7999.11,
+          "Savings": 11208.93,
+          "UPI Transfer": 1704.42
+        }
+      },
+      {
+        "month": "2025-12",
+        "income": 62000.0,
+        "expenses": 19298.35,
+        "emi": 7999.46,
+        "savings": 11431.11,
+        "net_cash_flow": 34702.19,
+        "category_breakdown": {
+          "Groceries": 5636.83,
+          "Utilities": 2555.96,
+          "Transport": 1403.05,
+          "Healthcare": 1779.6399999999999,
+          "Education": 2650.4,
+          "Shopping": 2050.71,
+          "Entertainment": 824.46,
+          "EMI": 7999.46,
+          "Savings": 11431.11,
+          "UPI Transfer": 2397.3
+        }
+      }
+    ],
+    "assistant_context": {
+      "summary": "Deepa Pillai has stable income, healthy savings, and manageable EMI obligations. Financial health score: 91/100 (Excellent). Primary goal: Retirement Planning.",
+      "stress_level": "none",
+      "loan_suppressed": false
+    }
+  }
+}

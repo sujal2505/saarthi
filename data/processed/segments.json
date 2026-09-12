@@ -1,0 +1,72 @@
+[
+  {
+    "customer_id": "cust_001",
+    "segment": "Growing Saver",
+    "segment_description": "Savings rate is improving month-on-month. Income is steady.",
+    "segment_opportunity": "Savings boosters, SIPs, and goal-based products.",
+    "segment_icon": "📈"
+  },
+  {
+    "customer_id": "cust_002",
+    "segment": "EMI Stressed",
+    "segment_description": "EMI obligations are high relative to income, leaving limited flexibility.",
+    "segment_opportunity": "Debt restructuring guidance, stress support, no new loan recommendations.",
+    "segment_icon": "🚨"
+  },
+  {
+    "customer_id": "cust_003",
+    "segment": "Growing Saver",
+    "segment_description": "Savings rate is improving month-on-month. Income is steady.",
+    "segment_opportunity": "Savings boosters, SIPs, and goal-based products.",
+    "segment_icon": "📈"
+  },
+  {
+    "customer_id": "cust_004",
+    "segment": "Cash Flow Constrained",
+    "segment_description": "Limited income with high essential expense burden leaves little room for savings.",
+    "segment_opportunity": "Emergency micro-savings, income supplement guidance.",
+    "segment_icon": "⚠️"
+  },
+  {
+    "customer_id": "cust_005",
+    "segment": "Cash Flow Constrained",
+    "segment_description": "Limited income with high essential expense burden leaves little room for savings.",
+    "segment_opportunity": "Emergency micro-savings, income supplement guidance.",
+    "segment_icon": "⚠️"
+  },
+  {
+    "customer_id": "cust_006",
+    "segment": "Stable Planner",
+    "segment_description": "Consistent income, controlled expenses, regular savings, and manageable debt.",
+    "segment_opportunity": "Goal-based savings and long-term investment products.",
+    "segment_icon": "📊"
+  },
+  {
+    "customer_id": "cust_007",
+    "segment": "Stable Planner",
+    "segment_description": "Consistent income, controlled expenses, regular savings, and manageable debt.",
+    "segment_opportunity": "Goal-based savings and long-term investment products.",
+    "segment_icon": "📊"
+  },
+  {
+    "customer_id": "cust_008",
+    "segment": "Stable Planner",
+    "segment_description": "Consistent income, controlled expenses, regular savings, and manageable debt.",
+    "segment_opportunity": "Goal-based savings and long-term investment products.",
+    "segment_icon": "📊"
+  },
+  {
+    "customer_id": "cust_009",
+    "segment": "Growing Saver",
+    "segment_description": "Savings rate is improving month-on-month. Income is steady.",
+    "segment_opportunity": "Savings boosters, SIPs, and goal-based products.",
+    "segment_icon": "📈"
+  },
+  {
+    "customer_id": "cust_010",
+    "segment": "Stable Planner",
+    "segment_description": "Consistent income, controlled expenses, regular savings, and manageable debt.",
+    "segment_opportunity": "Goal-based savings and long-term investment products.",
+    "segment_icon": "📊"
+  }
+]

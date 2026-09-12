@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database (Production & Staging demo)
+  db:
+    image: postgres:16-alpine
+    container_name: saarthi-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: saarthi_user
+      POSTGRES_PASSWORD: saarthi_password
+      POSTGRES_DB: saarthi_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U saarthi_user -d saarthi_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # FastAPI Backend API
+  api:
+    build:
+      context: ./apps/api
+      dockerfile: Dockerfile
+    container_name: saarthi-api
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: postgresql://saarthi_user:saarthi_password@db:5432/saarthi_db
+      CORS_ORIGINS: '["http://localhost:3000", "http://localhost:5173"]'
+      JWT_SECRET: saarthi-demo-secret-change-in-prod
+      ENVIRONMENT: development
+      LOG_LEVEL: INFO
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - ./data:/app/data
+
+  # React Web Frontend
+  web:
+    build:
+      context: ./apps/web
+      dockerfile: Dockerfile
+    container_name: saarthi-web
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - VITE_API_URL=http://api:8000
+    depends_on:
+      - api
+
+volumes:
+  postgres_data:

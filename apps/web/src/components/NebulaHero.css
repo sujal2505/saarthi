@@ -1,0 +1,243 @@
+.nebula-hero {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    background: #09090b;
+    color: #fff;
+    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+}
+
+.nebula-hero__grain {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.08;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.nebula-hero__vignette {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: radial-gradient(ellipse at 50% 50%, transparent 55%, rgba(9, 9, 11, 0.65) 100%);
+}
+
+.nebula-hero__main {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+.nebula-hero__mask {
+    display: inline-flex;
+    overflow: hidden;
+    padding-bottom: 2px;
+    margin-bottom: -2px;
+}
+
+.nebula-hero__mask--top,
+.nebula-hero__mask--bottom {
+    display: block;
+    overflow: hidden;
+    padding-bottom: 0.5rem;
+}
+
+.nebula-hero__word,
+.nebula-hero__tagline-word,
+.nebula-hero__sub-word,
+.nebula-hero__footer-word,
+.nebula-hero__name-top,
+.nebula-hero__name-bottom {
+    display: inline-block;
+    will-change: transform;
+}
+
+.nebula-hero__header {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    padding: 2rem 1.5rem 0;
+}
+
+@media (min-width: 640px) {
+    .nebula-hero__header {
+        padding: 2.5rem 3rem 0;
+        gap: 3.5rem;
+    }
+}
+
+.nebula-hero__topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nebula-hero__nav {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #d4d4d8;
+}
+
+.nebula-hero__link {
+    color: inherit;
+    text-decoration: none;
+    transition: color 150ms;
+}
+
+.nebula-hero__link:hover {
+    color: #818cf8;
+}
+
+.nebula-hero__cta {
+    padding: 0.5rem 1.25rem;
+    border: 0;
+    border-radius: 999px;
+    background: linear-gradient(180deg, #2a2a2e, #09090b);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15), inset 0 -1px 1px rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 150ms;
+}
+
+.nebula-hero__cta:hover {
+    background: linear-gradient(180deg, #323236, #121216);
+}
+
+.nebula-hero__copy {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    max-width: 26rem;
+}
+
+.nebula-hero__tagline {
+    font-size: 1.4rem;
+    font-weight: 300;
+    line-height: 1.4;
+    color: #e5e5e5;
+}
+
+.nebula-hero__subheading {
+    font-size: 0.9rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #a1a1aa;
+    max-width: 24rem;
+}
+
+.nebula-hero__wordmark-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 2rem 1.5rem;
+}
+
+@media (min-width: 640px) {
+    .nebula-hero__wordmark-section {
+        padding: 2rem 3rem;
+    }
+}
+
+.nebula-hero__wordmark {
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+}
+
+.nebula-hero__name-top {
+    font-size: clamp(3.5rem, 15vw, 11rem);
+    line-height: 0.95;
+    color: #f4f4f5;
+}
+
+.nebula-hero__name-bottom {
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(3.75rem, 16vw, 12rem);
+    line-height: 0.95;
+    background: linear-gradient(100deg, #818cf8 0%, #c084fc 45%, #e2e8f0 80%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.nebula-hero__footer {
+    position: relative;
+    padding: 1.5rem;
+}
+
+.nebula-hero__footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 1.5rem;
+    right: 1.5rem;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+}
+
+@media (min-width: 640px) {
+    .nebula-hero__footer {
+        padding: 1.5rem 3rem;
+    }
+
+    .nebula-hero__footer::before {
+        left: 3rem;
+        right: 3rem;
+    }
+}
+
+.nebula-hero__footer-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding-top: 1.5rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.nebula-hero__social {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #e4e4e7;
+}
+
+.nebula-hero__divider {
+    color: #52525b;
+    font-weight: 300;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .nebula-hero__word,
+    .nebula-hero__tagline-word,
+    .nebula-hero__sub-word,
+    .nebula-hero__footer-word,
+    .nebula-hero__name-top,
+    .nebula-hero__name-bottom {
+        transform: none !important;
+    }
+}

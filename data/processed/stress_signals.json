@@ -1,0 +1,119 @@
+[
+  {
+    "customer_id": "cust_001",
+    "stress_level": "low",
+    "stress_score": 1,
+    "evidence": [
+      "Emergency fund covers only 0.7 months — build this as a priority."
+    ],
+    "confidence": 0.67,
+    "loan_recommendation_suppressed": false,
+    "customer_intervention": "There are early signs of financial pressure. Review your recurring expenses and avoid new loan obligations for now.",
+    "requires_human_review": false
+  },
+  {
+    "customer_id": "cust_002",
+    "stress_level": "high",
+    "stress_score": 3,
+    "evidence": [
+      "EMI burden is critical at 42% of income with 1 overdue loan(s).",
+      "Monthly cash flow is negative on average — expenses exceed income.",
+      "Emergency fund is critically low — less than 2 weeks of expenses covered."
+    ],
+    "confidence": 1.0,
+    "loan_recommendation_suppressed": true,
+    "customer_intervention": "Your financial situation is under significant pressure. We recommend speaking with a financial counsellor before making any major financial decisions. Saarthi can help you create a recovery plan.",
+    "requires_human_review": true
+  },
+  {
+    "customer_id": "cust_003",
+    "stress_level": "none",
+    "stress_score": 0,
+    "evidence": [],
+    "confidence": 0.5,
+    "loan_recommendation_suppressed": false,
+    "customer_intervention": "Your finances appear stable. Continue current savings and repayment habits.",
+    "requires_human_review": false
+  },
+  {
+    "customer_id": "cust_004",
+    "stress_level": "medium",
+    "stress_score": 2,
+    "evidence": [
+      "Emergency fund is critically low — less than 2 weeks of expenses covered."
+    ],
+    "confidence": 0.67,
+    "loan_recommendation_suppressed": true,
+    "customer_intervention": "Your finances need attention. Consider reducing discretionary spending and focus on building an emergency buffer before taking on new debt.",
+    "requires_human_review": false
+  },
+  {
+    "customer_id": "cust_005",
+    "stress_level": "high",
+    "stress_score": 3,
+    "evidence": [
+      "Monthly cash flow is negative on average — expenses exceed income.",
+      "Emergency fund is critically low — less than 2 weeks of expenses covered."
+    ],
+    "confidence": 0.83,
+    "loan_recommendation_suppressed": true,
+    "customer_intervention": "Your financial situation is under significant pressure. We recommend speaking with a financial counsellor before making any major financial decisions. Saarthi can help you create a recovery plan.",
+    "requires_human_review": true
+  },
+  {
+    "customer_id": "cust_006",
+    "stress_level": "none",
+    "stress_score": 0,
+    "evidence": [],
+    "confidence": 0.5,
+    "loan_recommendation_suppressed": false,
+    "customer_intervention": "Your finances appear stable. Continue current savings and repayment habits.",
+    "requires_human_review": false
+  },
+  {
+    "customer_id": "cust_007",
+    "stress_level": "medium",
+    "stress_score": 2,
+    "evidence": [
+      "Emergency fund is critically low — less than 2 weeks of expenses covered."
+    ],
+    "confidence": 0.67,
+    "loan_recommendation_suppressed": true,
+    "customer_intervention": "Your finances need attention. Consider reducing discretionary spending and focus on building an emergency buffer before taking on new debt.",
+    "requires_human_review": false
+  },
+  {
+    "customer_id": "cust_008",
+    "stress_level": "low",
+    "stress_score": 1,
+    "evidence": [
+      "Emergency fund covers only 0.7 months — build this as a priority."
+    ],
+    "confidence": 0.67,
+    "loan_recommendation_suppressed": false,
+    "customer_intervention": "There are early signs of financial pressure. Review your recurring expenses and avoid new loan obligations for now.",
+    "requires_human_review": false
+  },
+  {
+    "customer_id": "cust_009",
+    "stress_level": "low",
+    "stress_score": 1,
+    "evidence": [
+      "Emergency fund covers only 0.9 months — build this as a priority."
+    ],
+    "confidence": 0.67,
+    "loan_recommendation_suppressed": false,
+    "customer_intervention": "There are early signs of financial pressure. Review your recurring expenses and avoid new loan obligations for now.",
+    "requires_human_review": false
+  },
+  {
+    "customer_id": "cust_010",
+    "stress_level": "none",
+    "stress_score": 0,
+    "evidence": [],
+    "confidence": 0.5,
+    "loan_recommendation_suppressed": false,
+    "customer_intervention": "Your finances appear stable. Continue current savings and repayment habits.",
+    "requires_human_review": false
+  }
+]

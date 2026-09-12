@@ -1,0 +1,8 @@
+loan_id,customer_id,loan_type,principal,outstanding_amount,emi_amount,interest_rate,tenure_months,next_due_date,repayment_status
+loan_001,cust_001,Personal Loan,200000,145000,9500,12.5,24,2026-01-05,current
+loan_002,cust_002,Personal Loan,120000,98000,7500,18.0,18,2026-01-07,overdue_30
+loan_003,cust_002,Two Wheeler Loan,80000,55000,6000,16.0,18,2026-01-10,current
+loan_004,cust_005,Microfinance Loan,50000,38000,4500,22.0,12,2026-01-15,current
+loan_005,cust_007,Kisan Credit Card,60000,45000,3500,9.0,24,2026-01-20,current
+loan_006,cust_008,Education Loan,300000,220000,7000,10.5,48,2026-01-05,current
+loan_007,cust_010,LIC Policy Loan,150000,90000,8000,10.0,18,2026-01-01,current
