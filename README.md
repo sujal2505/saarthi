@@ -126,7 +126,7 @@ cp .env.example .env
 
 Edit `.env` with your local settings.
 
-### 2. ML / Data Layer (Laptop 3)
+### 2. ML / Data Layer 
 
 ```bash
 # Generate synthetic seed data
@@ -139,7 +139,7 @@ python ml/src/export_fixtures.py
 python -X utf8 ml/notebooks/evaluate.py
 ```
 
-### 3. Backend (Laptop 2)
+### 3. Backend 
 
 ```bash
 cd apps/api
@@ -159,7 +159,7 @@ uvicorn app.main:app --reload --port 8000
 
 The backend auto-seeds demo data on first startup.
 
-### 4. Frontend (Laptop 1)
+### 4. Frontend 
 
 ```bash
 cd apps/web
