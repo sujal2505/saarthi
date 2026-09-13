@@ -15,8 +15,9 @@ import {
 } from 'recharts'
 import { getDashboard } from '@/lib/api'
 import { MOCK_DASHBOARD } from '@/data/mockData'
-import { formatRupee, CATEGORY_EMOJI, CATEGORY_BG } from '@/lib/utils'
+import { formatRupee, CATEGORY_BG } from '@/lib/utils'
 import { useAuth } from '@/lib/AuthContext'
+import { useI18n } from '@/lib/i18n'
 import { GlowCard } from '@/components/ui/glowing-effect'
 import type { DashboardData } from '@/types'
 
@@ -34,8 +35,8 @@ const INSIGHTS_HI = [
 ]
 
 export default function SpendingPage() {
-  const { customerId, customer } = useAuth()
-  const [lang, setLang] = useState<'en' | 'hi'>('en')
+  const { customerId, customer, language } = useAuth()
+  const { t } = useI18n()
   const [data, setData] = useState<DashboardData | null>(null)
   const [loading, setLoading] = useState(true)
 
@@ -51,18 +52,14 @@ export default function SpendingPage() {
   const monthly_trend = data?.monthly_trend || MOCK_DASHBOARD.monthly_trend
   const recent_txns = data?.recent_transactions || MOCK_DASHBOARD.recent_transactions
   const recurring_txns = recent_txns.filter(t => t.recurring)
-  const insights = lang === 'hi' ? INSIGHTS_HI : INSIGHTS_EN
+  const insights = language === 'hi' ? INSIGHTS_HI : INSIGHTS_EN
 
   return (
     <div className="page-container fade-in">
       <div className="page-header" style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.75rem' }}>
         <div>
-          <h1>{lang === 'hi' ? 'खर्च विश्लेषण' : 'Spending Analysis'}</h1>
-          <p>{lang === 'hi' ? `${customer?.name || ''} के मासिक खर्च की पूरी तस्वीर` : `A complete picture of monthly spending for ${customer?.name || 'you'}`}</p>
-        </div>
-        <div className="toggle-wrapper">
-          <button className={`toggle-option ${lang === 'en' ? 'active' : ''}`} onClick={() => setLang('en')}>English</button>
-          <button className={`toggle-option ${lang === 'hi' ? 'active' : ''}`} onClick={() => setLang('hi')}>हिन्दी</button>
+          <h1>{t('spendingAnalysis')}</h1>
+          <p>{t('monthlySpendingFor')} {customer?.name || 'you'}</p>
         </div>
       </div>
 
@@ -76,7 +73,7 @@ export default function SpendingPage() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.6fr', gap: '1rem', marginBottom: '1rem' }}>
             {/* Donut */}
             <GlowCard proximity={90}>
-              <div className="section-title">{lang === 'hi' ? 'श्रेणी वार खर्च' : 'Spending by Category'}</div>
+              <div className="section-title">{t('categorySpending')}</div>
               <ResponsiveContainer width="100%" height={220}>
                 <RPieChart>
                   <Pie
@@ -110,7 +107,7 @@ export default function SpendingPage() {
 
             {/* Monthly trend bar chart */}
             <GlowCard proximity={110}>
-              <div className="section-title">{lang === 'hi' ? 'मासिक आय और खर्च' : 'Monthly Income vs Outflow'}</div>
+              <div className="section-title">{t('monthlyIncomeOutflow')}</div>
               <ResponsiveContainer width="100%" height={260}>
                 <BarChart data={monthly_trend} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
                   <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="var(--color-border-light)" />
@@ -128,23 +125,33 @@ export default function SpendingPage() {
 
           {/* Category breakdown table */}
           <GlowCard style={{ marginBottom: '1rem' }} proximity={120}>
-            <div className="section-title">{lang === 'hi' ? 'खर्च का विस्तृत विवरण' : 'Category Details'}</div>
+            <div className="section-title">{t('categoryDetails')}</div>
             <div className="table-wrapper">
               <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.875rem' }}>
                 <thead>
                   <tr style={{ borderBottom: '1px solid var(--color-border-light)', textAlign: 'left' }}>
-                    <th style={{ padding: '0.625rem 0.75rem', color: 'var(--color-text-muted)', fontWeight: 600 }}>Category</th>
-                    <th style={{ padding: '0.625rem 0.75rem', color: 'var(--color-text-muted)', fontWeight: 600 }}>Amount</th>
-                    <th style={{ padding: '0.625rem 0.75rem', color: 'var(--color-text-muted)', fontWeight: 600 }}>Share</th>
-                    <th style={{ padding: '0.625rem 0.75rem', color: 'var(--color-text-muted)', fontWeight: 600 }}>Trend</th>
-                    <th style={{ padding: '0.625rem 0.75rem', color: 'var(--color-text-muted)', fontWeight: 600 }}>Change</th>
+                    <th style={{ padding: '0.625rem 0.75rem', color: 'var(--color-text-muted)', fontWeight: 600 }}>{t('category')}</th>
+                    <th style={{ padding: '0.625rem 0.75rem', color: 'var(--color-text-muted)', fontWeight: 600 }}>{t('amount')}</th>
+                    <th style={{ padding: '0.625rem 0.75rem', color: 'var(--color-text-muted)', fontWeight: 600 }}>{t('share')}</th>
+                    <th style={{ padding: '0.625rem 0.75rem', color: 'var(--color-text-muted)', fontWeight: 600 }}>{t('trend')}</th>
+                    <th style={{ padding: '0.625rem 0.75rem', color: 'var(--color-text-muted)', fontWeight: 600 }}>{t('change')}</th>
                   </tr>
                 </thead>
                 <tbody>
                   {spending_categories.map(cat => (
                     <tr key={cat.category} style={{ borderBottom: '1px solid var(--color-border-light)' }}>
                       <td style={{ padding: '0.625rem 0.75rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                        <span>{CATEGORY_EMOJI[cat.category] || '📦'}</span>
+                        <span
+                          aria-hidden
+                          style={{
+                            width: 10,
+                            height: 10,
+                            borderRadius: 3,
+                            background: cat.color || '#4a5568',
+                            boxShadow: `0 0 0 3px ${cat.color || '#4a5568'}22`,
+                            flexShrink: 0,
+                          }}
+                        />
                         <span style={{ fontWeight: 500 }}>{cat.category}</span>
                       </td>
                       <td style={{ padding: '0.625rem 0.75rem', fontWeight: 600 }}>{formatRupee(cat.amount)}</td>
@@ -159,7 +166,7 @@ export default function SpendingPage() {
                       <td style={{ padding: '0.625rem 0.75rem' }}>
                         {cat.trend === 'up' ? <TrendingUp size={15} style={{ color: 'var(--color-terracotta)' }} /> :
                           cat.trend === 'down' ? <TrendingDown size={15} style={{ color: 'var(--color-green)' }} /> :
-                            <span style={{ color: 'var(--color-text-muted)', fontSize: '0.8rem' }}>Stable</span>}
+                            <span style={{ color: 'var(--color-text-muted)', fontSize: '0.8rem' }}>{t('stable')}</span>}
                       </td>
                       <td style={{ padding: '0.625rem 0.75rem' }}>
                         {cat.change_pct !== undefined ? (
@@ -180,16 +187,31 @@ export default function SpendingPage() {
             <GlowCard style={{ marginBottom: '1rem' }} proximity={100}>
               <div className="section-title">
                 <RefreshCw size={16} style={{ display: 'inline', marginRight: 6, verticalAlign: 'middle' }} />
-                {lang === 'hi' ? 'नियमित खर्च' : 'Recurring Expenses'}
+                {t('recurringExpenses')}
               </div>
               {recurring_txns.slice(0, 6).map(txn => (
                 <div key={txn.id} className="txn-row">
-                  <div className="txn-icon" style={{ background: CATEGORY_BG[txn.category] ?? '#f5f5f5' }}>
-                    {CATEGORY_EMOJI[txn.category] ?? '📄'}
+                  <div
+                    className="txn-icon"
+                    style={{
+                      background: CATEGORY_BG[txn.category] ?? '#f5f5f5',
+                      position: 'relative',
+                    }}
+                    aria-label={`${txn.category} category`}
+                  >
+                    <span
+                      aria-hidden
+                      style={{
+                        width: 12,
+                        height: 12,
+                        borderRadius: 4,
+                        background: spending_categories.find(category => category.category === txn.category)?.color || 'var(--color-navy-muted)',
+                      }}
+                    />
                   </div>
                   <div className="txn-details">
                     <div className="txn-merchant">{txn.merchant}</div>
-                    <div className="txn-category">{txn.category} · Monthly</div>
+                    <div className="txn-category">{txn.category} · {t('monthly')}</div>
                   </div>
                   <div className={`txn-amount ${txn.type === 'debit' ? 'txn-amount--debit' : 'txn-amount--credit'}`}>
                     {txn.type === 'debit' ? '−' : '+'}{formatRupee(txn.amount)}
@@ -201,7 +223,7 @@ export default function SpendingPage() {
 
           {/* Insight cards */}
           <GlowCard proximity={100}>
-            <div className="section-title">{lang === 'hi' ? 'आपके लिए अंतर्दृष्टि' : 'Insights for You'}</div>
+            <div className="section-title">{t('insightsForYou')}</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               {insights.map((ins, i) => (
                 <div key={i} className={`insight-card ${ins.type === 'teal' ? 'insight-card--teal' : ''}`}>

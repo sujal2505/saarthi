@@ -12,11 +12,13 @@ import {
 import { calculateEmi } from '@/lib/api'
 import { formatRupee } from '@/lib/utils'
 import { MOCK_DASHBOARD } from '@/data/mockData'
+import { useI18n } from '@/lib/i18n'
 import type { SimulatorOutput } from '@/types'
 
 const DEFAULT_INPUT = { loan_amount: 100000, interest_rate: 12, tenure_months: 24, monthly_savings_delta: 0 }
 
 export default function SimulatorPage() {
+  const { t } = useI18n()
   const [input, setInput] = useState(DEFAULT_INPUT)
   const [result, setResult] = useState<SimulatorOutput | null>(null)
   const [loading, setLoading] = useState(false)
@@ -56,17 +58,17 @@ export default function SimulatorPage() {
   return (
     <div className="page-container fade-in">
       <div className="page-header">
-        <h1>What-If Simulator</h1>
-        <p>Explore how a loan or savings change would affect your finances — before making any decision.</p>
+        <h1>{t('whatIf')}</h1>
+        <p>{t('simulatorDescription')}</p>
       </div>
 
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
         {/* Sliders panel */}
         <div className="card fade-in-delay-1">
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.25rem' }}>
-            <div className="section-title" style={{ margin: 0 }}>Adjust Assumptions</div>
+            <div className="section-title" style={{ margin: 0 }}>{t('adjustAssumptions')}</div>
             <button className="btn btn-ghost btn-sm" onClick={reset} aria-label="Reset to defaults">
-              <RotateCcw size={14} /> Reset
+              <RotateCcw size={14} /> {t('reset')}
             </button>
           </div>
 
@@ -104,7 +106,7 @@ export default function SimulatorPage() {
             disabled={loading}
             id="simulate-btn"
           >
-            {loading ? <span className="spinner spinner--sm" /> : 'Calculate Impact'}
+            {loading ? <span className="spinner spinner--sm" /> : t('calculateImpact')}
           </button>
         </div>
 
@@ -113,7 +115,7 @@ export default function SimulatorPage() {
           {!result && (
             <div className="card" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: 200, textAlign: 'center' }}>
               <div style={{ fontSize: '2.5rem', marginBottom: '0.75rem' }}>🧮</div>
-              <p style={{ fontSize: '0.9rem' }}>Adjust the sliders and click <strong>Calculate Impact</strong> to see your projected financial scenario.</p>
+              <p style={{ fontSize: '0.9rem' }}>{t('adjustSliders')}</p>
             </div>
           )}
 
@@ -124,7 +126,7 @@ export default function SimulatorPage() {
                 <div className="alert-banner alert-banner--warning fade-in">
                   <AlertTriangle size={17} style={{ flexShrink: 0 }} />
                   <div>
-                    <strong>Caution</strong>
+                    <strong>{t('caution')}</strong>
                     <p style={{ fontSize: '0.8125rem', marginTop: '0.2rem' }}>{result.warning}</p>
                   </div>
                 </div>
@@ -133,19 +135,19 @@ export default function SimulatorPage() {
               {!result.warning && result.is_affordable && (
                 <div className="alert-banner alert-banner--success fade-in">
                   <Info size={17} style={{ flexShrink: 0 }} />
-                  <span>This loan appears affordable based on your current financial profile.</span>
+                  <span>{t('affordable')}</span>
                 </div>
               )}
 
               {/* Key numbers */}
               <div className="card fade-in" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.875rem' }}>
                 {[
-                  { label: 'Monthly EMI', val: formatRupee(result.monthly_emi), color: 'var(--color-saffron)' },
-                  { label: 'Total Repayment', val: formatRupee(result.total_repayment, true), color: 'var(--color-navy)' },
-                  { label: 'Total Interest', val: formatRupee(result.total_interest, true), color: 'var(--color-terracotta)' },
-                  { label: 'New Savings Rate', val: `${result.new_savings_rate}%`, color: result.new_savings_rate > 20 ? 'var(--color-green)' : result.new_savings_rate > 10 ? 'var(--color-amber)' : 'var(--color-terracotta)' },
-                  { label: 'EMI/Income Ratio', val: `${(result.emi_to_income_ratio * 100).toFixed(0)}%`, color: result.emi_to_income_ratio < 0.4 ? 'var(--color-green)' : 'var(--color-terracotta)' },
-                  { label: 'Health Score Impact', val: `${result.health_impact > 0 ? '+' : ''}${result.health_impact} pts`, color: result.health_impact >= 0 ? 'var(--color-green)' : 'var(--color-terracotta)' },
+                  { label: t('emiPayments'), val: formatRupee(result.monthly_emi), color: 'var(--color-saffron)' },
+                  { label: t('totalRepayment'), val: formatRupee(result.total_repayment, true), color: 'var(--color-navy)' },
+                  { label: t('totalInterest'), val: formatRupee(result.total_interest, true), color: 'var(--color-terracotta)' },
+                  { label: t('newSavingsRate'), val: `${result.new_savings_rate}%`, color: result.new_savings_rate > 20 ? 'var(--color-green)' : result.new_savings_rate > 10 ? 'var(--color-amber)' : 'var(--color-terracotta)' },
+                  { label: t('emiIncomeRatio'), val: `${(result.emi_to_income_ratio * 100).toFixed(0)}%`, color: result.emi_to_income_ratio < 0.4 ? 'var(--color-green)' : 'var(--color-terracotta)' },
+                  { label: t('healthScoreImpact'), val: `${result.health_impact > 0 ? '+' : ''}${result.health_impact} pts`, color: result.health_impact >= 0 ? 'var(--color-green)' : 'var(--color-terracotta)' },
                 ].map(({ label, val, color }) => (
                   <div key={label} style={{ background: 'var(--color-ivory-dark)', borderRadius: 10, padding: '0.75rem', textAlign: 'center' }}>
                     <div style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '0.25rem' }}>{label}</div>
@@ -157,7 +159,7 @@ export default function SimulatorPage() {
               {/* Before/After bar chart */}
               {comparisonData.length > 0 && (
                 <div className="card fade-in">
-                  <div className="section-title">Before vs After</div>
+                  <div className="section-title">{t('beforeAfter')}</div>
                   <ResponsiveContainer width="100%" height={160}>
                     <BarChart data={comparisonData} barGap={8}>
                       <CartesianGrid strokeDasharray="3 3" stroke="var(--color-border-light)" />
@@ -173,15 +175,15 @@ export default function SimulatorPage() {
 
               {/* Health score impact */}
               <div className="card fade-in">
-                <div className="section-title">Projected Health Score</div>
+                <div className="section-title">{t('projectedHealth')}</div>
                 <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
                   <div style={{ textAlign: 'center' }}>
-                    <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginBottom: '0.25rem' }}>Current</div>
+                    <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginBottom: '0.25rem' }}>{t('current')}</div>
                     <div style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', fontWeight: 700, color: 'var(--color-teal)' }}>{MOCK_DASHBOARD.financial_health.score}</div>
                   </div>
                   <TrendingDown size={22} style={{ color: 'var(--color-terracotta)' }} />
                   <div style={{ textAlign: 'center' }}>
-                    <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginBottom: '0.25rem' }}>After Loan</div>
+                    <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', marginBottom: '0.25rem' }}>{t('afterLoan')}</div>
                     <div style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', fontWeight: 700, color: newHealthScore >= 65 ? 'var(--color-teal)' : newHealthScore >= 50 ? 'var(--color-amber)' : 'var(--color-terracotta)' }}>{newHealthScore}</div>
                   </div>
                   <div style={{ flex: 1 }}>

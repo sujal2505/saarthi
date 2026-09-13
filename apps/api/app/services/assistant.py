@@ -36,6 +36,10 @@ def generate_response(
     full_name: str = "",
     is_suppressed: bool = False,
     suppression_reason: Optional[str] = None,
+    risk_factors: Optional[list[str]] = None,
+    health_change: float = 0,
+    emergency_months: Optional[float] = None,
+    spending_categories: Optional[dict[str, float]] = None,
 ) -> ChatResponse:
     """Generate an assistant response grounded in customer financial data."""
     if settings.llm_api_key:
@@ -74,6 +78,10 @@ def generate_response(
         emi_ratio=emi_ratio,
         is_suppressed=is_suppressed,
         suppression_reason=suppression_reason,
+        risk_factors=risk_factors or [],
+        health_change=health_change,
+        emergency_months=emergency_months,
+        spending_categories=spending_categories or {},
     )
 
     return ChatResponse(
@@ -96,9 +104,45 @@ def _match_template(
     emi_ratio: float,
     is_suppressed: bool = False,
     suppression_reason: Optional[str] = None,
+    risk_factors: Optional[list[str]] = None,
+    health_change: float = 0,
+    emergency_months: Optional[float] = None,
+    spending_categories: Optional[dict[str, float]] = None,
 ) -> str:
     """Match user message to the best template response."""
     disclaimer = DISCLAIMER_HI if is_hindi else DISCLAIMER_EN
+    risk_factors = risk_factors or []
+    spending_categories = spending_categories or {}
+
+    # ---- Requested financial insights ----
+    if any(w in msg for w in ["biggest financial risk", "main risk", "top risk", "financial risk", "risk factor", "sabse bada risk", "bada jokhim"]):
+        risk = risk_factors[0] if risk_factors else "Your emergency savings and expense pressure need the closest attention."
+        if is_hindi:
+            return f"{name} ji, aapka sabse bada financial risk hai: {risk} Apne emergency fund ko badhayein aur naye loan lene se pehle budget check karein.{disclaimer}"
+        return f"{name}, your biggest current financial risk is: {risk} Prioritise your emergency buffer and review expenses before taking on new debt.{disclaimer}"
+
+    if any(w in msg for w in ["highest spending", "spending the most", "most this month", "top spending", "largest expense", "sabse zyada kharch", "sabse bada kharcha"]):
+        if spending_categories:
+            category, amount = max(spending_categories.items(), key=lambda item: item[1])
+            if is_hindi:
+                return f"{name} ji, aapka sabse zyada kharcha {category} par hai: lagbhag ₹{amount:,.0f}. Is category ko review karke monthly budget set karein."
+            return f"{name}, your highest spending category is {category} at approximately ₹{amount:,.0f}. Review this category and consider setting a monthly budget."
+        return f"{name}, category-level spending data is not available for this period. Please open Spending Analysis to review your breakdown."
+
+    if any(w in msg for w in ["emergency fund", "emergency savings", "safety net", "emergency buffer", "emergency reserve", "emergency status", "emergency fund status", "emergency ko"]):
+        months = emergency_months if emergency_months is not None else 0
+        if is_hindi:
+            status = "bahut limited" if months < 1 else "theek hai, lekin ise aur badhana chahiye"
+            return f"{name} ji, aapka emergency fund lagbhag {months:.1f} mahine ke kharch ko cover karta hai, isliye iska status {status} hai. Pehla lakshya kam se kam 3 mahine ke kharch ka buffer banana rakhein."
+        status = "very limited" if months < 1 else "developing but should be strengthened"
+        return f"{name}, your emergency fund covers approximately {months:.1f} months of expenses, so its status is {status}. Aim to build a buffer covering at least three months of expenses."
+
+    if any(w in msg for w in ["why health score", "health score changed", "score changed", "score change", "health score improve", "score improve", "score decrease", "score down", "score up", "health score kyun"]):
+        direction = "increased" if health_change > 0 else "decreased" if health_change < 0 else "has not changed"
+        reasons = "; ".join(risk_factors[:2]) if risk_factors else "your income, spending, savings, debt, and repayment patterns"
+        if is_hindi:
+            return f"{name} ji, aapka health score {abs(health_change):.1f} points se {'badha' if health_change > 0 else 'ghata' if health_change < 0 else 'badla nahi'} hai. Iska sambandh aapke financial patterns se hai: {reasons}."
+        return f"{name}, your health score {direction} by {abs(health_change):.1f} points. The main factors to review are: {reasons}."
 
     # ---- Loan / Borrowing ----
     if any(w in msg for w in ["loan", "lena", "borrow", "udhar", "karj", "credit"]):

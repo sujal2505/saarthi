@@ -5,7 +5,7 @@ from sqlalchemy.orm import Session
 
 from app.database import get_db
 from app.models.customer import Customer
-from app.schemas.customer import CustomerResponse
+from app.schemas.customer import CustomerResponse, CustomerUpdate
 
 router = APIRouter(prefix="/api/v1/customers", tags=["Customer"])
 
@@ -20,6 +20,20 @@ async def get_customer(customer_id: str, db: Session = Depends(get_db)):
     customer = db.query(Customer).filter(Customer.id == customer_id).first()
     if not customer:
         raise HTTPException(status_code=404, detail=f"Customer {customer_id} not found")
+    return CustomerResponse.model_validate(customer)
+
+
+@router.put("/{customer_id}", response_model=CustomerResponse)
+async def update_customer(customer_id: str, payload: CustomerUpdate, db: Session = Depends(get_db)):
+    """Update editable profile information for the demo customer."""
+    customer = db.query(Customer).filter(Customer.id == customer_id).first()
+    if not customer:
+        raise HTTPException(status_code=404, detail=f"Customer {customer_id} not found")
+
+    for field, value in payload.model_dump().items():
+        setattr(customer, field, value)
+    db.commit()
+    db.refresh(customer)
     return CustomerResponse.model_validate(customer)
 
 

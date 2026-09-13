@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Shield, ChevronRight, Globe } from 'lucide-react'
+import { Shield, ChevronRight, Globe, RefreshCw, ShieldCheck } from 'lucide-react'
 import { useAuth } from '@/lib/AuthContext'
 import type { Language } from '@/types'
 import NebulaBackground from '@/components/NebulaBackground'
@@ -21,27 +21,65 @@ const HERO_CONTENT: Record<Language, { heading: string; sub: string }> = {
   bn: { heading: 'ব্যাংকিং যা আপনার পরবর্তী পদক্ষেপ বোঝে।', sub: 'ভারতের জন্য তৈরি স্বচ্ছ আর্থিক নির্দেশনা।' },
 }
 
+const LOGIN_COPY: Record<Language, Record<string, string>> = {
+  en: { finance: 'Finance', welcome: 'Welcome back', enterMobile: 'Enter your mobile number to continue', preferred: 'Preferred Language', mobile: 'Mobile Number', placeholder: 'Enter your 10-digit mobile number', continue: 'Continue', demo: 'Demo Mode', tryIt: 'Try it instantly', secure: 'Secure & Private', customer: 'Customer', phone: 'Phone', language: 'Language', hindiDemo: 'Select Hindi for full demo', failed: 'Login failed. Please try again.', invalidMobile: 'Enter a valid 10-digit mobile number.', humanCheck: 'Human verification', solve: 'Solve this simple question to continue', answer: 'Answer', answerPlaceholder: 'Enter answer', refreshQuestion: 'Get a new question', wrongAnswer: 'That answer is not correct. Try again.', verified: 'Human verified' },
+  hi: { finance: 'वित्त', welcome: 'वापसी पर स्वागत है', enterMobile: 'जारी रखने के लिए मोबाइल नंबर दर्ज करें', preferred: 'पसंदीदा भाषा', mobile: 'मोबाइल नंबर', placeholder: 'अपना 10 अंकों का मोबाइल नंबर दर्ज करें', continue: 'जारी रखें', demo: 'डेमो मोड', tryIt: 'तुरंत आज़माएं', secure: 'सुरक्षित और निजी', customer: 'ग्राहक', phone: 'फोन', language: 'भाषा', hindiDemo: 'पूरे डेमो के लिए हिंदी चुनें', failed: 'लॉगिन विफल हुआ। फिर प्रयास करें।', invalidMobile: 'कृपया सही 10 अंकों का मोबाइल नंबर दर्ज करें।', humanCheck: 'मानव सत्यापन', solve: 'जारी रखने के लिए यह आसान सवाल हल करें', answer: 'उत्तर', answerPlaceholder: 'उत्तर दर्ज करें', refreshQuestion: 'नया सवाल', wrongAnswer: 'उत्तर सही नहीं है। फिर प्रयास करें।', verified: 'मानव सत्यापन पूरा हुआ' },
+  mr: { finance: 'वित्त', welcome: 'पुन्हा स्वागत आहे', enterMobile: 'पुढे जाण्यासाठी मोबाईल नंबर टाका', preferred: 'प्राधान्याची भाषा', mobile: 'मोबाईल नंबर', placeholder: 'तुमचा १० अंकी मोबाईल नंबर टाका', continue: 'पुढे जा', demo: 'डेमो मोड', tryIt: 'त्वरित वापरून पहा', secure: 'सुरक्षित आणि खासगी', customer: 'ग्राहक', phone: 'फोन', language: 'भाषा', hindiDemo: 'पूर्ण डेमोसाठी हिंदी निवडा', failed: 'लॉगिन अयशस्वी. पुन्हा प्रयत्न करा.', invalidMobile: 'कृपया योग्य १० अंकी मोबाईल नंबर टाका.', humanCheck: 'मानवी पडताळणी', solve: 'पुढे जाण्यासाठी हा सोपा प्रश्न सोडवा', answer: 'उत्तर', answerPlaceholder: 'उत्तर टाका', refreshQuestion: 'नवीन प्रश्न', wrongAnswer: 'उत्तर चुकीचे आहे. पुन्हा प्रयत्न करा.', verified: 'मानवी पडताळणी पूर्ण' },
+  ta: { finance: 'நிதி', welcome: 'மீண்டும் வரவேற்கிறோம்', enterMobile: 'தொடர உங்கள் மொபைல் எண்ணை உள்ளிடவும்', preferred: 'விருப்ப மொழி', mobile: 'மொபைல் எண்', placeholder: '10 இலக்க மொபைல் எண்ணை உள்ளிடவும்', continue: 'தொடரவும்', demo: 'டெமோ முறை', tryIt: 'உடனே முயற்சிக்கவும்', secure: 'பாதுகாப்பானது மற்றும் தனிப்பட்டது', customer: 'வாடிக்கையாளர்', phone: 'தொலைபேசி', language: 'மொழி', hindiDemo: 'முழு டெமோவிற்கு இந்தி தேர்வு செய்யவும்', failed: 'உள்நுழைவு தோல்வியடைந்தது. மீண்டும் முயற்சிக்கவும்.', invalidMobile: 'சரியான 10 இலக்க மொபைல் எண்ணை உள்ளிடவும்.', humanCheck: 'மனித சரிபார்ப்பு', solve: 'தொடர இந்த எளிய கேள்வியைத் தீர்க்கவும்', answer: 'பதில்', answerPlaceholder: 'பதிலை உள்ளிடவும்', refreshQuestion: 'புதிய கேள்வி', wrongAnswer: 'பதில் தவறானது. மீண்டும் முயற்சிக்கவும்.', verified: 'மனித சரிபார்ப்பு முடிந்தது' },
+  bn: { finance: 'অর্থ', welcome: 'আবার স্বাগতম', enterMobile: 'চালিয়ে যেতে মোবাইল নম্বর লিখুন', preferred: 'পছন্দের ভাষা', mobile: 'মোবাইল নম্বর', placeholder: '১০ সংখ্যার মোবাইল নম্বর লিখুন', continue: 'চালিয়ে যান', demo: 'ডেমো মোড', tryIt: 'এখনই চেষ্টা করুন', secure: 'নিরাপদ ও ব্যক্তিগত', customer: 'গ্রাহক', phone: 'ফোন', language: 'ভাষা', hindiDemo: 'সম্পূর্ণ ডেমোর জন্য হিন্দি নির্বাচন করুন', failed: 'লগইন ব্যর্থ হয়েছে। আবার চেষ্টা করুন.', invalidMobile: 'সঠিক ১০ সংখ্যার মোবাইল নম্বর লিখুন।', humanCheck: 'মানব যাচাই', solve: 'চালিয়ে যেতে এই সহজ প্রশ্নটি সমাধান করুন', answer: 'উত্তর', answerPlaceholder: 'উত্তর লিখুন', refreshQuestion: 'নতুন প্রশ্ন', wrongAnswer: 'উত্তর সঠিক নয়। আবার চেষ্টা করুন।', verified: 'মানব যাচাই সম্পন্ন' },
+}
+
+type MathChallenge = { left: number; right: number; operator: '+' | '-'; answer: number }
+
+function createMathChallenge(): MathChallenge {
+  const left = Math.floor(Math.random() * 9) + 2
+  const right = Math.floor(Math.random() * 9) + 1
+  const operator = Math.random() > 0.5 ? '+' : '-'
+  return operator === '+'
+    ? { left, right, operator, answer: left + right }
+    : { left: Math.max(left, right), right: Math.min(left, right), operator, answer: Math.abs(left - right) }
+}
+
 export default function LoginPage() {
   const [phone, setPhone] = useState('')
   const [language, setLanguage] = useState<Language>('en')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
+  const [challenge, setChallenge] = useState<MathChallenge>(() => createMathChallenge())
+  const [challengeAnswer, setChallengeAnswer] = useState('')
+  const [verificationError, setVerificationError] = useState('')
   const { login } = useAuth()
   const navigate = useNavigate()
 
   const hero = HERO_CONTENT[language]
+  const copy = LOGIN_COPY[language]
+  const isPhoneValid = /^\d{10}$/.test(phone)
 
   const handleDemoLogin = async () => {
+    if (!/^\d{10}$/.test(phone)) {
+      setError(copy.invalidMobile)
+      return
+    }
+    if (Number(challengeAnswer) !== challenge.answer) {
+      setVerificationError(copy.wrongAnswer)
+      return
+    }
     setLoading(true)
     setError('')
     try {
-      await login(phone || '9800000001', language)
+      await login(phone, language)
       navigate('/dashboard')
     } catch {
-      setError('Login failed. Please try again.')
+      setError(copy.failed)
     } finally {
       setLoading(false)
     }
+  }
+
+  const refreshChallenge = () => {
+    setChallenge(createMathChallenge())
+    setChallengeAnswer('')
+    setVerificationError('')
   }
 
   return (
@@ -55,7 +93,7 @@ export default function LoginPage() {
               Saarthi<span style={{ color: 'var(--color-saffron)' }}>.</span>
             </div>
             <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.4)', letterSpacing: '0.05em', textTransform: 'uppercase' }}>
-              Finance
+              {copy.finance}
             </div>
           </div>
 
@@ -85,7 +123,7 @@ export default function LoginPage() {
           <div style={{ marginTop: '3rem', padding: '0.875rem 1rem', background: 'rgba(255,255,255,0.06)', borderRadius: 10, border: '1px solid rgba(255,255,255,0.1)' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.25rem' }}>
               <Shield size={14} style={{ color: 'var(--color-teal-light)' }} />
-              <span style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--color-teal-light)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Secure & Private</span>
+              <span style={{ fontSize: '0.75rem', fontWeight: 600, color: 'var(--color-teal-light)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>{copy.secure}</span>
             </div>
             <p style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.45)', lineHeight: 1.5 }}>
               Built with synthetic data for demonstration. No real financial information is collected, stored, or shared.
@@ -97,14 +135,14 @@ export default function LoginPage() {
       {/* Right panel */}
       <div className="login-right">
         <div style={{ maxWidth: 360, margin: '0 auto', width: '100%' }}>
-          <h2 style={{ marginBottom: '0.375rem' }}>Welcome back</h2>
-          <p style={{ fontSize: '0.9rem', marginBottom: '2rem' }}>Enter your mobile number to continue</p>
+          <h2 style={{ marginBottom: '0.375rem' }}>{copy.welcome}</h2>
+          <p style={{ fontSize: '0.9rem', marginBottom: '2rem' }}>{copy.enterMobile}</p>
 
           {/* Language selector */}
           <div style={{ marginBottom: '1.25rem' }}>
             <label className="form-label" htmlFor="language-select">
               <Globe size={13} style={{ display: 'inline', marginRight: 4, verticalAlign: 'middle' }} />
-              Preferred Language
+              {copy.preferred}
             </label>
             <select
               id="language-select"
@@ -122,18 +160,42 @@ export default function LoginPage() {
 
           {/* Phone */}
           <div style={{ marginBottom: '1.5rem' }}>
-            <label className="form-label" htmlFor="phone-input">Mobile Number</label>
+            <label className="form-label" htmlFor="phone-input">{copy.mobile}</label>
             <input
               id="phone-input"
               type="tel"
               className="input"
-              placeholder="Enter your 10-digit mobile number"
+              placeholder={copy.placeholder}
               value={phone}
               onChange={e => setPhone(e.target.value)}
               maxLength={10}
               onKeyDown={e => e.key === 'Enter' && handleDemoLogin()}
             />
           </div>
+
+          {isPhoneValid && <div className="human-check" style={{ marginBottom: '1.25rem' }}>
+            <div className="human-check-heading">
+              <span><ShieldCheck size={15} /> {copy.humanCheck}</span>
+              <button type="button" className="human-check-refresh" onClick={refreshChallenge} aria-label={copy.refreshQuestion} title={copy.refreshQuestion}>
+                <RefreshCw size={15} />
+              </button>
+            </div>
+            <p>{copy.solve}</p>
+            <div className="human-check-controls">
+              <strong>{challenge.left} {challenge.operator} {challenge.right} =</strong>
+              <input
+                type="number"
+                inputMode="numeric"
+                className="input"
+                aria-label={copy.answer}
+                placeholder={copy.answerPlaceholder}
+                value={challengeAnswer}
+                onChange={e => { setChallengeAnswer(e.target.value); setVerificationError('') }}
+                onKeyDown={e => e.key === 'Enter' && handleDemoLogin()}
+              />
+            </div>
+            {verificationError ? <div className="human-check-error">{verificationError}</div> : challengeAnswer && Number(challengeAnswer) === challenge.answer ? <div className="human-check-success"><ShieldCheck size={14} /> {copy.verified}</div> : null}
+          </div>}
 
           {error && (
             <div className="alert-banner alert-banner--danger" style={{ marginBottom: '1rem' }}>
@@ -145,13 +207,13 @@ export default function LoginPage() {
             id="demo-login-btn"
             className="btn btn-primary btn-lg btn-block"
             onClick={handleDemoLogin}
-            disabled={loading}
+            disabled={loading || !isPhoneValid || Number(challengeAnswer) !== challenge.answer}
           >
             {loading ? (
               <span className="spinner spinner--sm" />
             ) : (
               <>
-                Continue
+                {copy.continue}
                 <span
                   style={{
                     fontSize: '0.65rem',
@@ -164,7 +226,7 @@ export default function LoginPage() {
                     marginLeft: '0.5rem',
                   }}
                 >
-                  Demo Mode
+                  {copy.demo}
                 </span>
                 <ChevronRight size={18} />
               </>
@@ -177,12 +239,12 @@ export default function LoginPage() {
 
           <div style={{ background: 'var(--color-saffron-pale)', border: '1px solid #f3d7b0', borderRadius: 10, padding: '0.875rem 1rem' }}>
             <div style={{ fontSize: '0.8125rem', fontWeight: 600, color: 'var(--color-saffron)', marginBottom: '0.375rem' }}>
-              Try it instantly
+              {copy.tryIt}
             </div>
             <div style={{ fontSize: '0.8rem', color: 'var(--color-text-secondary)', lineHeight: 1.55 }}>
-              <div><strong>Customer:</strong> Ananya Verma, Indore</div>
-              <div><strong>Phone:</strong> Any 10-digit number</div>
-              <div><strong>Language:</strong> Select Hindi for full demo</div>
+              <div><strong>{copy.customer}:</strong> Ananya Verma, Indore</div>
+              <div><strong>{copy.phone}:</strong> Any 10-digit number</div>
+              <div><strong>{copy.language}:</strong> {copy.hindiDemo}</div>
             </div>
           </div>
 

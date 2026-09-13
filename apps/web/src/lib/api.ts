@@ -6,14 +6,23 @@
 import { MOCK_DASHBOARD } from '@/data/mockData'
 import type {
   DashboardData,
+  Customer,
   SimulatorInput,
   SimulatorOutput,
   Alert,
   Goal,
 } from '@/types'
 
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000'
+// Use Vite's same-origin proxy in development so phones do not resolve localhost to themselves.
+const API_BASE = import.meta.env.VITE_API_URL || ''
 const USE_MOCK = import.meta.env.VITE_USE_MOCK === 'true'
+
+export async function updateCustomer(customerId: string, profile: Omit<Customer, 'id'>): Promise<Customer> {
+  return apiFetch<Customer>(`/api/v1/customers/${customerId}`, {
+    method: 'PUT',
+    body: JSON.stringify(profile),
+  })
+}
 
 async function apiFetch<T>(path: string, options?: RequestInit): Promise<T> {
   const res = await fetch(`${API_BASE}${path}`, {

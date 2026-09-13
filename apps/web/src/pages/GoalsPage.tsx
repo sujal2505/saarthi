@@ -4,6 +4,7 @@ import { getGoals, createGoal, getDashboard } from '@/lib/api'
 import { MOCK_DASHBOARD } from '@/data/mockData'
 import { formatRupee, GOAL_EMOJI, GOAL_BG } from '@/lib/utils'
 import { useAuth } from '@/lib/AuthContext'
+import { useI18n } from '@/lib/i18n'
 import type { Goal, GoalType } from '@/types'
 
 const GOAL_TYPE_OPTIONS: { value: GoalType; label: string; icon: string }[] = [
@@ -17,6 +18,7 @@ const GOAL_TYPE_OPTIONS: { value: GoalType; label: string; icon: string }[] = [
 
 export default function GoalsPage() {
   const { customerId, customer } = useAuth()
+  const { t } = useI18n()
   const [goals, setGoals] = useState<Goal[]>([])
   const [monthlySavings, setMonthlySavings] = useState(16700)
   const [loading, setLoading] = useState(true)
@@ -74,11 +76,11 @@ export default function GoalsPage() {
     <div className="page-container fade-in">
       <div className="page-header" style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.75rem' }}>
         <div>
-          <h1>Goal Planning</h1>
-          <p>Set clear financial goals and track progress for {customer?.name || 'you'}.</p>
+          <h1>{t('goalPlanning')}</h1>
+          <p>{t('setGoals')} {customer?.name || 'you'}.</p>
         </div>
         <button className="btn btn-primary" onClick={() => setShowForm(true)} id="add-goal-btn">
-          <Plus size={16} /> New Goal
+          <Plus size={16} /> {t('newGoal')}
         </button>
       </div>
 
@@ -91,19 +93,19 @@ export default function GoalsPage() {
           {/* Summary bar */}
           <div className="card fade-in-delay-1" style={{ marginBottom: '1.25rem', display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
             <div>
-              <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Active Goals</div>
+              <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('activeGoals')}</div>
               <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.625rem', fontWeight: 700, color: 'var(--color-navy)' }}>{goals.length}</div>
             </div>
             <div>
-              <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Monthly Commitment</div>
+              <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('monthlyCommitment')}</div>
               <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.625rem', fontWeight: 700, color: 'var(--color-teal)' }}>{formatRupee(totalSavingsRequired)}</div>
             </div>
             <div>
-              <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>On Track</div>
+              <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('onTrack')}</div>
               <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.625rem', fontWeight: 700, color: 'var(--color-green)' }}>{goals.filter(g => g.on_track).length} / {goals.length}</div>
             </div>
             <div>
-              <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Available for Goals</div>
+              <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{t('availableForGoals')}</div>
               <div style={{ fontFamily: 'var(--font-display)', fontSize: '1.625rem', fontWeight: 700, color: monthlySavings - totalSavingsRequired > 0 ? 'var(--color-green)' : 'var(--color-terracotta)' }}>
                 {formatRupee(monthlySavings - totalSavingsRequired, true)}
               </div>
@@ -120,16 +122,16 @@ export default function GoalsPage() {
                   </div>
                   <span className={`badge ${goal.on_track ? 'badge-green' : 'badge-red'}`}>
                     {goal.on_track ? (
-                      <><CheckCircle size={11} /> On track</>
+                      <><CheckCircle size={11} /> {t('onTrack')}</>
                     ) : (
-                      <><AlertTriangle size={11} /> Behind</>
+                      <><AlertTriangle size={11} /> {t('behind')}</>
                     )}
                   </span>
                 </div>
                 <div className="goal-card-title">{goal.name}</div>
                 <div className="goal-card-amount">{formatRupee(goal.target_amount)}</div>
                 <div style={{ fontSize: '0.8125rem', color: 'var(--color-text-muted)', marginBottom: '0.875rem' }}>
-                  {formatRupee(goal.current_amount)} saved · {goal.months_remaining} months remaining
+                  {formatRupee(goal.current_amount)} saved · {goal.months_remaining} {t('monthsRemaining')}
                 </div>
                 <div className="progress-bar" style={{ marginBottom: '0.5rem' }}>
                   <div
@@ -138,11 +140,11 @@ export default function GoalsPage() {
                   />
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.8rem', color: 'var(--color-text-muted)' }}>
-                  <span>{goal.progress_pct.toFixed(0)}% complete</span>
+                  <span>{goal.progress_pct.toFixed(0)}% {t('complete')}</span>
                   <span>{formatRupee(goal.monthly_contribution)}/mo</span>
                 </div>
                 <div style={{ fontSize: '0.775rem', color: 'var(--color-text-muted)', marginTop: '0.5rem' }}>
-                  Target: {new Date(goal.target_date).toLocaleDateString('en-IN', { month: 'short', year: 'numeric' })}
+                  {t('target')}: {new Date(goal.target_date).toLocaleDateString('en-IN', { month: 'short', year: 'numeric' })}
                 </div>
               </div>
             ))}
@@ -155,15 +157,15 @@ export default function GoalsPage() {
         <div style={{ position: 'fixed', inset: 0, background: 'rgba(26,35,50,0.45)', zIndex: 200, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1rem' }}>
           <div className="card card--raised" style={{ width: '100%', maxWidth: 480, maxHeight: '90vh', overflowY: 'auto' }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.25rem' }}>
-              <h3>Create New Goal</h3>
-              <button className="btn-icon" onClick={() => setShowForm(false)} aria-label="Close">
+              <h3>{t('createGoal')}</h3>
+              <button className="btn-icon" onClick={() => setShowForm(false)} aria-label={t('close')}>
                 <X size={20} />
               </button>
             </div>
 
             {/* Goal type grid */}
             <div style={{ marginBottom: '1.25rem' }}>
-              <label className="form-label">Goal Type</label>
+              <label className="form-label">{t('goalType')}</label>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '0.5rem' }}>
                 {GOAL_TYPE_OPTIONS.map(opt => (
                   <button
@@ -188,23 +190,23 @@ export default function GoalsPage() {
             </div>
 
             <div style={{ marginBottom: '1rem' }}>
-              <label className="form-label" htmlFor="goal-name">Goal Name</label>
+              <label className="form-label" htmlFor="goal-name">{t('goalName')}</label>
               <input id="goal-name" className="input" placeholder="e.g. Emergency Fund" value={form.name} onChange={e => setForm(f => ({ ...f, name: e.target.value }))} />
             </div>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '1rem' }}>
               <div>
-                <label className="form-label" htmlFor="goal-target">Target Amount (₹)</label>
+                <label className="form-label" htmlFor="goal-target">{t('targetAmount')}</label>
                 <input id="goal-target" type="number" className="input" placeholder="100000" value={form.target_amount} onChange={e => setForm(f => ({ ...f, target_amount: e.target.value }))} />
               </div>
               <div>
-                <label className="form-label" htmlFor="goal-date">Target Date</label>
+                <label className="form-label" htmlFor="goal-date">{t('targetDate')}</label>
                 <input id="goal-date" type="date" className="input" value={form.target_date} onChange={e => setForm(f => ({ ...f, target_date: e.target.value }))} />
               </div>
             </div>
 
             <div style={{ marginBottom: '1.25rem' }}>
-              <label className="form-label" htmlFor="goal-monthly">Monthly Contribution (₹)</label>
+              <label className="form-label" htmlFor="goal-monthly">{t('monthlyContribution')}</label>
               <input id="goal-monthly" type="number" className="input" placeholder="5000" value={form.monthly_contribution} onChange={e => setForm(f => ({ ...f, monthly_contribution: e.target.value }))} />
               {form.target_amount && form.monthly_contribution && (
                 <div className="insight-card insight-card--teal" style={{ marginTop: '0.5rem', fontSize: '0.8rem' }}>
@@ -214,8 +216,8 @@ export default function GoalsPage() {
             </div>
 
             <div style={{ display: 'flex', gap: '0.75rem' }}>
-              <button className="btn btn-secondary btn-block" onClick={() => setShowForm(false)}>Cancel</button>
-              <button className="btn btn-primary btn-block" onClick={handleCreate} id="save-goal-btn">Save Goal</button>
+              <button className="btn btn-secondary btn-block" onClick={() => setShowForm(false)}>{t('cancel')}</button>
+              <button className="btn btn-primary btn-block" onClick={handleCreate} id="save-goal-btn">{t('saveGoal')}</button>
             </div>
           </div>
         </div>

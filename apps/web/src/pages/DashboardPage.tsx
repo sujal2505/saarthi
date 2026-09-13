@@ -23,10 +23,19 @@ import {
   CartesianGrid,
 } from 'recharts'
 import { getDashboard } from '@/lib/api'
-import { formatRupee, formatRelativeDate, CATEGORY_EMOJI, CATEGORY_BG, getHealthColor } from '@/lib/utils'
+import { formatRupee, formatRelativeDate, CATEGORY_BG, getHealthColor } from '@/lib/utils'
 import { useAuth } from '@/lib/AuthContext'
+import { useI18n } from '@/lib/i18n'
 import { GlowCard } from '@/components/ui/glowing-effect'
-import type { DashboardData } from '@/types'
+import type { DashboardData, Language } from '@/types'
+
+const LANGUAGES: { code: Language; label: string }[] = [
+  { code: 'en', label: 'English' },
+  { code: 'hi', label: 'हिन्दी' },
+  { code: 'mr', label: 'मराठी' },
+  { code: 'ta', label: 'தமிழ்' },
+  { code: 'bn', label: 'বাংলা' },
+]
 
 function HealthScoreRing({ score }: { score: number }) {
   const radius = 54
@@ -76,7 +85,8 @@ const QUICK_ACTIONS: QuickAction[] = [
 ]
 
 export default function DashboardPage() {
-  const { customerId, customer } = useAuth()
+  const { customerId, customer, language, setLanguage } = useAuth()
+  const { t } = useI18n()
   const navigate = useNavigate()
   const [data, setData] = useState<DashboardData | null>(null)
   const [loading, setLoading] = useState(true)
@@ -91,7 +101,7 @@ export default function DashboardPage() {
   if (loading) return (
     <div className="page-container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '60vh', flexDirection: 'column', gap: '1rem' }}>
       <div className="spinner spinner--lg" />
-      <p className="text-muted">Loading your dashboard…</p>
+      <p className="text-muted">{t('loadingDashboard')}</p>
     </div>
   )
 
@@ -99,7 +109,7 @@ export default function DashboardPage() {
     <div className="page-container">
       <div className="alert-banner alert-banner--danger">
         <AlertTriangle size={18} />
-        <span>Failed to load dashboard. Please refresh the page.</span>
+        <span>{t('failedDashboard')}</span>
       </div>
     </div>
   )
@@ -110,24 +120,40 @@ export default function DashboardPage() {
   const topAlert = highAlert ?? mediumAlert
 
   const greetingTime = new Date().getHours()
-  const greeting = greetingTime < 12 ? 'Good morning' : greetingTime < 17 ? 'Good afternoon' : 'Good evening'
+  const greeting = greetingTime < 12 ? t('goodMorning') : greetingTime < 17 ? t('goodAfternoon') : t('goodEvening')
 
   // Health score trend: pick the right icon/copy instead of always showing "up"
   const healthChange = financial_health.change
   const HealthTrendIcon = healthChange > 0 ? TrendingUp : healthChange < 0 ? TrendingDown : Minus
   const healthTrendColor = healthChange > 0 ? 'var(--color-green)' : healthChange < 0 ? 'var(--color-terracotta)' : 'var(--color-text-muted)'
   const healthTrendText = healthChange === 0
-    ? 'No change from last month'
-    : `${Math.abs(healthChange)} pts ${healthChange > 0 ? 'up' : 'down'} from last month`
+    ? t('noChange')
+    : `${Math.abs(healthChange)} ${healthChange > 0 ? t('ptsUp') : t('ptsDown')}`
 
   return (
     <div className="page-container fade-in">
       {/* Greeting */}
-      <div className="page-header">
-        <h1 style={{ fontFamily: 'var(--font-display)' }}>
-          {greeting}, {customer?.name?.split(' ')[0]} 👋
-        </h1>
-        <p>{customer?.city}, {customer?.state} · {new Date().toLocaleDateString('en-IN', { weekday: 'long', day: 'numeric', month: 'long' })}</p>
+      <div className="page-header" style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', flexWrap: 'wrap', gap: '0.75rem' }}>
+        <div>
+          <h1 style={{ fontFamily: 'var(--font-display)' }}>
+            {greeting}, {customer?.name?.split(' ')[0]}
+          </h1>
+          <p>{customer?.city}, {customer?.state} · {new Date().toLocaleDateString('en-IN', { weekday: 'long', day: 'numeric', month: 'long' })}</p>
+        </div>
+        <div style={{ minWidth: 170 }}>
+          <label className="form-label" htmlFor="dashboard-language-select">{t('preferredLanguage')}</label>
+          <select
+            id="dashboard-language-select"
+            className="input"
+            value={language}
+            onChange={e => setLanguage(e.target.value as Language)}
+            aria-label={t('preferredLanguage')}
+          >
+            {LANGUAGES.map(option => (
+              <option key={option.code} value={option.code}>{option.label}</option>
+            ))}
+          </select>
+        </div>
       </div>
 
       {/* Alert banner if present */}
@@ -159,7 +185,7 @@ export default function DashboardPage() {
           style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', padding: '1.5rem 1rem', textAlign: 'center' }}
         >
           <div style={{ fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-muted)', marginBottom: '0.75rem' }}>
-            Financial Health
+            {t('financialHealth')}
           </div>
           <HealthScoreRing score={financial_health.score} />
           <div style={{ marginTop: '0.5rem' }}>
@@ -174,35 +200,35 @@ export default function DashboardPage() {
             style={{ marginTop: '1rem', width: '100%' }}
             onClick={() => navigate('/borrowing')}
           >
-            View Details
+            {t('viewDetails')}
           </button>
         </GlowCard>
 
         {/* Cash flow cards */}
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.875rem' }}>
           <GlowCard baseClass="stat-card" className="fade-in-delay-1" proximity={80}>
-            <div className="stat-card-label">Monthly Income</div>
+            <div className="stat-card-label">{t('monthlyIncome')}</div>
             <div className="stat-card-value" style={{ color: 'var(--color-green)' }}>{formatRupee(cash_flow.monthly_income, true)}</div>
-            <div className="stat-card-sub">Stable for 6 months</div>
+            <div className="stat-card-sub">{t('stableSixMonths')}</div>
           </GlowCard>
           <GlowCard baseClass="stat-card" className="fade-in-delay-2" proximity={80}>
-            <div className="stat-card-label">Monthly Expenses</div>
+            <div className="stat-card-label">{t('monthlyExpenses')}</div>
             <div className="stat-card-value">{formatRupee(cash_flow.monthly_expenses, true)}</div>
             <div className="stat-card-change stat-card-change--down">
               <TrendingUp size={12} /> +12% vs last month
             </div>
           </GlowCard>
           <GlowCard baseClass="stat-card" className="fade-in-delay-3" proximity={80}>
-            <div className="stat-card-label">EMI Payments</div>
+            <div className="stat-card-label">{t('emiPayments')}</div>
             <div className="stat-card-value">{formatRupee(cash_flow.monthly_emi, true)}</div>
             <div className="stat-card-sub">16.4% of income</div>
           </GlowCard>
           <GlowCard baseClass="stat-card" className="fade-in-delay-4" proximity={80}>
-            <div className="stat-card-label">Monthly Savings</div>
+            <div className="stat-card-label">{t('monthlySavings')}</div>
             <div className="stat-card-value" style={{ color: 'var(--color-teal)' }}>{formatRupee(cash_flow.monthly_savings, true)}</div>
             <div className="stat-card-change stat-card-change--up">
               <CheckCircle size={12} />
-              {cash_flow.savings_rate > 0 ? `${cash_flow.savings_rate}% savings rate` : 'No savings set aside this month'}
+              {cash_flow.savings_rate > 0 ? `${cash_flow.savings_rate}% ${t('savingsRate')}` : t('noSavings')}
             </div>
           </GlowCard>
         </div>
@@ -210,7 +236,7 @@ export default function DashboardPage() {
 
       {/* Trend chart */}
       <GlowCard className="fade-in-delay-2" proximity={100} style={{ marginBottom: '1rem' }}>
-        <div className="section-title">Income vs Expenses — Last 6 Months</div>
+        <div className="section-title">{t('incomeVsExpenses')}</div>
         <div style={{ width: '100%', height: 240, minHeight: 240 }}>
           <ResponsiveContainer width="100%" height="100%">
             <AreaChart data={monthly_trend} margin={{ top: 10, right: 10, left: -15, bottom: 0 }}>
@@ -231,8 +257,10 @@ export default function DashboardPage() {
         {/* Recommendation */}
         <GlowCard className="rec-card fade-in-delay-2" proximity={90}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem' }}>
-            <div className="step-badge">✦</div>
-            <span style={{ fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-saffron)' }}>Your Next Best Step</span>
+            <div className="step-badge" aria-hidden>
+              <Target size={15} />
+            </div>
+            <span style={{ fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-saffron)' }}>{t('yourNextStep')}</span>
           </div>
           <h3 style={{ fontSize: '1rem', marginBottom: '0.5rem' }}>{recommendation.title}</h3>
           <p style={{ fontSize: '0.8375rem', color: 'var(--color-text-secondary)', marginBottom: '0.875rem', lineHeight: 1.55 }}>
@@ -240,18 +268,18 @@ export default function DashboardPage() {
           </p>
           <div className="rec-card-confidence">
             <CheckCircle size={14} />
-            {Math.round(recommendation.confidence * 100)}% confidence
+            {Math.round(recommendation.confidence * 100)}% {t('confidence')}
           </div>
           <div style={{ marginTop: '1rem' }}>
             <button className="btn btn-primary btn-sm" onClick={() => navigate('/borrowing')}>
-              See full guidance <ArrowRight size={14} />
+              {t('seeFullGuidance')} <ArrowRight size={14} />
             </button>
           </div>
         </GlowCard>
 
         {/* Quick actions */}
         <GlowCard className="fade-in-delay-3" proximity={90} style={{ background: 'var(--color-surface)' }}>
-          <div className="section-title" style={{ marginBottom: '0.875rem' }}>Quick Actions</div>
+          <div className="section-title" style={{ marginBottom: '0.875rem' }}>{t('quickActions')}</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.625rem' }}>
             {QUICK_ACTIONS.map(({ label, icon: Icon, to, color, bg }) => (
               <button
@@ -270,10 +298,10 @@ export default function DashboardPage() {
                   gap: '0.5rem',
                 }}
                 className="btn-icon"
-                aria-label={label}
+                aria-label={label === 'View Spending' ? t('viewSpending') : label === 'Plan a Goal' ? t('planGoal') : label === 'Explore Borrowing' ? t('exploreBorrowing') : t('askSaarthi')}
               >
                 <Icon size={20} style={{ color }} />
-                <span style={{ fontSize: '0.8rem', fontWeight: 500, color: 'var(--color-navy)' }}>{label}</span>
+                <span style={{ fontSize: '0.8rem', fontWeight: 500, color: 'var(--color-navy)' }}>{label === 'View Spending' ? t('viewSpending') : label === 'Plan a Goal' ? t('planGoal') : label === 'Explore Borrowing' ? t('exploreBorrowing') : t('askSaarthi')}</span>
               </button>
             ))}
           </div>
@@ -283,25 +311,36 @@ export default function DashboardPage() {
       {/* Recent transactions */}
       <GlowCard className="fade-in-delay-3" proximity={100}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1rem' }}>
-          <div className="section-title" style={{ margin: 0 }}>Recent Transactions</div>
+          <div className="section-title" style={{ margin: 0 }}>{t('recentTransactions')}</div>
           <button className="btn btn-ghost btn-sm" onClick={() => navigate('/spending')}>
-            View all <ChevronRight size={14} />
+            {t('viewAll')} <ChevronRight size={14} />
           </button>
         </div>
         {recent_transactions.map(txn => (
           <div key={txn.id} className="txn-row">
             <div
               className="txn-icon"
-              style={{ background: CATEGORY_BG[txn.category] ?? '#f5f5f5' }}
+              style={{
+                background: CATEGORY_BG[txn.category] ?? '#f5f5f5',
+                position: 'relative',
+              }}
               aria-hidden
             >
-              {CATEGORY_EMOJI[txn.category] ?? '📄'}
+              <span
+                style={{
+                  width: 12,
+                  height: 12,
+                  borderRadius: 4,
+                  background: txn.type === 'credit' ? 'var(--color-green)' : 'var(--color-saffron)',
+                  boxShadow: '0 0 0 3px rgba(255,255,255,0.45)',
+                }}
+              />
             </div>
             <div className="txn-details">
               <div className="txn-merchant">{txn.merchant}</div>
               <div className="txn-category">
                 {txn.category} · {formatRelativeDate(txn.date)}
-                {txn.recurring && <span className="badge badge-navy" style={{ marginLeft: '0.375rem', padding: '0.1rem 0.5rem', fontSize: '0.7rem' }}>Recurring</span>}
+                {txn.recurring && <span className="badge badge-navy" style={{ marginLeft: '0.375rem', padding: '0.1rem 0.5rem', fontSize: '0.7rem' }}>{t('recurring')}</span>}
               </div>
             </div>
             <div className={`txn-amount ${txn.type === 'debit' ? 'txn-amount--debit' : 'txn-amount--credit'}`}>
@@ -313,7 +352,7 @@ export default function DashboardPage() {
 
       {/* Health explanation card */}
       <GlowCard style={{ marginTop: '1rem' }} proximity={100}>
-        <div className="section-title">Financial Health Breakdown</div>
+        <div className="section-title">{t('breakdown')}</div>
         {Object.entries(financial_health.components).map(([key, val]) => {
           const label = key.replace(/_/g, ' ').replace(/\b\w/g, l => l.toUpperCase())
           const color = val >= 75 ? 'var(--color-green)' : val >= 55 ? 'var(--color-teal)' : 'var(--color-amber)'

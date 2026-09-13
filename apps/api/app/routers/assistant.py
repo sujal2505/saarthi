@@ -53,6 +53,10 @@ async def chat(request: ChatRequest, db: Session = Depends(get_db)):
 
     dashboards = _load_dashboards()
     ml_data = dashboards.get(request.customer_id)
+    risk_factors = []
+    health_change = 0
+    emergency_months = None
+    spending_categories = {}
 
     if ml_data:
         fh = ml_data.get("financial_health", {})
@@ -73,6 +77,8 @@ async def chat(request: ChatRequest, db: Session = Depends(get_db)):
             risk_factors=fh.get("risk_factors", []),
             explanation=fh.get("plain_explanation") or fh.get("explanation", ""),
         )
+        risk_factors = fh.get("risk_factors", [])
+        health_change = float(fh.get("change", 0))
         cf_raw = ml_data.get("cash_flow", {})
         m_inc = float(cf_raw.get("monthly_income", customer.monthly_income))
         m_exp = float(cf_raw.get("avg_monthly_expenses", cf_raw.get("monthly_expenses", customer.monthly_income * 0.55)))
@@ -90,6 +96,18 @@ async def chat(request: ChatRequest, db: Session = Depends(get_db)):
         rec = ml_data.get("recommendation", {})
         is_suppressed = bool(rec.get("loan_suppressed") or rec.get("suppressed"))
         suppression_reason = rec.get("not_recommended_reason") or rec.get("suppression_reason")
+        stress = ml_data.get("stress", {})
+        for evidence in stress.get("evidence", []):
+            if "month" in evidence.lower() and "cover" in evidence.lower():
+                try:
+                    emergency_months = float(evidence.split("covers only")[1].split("months")[0].strip())
+                except (IndexError, ValueError):
+                    pass
+        spending_categories = {
+            key: float(value)
+            for key, value in cf_raw.get("last_month", {}).get("category_breakdown", {}).items()
+            if key not in {"Salary", "Savings"}
+        }
     else:
         m_exp = max(0, customer.monthly_income * 0.55)
         m_sav = customer.monthly_income - m_exp - customer.existing_emi
@@ -124,4 +142,8 @@ async def chat(request: ChatRequest, db: Session = Depends(get_db)):
         full_name=customer.name,
         is_suppressed=is_suppressed,
         suppression_reason=suppression_reason,
+        risk_factors=risk_factors,
+        health_change=health_change,
+        emergency_months=emergency_months,
+        spending_categories=spending_categories,
     )

@@ -19,6 +19,7 @@ class Customer(Base):
     name: Mapped[str] = mapped_column(String(200), nullable=False)
     city: Mapped[str] = mapped_column(String(100), nullable=False)
     state: Mapped[str] = mapped_column(String(100), nullable=False)
+    address: Mapped[str | None] = mapped_column(String(300), nullable=True)
     preferred_language: Mapped[str] = mapped_column(String(5), default="en")
     phone: Mapped[str | None] = mapped_column(String(20), nullable=True)
     age: Mapped[int | None] = mapped_column(Integer, nullable=True)

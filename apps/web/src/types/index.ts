@@ -10,11 +10,13 @@ export interface Customer {
   name: string
   city: string
   state: string
+  address?: string
   preferred_language: Language
   phone?: string
   age?: number
   occupation?: string
   dependents?: number
+  profile_photo?: string
 }
 
 // -------- Financial Health ---------

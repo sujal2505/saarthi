@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import logging
 from contextlib import asynccontextmanager
+from sqlalchemy import inspect, text
 
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
@@ -49,6 +50,9 @@ async def lifespan(app: FastAPI):
     """
     logger.info("Initializing Saarthi Finance database...")
     Base.metadata.create_all(bind=engine)
+    if "address" not in {column["name"] for column in inspect(engine).get_columns("customers")}:
+        with engine.begin() as connection:
+            connection.execute(text("ALTER TABLE customers ADD COLUMN address VARCHAR(300)"))
 
     # Seed demo data if database is empty
     db = SessionLocal()

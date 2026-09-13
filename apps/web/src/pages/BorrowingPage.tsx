@@ -4,10 +4,12 @@ import { getDashboard } from '@/lib/api'
 import { formatRupee } from '@/lib/utils'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '@/lib/AuthContext'
+import { useI18n } from '@/lib/i18n'
 import type { DashboardData } from '@/types'
 
 export default function BorrowingPage() {
   const { customerId, customer } = useAuth()
+  const { t } = useI18n()
   const [data, setData] = useState<DashboardData | null>(null)
   const [loading, setLoading] = useState(true)
   const [showWhy, setShowWhy] = useState(false)
@@ -25,7 +27,7 @@ export default function BorrowingPage() {
     return (
       <div className="page-container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', minHeight: '60vh', flexDirection: 'column', gap: '1rem' }}>
         <div className="spinner spinner--lg" />
-        <p className="text-muted">Loading borrowing assessment…</p>
+        <p className="text-muted">{t('loadingDashboard')}</p>
       </div>
     )
   }
@@ -48,15 +50,15 @@ export default function BorrowingPage() {
   return (
     <div className="page-container fade-in">
       <div className="page-header">
-        <h1>Responsible Borrowing</h1>
-        <p>Understand safe borrowing capacity — guidance tailored to {customer?.name || 'your'} financial reality.</p>
+        <h1>{t('responsibleBorrowing')}</h1>
+        <p>{t('safeBorrowingDescription')} {customer?.name || 'your'}.</p>
       </div>
 
       {/* Main disclaimer */}
       <div className="loan-disclaimer fade-in" style={{ marginBottom: '1.5rem' }}>
         <AlertTriangle size={16} style={{ flexShrink: 0, marginTop: 1 }} />
         <div>
-          <strong>Important:</strong> This screen provides financial guidance only. It is <em>not</em> a loan approval, a credit decision, or a guarantee of any financial product. Always consult your bank or a certified financial advisor for formal decisions.
+            <strong>{t('important')}:</strong> {t('financialGuidanceDisclaimer')}
         </div>
       </div>
 
@@ -112,14 +114,14 @@ export default function BorrowingPage() {
         {/* Financial readiness */}
         <div className="card">
           <div style={{ fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-muted)', marginBottom: '0.875rem' }}>
-            Financial Readiness
+            {t('financialReadiness')}
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.25rem' }}>
             <div style={{ textAlign: 'center' }}>
               <div style={{ fontFamily: 'var(--font-display)', fontSize: '2.5rem', fontWeight: 700, color: 'var(--color-navy)', lineHeight: 1 }}>
                 {financial_health.score}
               </div>
-              <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)' }}>Health Score</div>
+              <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)' }}>{t('healthScore')}</div>
             </div>
             <div style={{ flex: 1 }}>
               <span className={`badge ${financial_health.score > 70 ? 'badge-teal' : financial_health.score > 50 ? 'badge-amber' : 'badge-red'}`} style={{ marginBottom: '0.5rem' }}>
@@ -151,11 +153,11 @@ export default function BorrowingPage() {
         {/* Safe borrowing range */}
         <div className="card">
           <div style={{ fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-text-muted)', marginBottom: '0.875rem' }}>
-            Safe Borrowing Range
+            {t('safeBorrowingRange')}
           </div>
           <div style={{ textAlign: 'center', padding: '1rem 0' }}>
             <div style={{ fontSize: '0.8125rem', color: 'var(--color-text-muted)', marginBottom: '0.25rem' }}>
-              {isSuppressed ? 'Recommended New Borrowing' : 'Estimated safe range'}
+              {isSuppressed ? t('recommendedBorrowing') : t('estimatedSafeRange')}
             </div>
             <div style={{ fontFamily: 'var(--font-display)', fontSize: '2rem', fontWeight: 700, color: isSuppressed ? '#d9534f' : 'var(--color-navy)', lineHeight: 1.1 }}>
               {isSuppressed ? '₹0 (Suppressed)' : `${formatRupee(safeMinAmount, true)} – ${formatRupee(safeMaxAmount, true)}`}
@@ -169,11 +171,11 @@ export default function BorrowingPage() {
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.875rem' }}>
-              <span style={{ color: 'var(--color-text-secondary)' }}>Monthly Income</span>
+              <span style={{ color: 'var(--color-text-secondary)' }}>{t('monthlyIncome')}</span>
               <span style={{ fontWeight: 600 }}>{formatRupee(cash_flow.monthly_income)}</span>
             </div>
             <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.875rem' }}>
-              <span style={{ color: 'var(--color-text-secondary)' }}>Current EMI</span>
+              <span style={{ color: 'var(--color-text-secondary)' }}>{t('currentEmi')}</span>
               <span style={{ fontWeight: 600 }}>{formatRupee(cash_flow.monthly_emi)}</span>
             </div>
             {!isSuppressed && (
@@ -197,7 +199,7 @@ export default function BorrowingPage() {
           </div>
 
           <button className="btn btn-primary btn-block" style={{ marginTop: '1rem' }} onClick={() => navigate('/simulator')}>
-            Test in Simulator
+            {t('testSimulator')}
           </button>
         </div>
       </div>
@@ -207,7 +209,7 @@ export default function BorrowingPage() {
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '0.875rem', flexWrap: 'wrap', gap: '0.5rem' }}>
           <div>
             <div style={{ fontSize: '0.75rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--color-saffron)', marginBottom: '0.375rem' }}>
-              Saarthi Recommendation
+              {t('saarthiRecommendation')}
             </div>
             <h3 style={{ fontSize: '1.125rem' }}>{recommendation.title}</h3>
           </div>
@@ -225,13 +227,13 @@ export default function BorrowingPage() {
           <div style={{ textAlign: 'center', background: 'rgba(255,255,255,0.7)', borderRadius: 10, padding: '0.75rem' }}>
             <div style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', marginBottom: '0.25rem', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Suggested</div>
             <div style={{ fontWeight: 700, fontSize: '1rem', color: isSuppressed ? '#d9534f' : 'var(--color-teal)' }}>
-              {recommendation.recommended_amount ? `${formatRupee(recommendation.recommended_amount)}` : 'Guidance Only'}
+              {recommendation.recommended_amount ? `${formatRupee(recommendation.recommended_amount)}` : t('guidanceOnly')}
             </div>
           </div>
           <div style={{ textAlign: 'center', background: 'rgba(255,255,255,0.7)', borderRadius: 10, padding: '0.75rem' }}>
             <div style={{ fontSize: '0.7rem', color: 'var(--color-text-muted)', marginBottom: '0.25rem', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Status</div>
             <div style={{ fontWeight: 600, fontSize: '0.875rem', color: isSuppressed ? '#d9534f' : 'var(--color-teal)' }}>
-              {isSuppressed ? 'Loan Suppressed' : 'Eligible'}
+              {isSuppressed ? t('loanSuppressed') : t('eligible')}
             </div>
           </div>
         </div>
@@ -243,7 +245,7 @@ export default function BorrowingPage() {
           aria-expanded={showWhy}
         >
           <Info size={15} />
-          Why is this recommended?
+          {t('whyRecommended')}
           {showWhy ? <ChevronUp size={15} /> : <ChevronDown size={15} />}
         </button>
         {showWhy && (

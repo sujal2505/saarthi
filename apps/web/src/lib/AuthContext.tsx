@@ -1,13 +1,14 @@
 import React, { createContext, useContext, useState, useCallback } from 'react'
 import type { Customer, Language } from '@/types'
 import { MOCK_DASHBOARD } from '@/data/mockData'
-import { demoLogin, getDashboard } from '@/lib/api'
+import { demoLogin, getDashboard, updateCustomer } from '@/lib/api'
 
 interface AuthState {
   isAuthenticated: boolean
   customer: Customer | null
   language: Language
   customerId: string
+  profilePhoto: string
 }
 
 interface AuthContextType extends AuthState {
@@ -15,6 +16,8 @@ interface AuthContextType extends AuthState {
   logout: () => void
   setLanguage: (lang: Language) => void
   switchCustomer: (customerId: string) => Promise<void>
+  updateProfile: (profile: Omit<Customer, 'id'>) => Promise<void>
+  setProfilePhoto: (photo: string) => void
 }
 
 const AuthContext = createContext<AuthContextType | null>(null)
@@ -25,6 +28,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     customer: null,
     language: 'en',
     customerId: 'cust_001',
+    profilePhoto: '',
   })
 
   const login = useCallback(async (phone: string, language: Language) => {
@@ -37,6 +41,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         customer: dash.customer || MOCK_DASHBOARD.customer,
         language,
         customerId: targetId,
+        profilePhoto: localStorage.getItem(`saarthi-profile-photo-${targetId}`) || '',
       })
     } catch {
       // Fallback
@@ -45,6 +50,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         customer: MOCK_DASHBOARD.customer,
         language,
         customerId: 'cust_001',
+        profilePhoto: localStorage.getItem('saarthi-profile-photo-cust_001') || '',
       })
     }
   }, [])
@@ -56,25 +62,41 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         ...prev,
         customer: dash.customer,
         customerId: targetId,
+        profilePhoto: localStorage.getItem(`saarthi-profile-photo-${targetId}`) || '',
       }))
     } catch {
       setState(prev => ({
         ...prev,
         customerId: targetId,
+        profilePhoto: localStorage.getItem(`saarthi-profile-photo-${targetId}`) || '',
       }))
     }
   }, [])
 
   const logout = useCallback(() => {
-    setState({ isAuthenticated: false, customer: null, language: 'en', customerId: 'cust_001' })
+    setState({ isAuthenticated: false, customer: null, language: 'en', customerId: 'cust_001', profilePhoto: '' })
   }, [])
 
   const setLanguage = useCallback((lang: Language) => {
     setState(prev => ({ ...prev, language: lang }))
   }, [])
 
+  const updateProfile = useCallback(async (profile: Omit<Customer, 'id'>) => {
+    const updated = await updateCustomer(state.customerId, profile)
+    setState(prev => ({
+      ...prev,
+      customer: updated,
+      language: updated.preferred_language,
+    }))
+  }, [state.customerId])
+
+  const setProfilePhoto = useCallback((photo: string) => {
+    localStorage.setItem(`saarthi-profile-photo-${state.customerId}`, photo)
+    setState(prev => ({ ...prev, profilePhoto: photo }))
+  }, [state.customerId])
+
   return (
-    <AuthContext.Provider value={{ ...state, login, logout, setLanguage, switchCustomer }}>
+    <AuthContext.Provider value={{ ...state, login, logout, setLanguage, switchCustomer, updateProfile, setProfilePhoto }}>
       {children}
     </AuthContext.Provider>
   )

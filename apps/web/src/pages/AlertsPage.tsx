@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { getAlerts } from '@/lib/api'
 import { useAuth } from '@/lib/AuthContext'
+import { useI18n } from '@/lib/i18n'
 import type { Alert } from '@/types'
 
 const SEVERITY_CONFIG: Record<string, { label: string; badgeClass: string; borderColor: string; bgColor: string }> = {
@@ -22,7 +23,7 @@ const TYPE_ICONS: Record<string, React.ElementType> = {
   expense_surge: TrendingDown,
 }
 
-function AlertCard({ alert, onTalkToSupport, onReviewFinances }: { alert: Alert; onTalkToSupport: () => void; onReviewFinances: () => void }) {
+function AlertCard({ alert, onTalkToSupport, onReviewFinances, t }: { alert: Alert; onTalkToSupport: () => void; onReviewFinances: () => void; t: (key: string) => string }) {
   const config = SEVERITY_CONFIG[alert.severity] || SEVERITY_CONFIG.medium
   const Icon = TYPE_ICONS[alert.type] ?? AlertTriangle
 
@@ -63,7 +64,7 @@ function AlertCard({ alert, onTalkToSupport, onReviewFinances }: { alert: Alert;
 
           <div style={{ background: 'rgba(255,255,255,0.7)', borderRadius: 8, padding: '0.625rem 0.75rem', marginBottom: '1rem', fontSize: '0.8rem', display: 'flex', alignItems: 'flex-start', gap: '0.5rem' }}>
             <CheckCircle size={14} style={{ color: 'var(--color-teal)', flexShrink: 0, marginTop: 1 }} />
-            <span style={{ color: 'var(--color-navy)' }}><strong>Recommended action: </strong>{alert.action}</span>
+            <span style={{ color: 'var(--color-navy)' }}><strong>{t('recommendedAction')} </strong>{alert.action}</span>
           </div>
 
           <div style={{ display: 'flex', gap: '0.625rem', flexWrap: 'wrap' }}>
@@ -72,13 +73,13 @@ function AlertCard({ alert, onTalkToSupport, onReviewFinances }: { alert: Alert;
               style={{ background: 'var(--color-navy)', color: '#fff', borderRadius: 8 }}
               onClick={onTalkToSupport}
             >
-              <MessageCircle size={14} /> Talk to Support
+              <MessageCircle size={14} /> {t('talkSupport')}
             </button>
             <button
               className="btn btn-secondary btn-sm"
               onClick={onReviewFinances}
             >
-              <FileText size={14} /> {alert.action_label || 'Review Finances'}
+              <FileText size={14} /> {alert.action_label || t('reviewFinances')}
             </button>
           </div>
         </div>
@@ -89,6 +90,7 @@ function AlertCard({ alert, onTalkToSupport, onReviewFinances }: { alert: Alert;
 
 export default function AlertsPage() {
   const { customerId, customer } = useAuth()
+  const { t } = useI18n()
   const [alerts, setAlerts] = useState<Alert[]>([])
   const [loading, setLoading] = useState(true)
   const navigate = useNavigate()
@@ -107,8 +109,8 @@ export default function AlertsPage() {
   return (
     <div className="page-container fade-in">
       <div className="page-header">
-        <h1>Alerts & Notifications</h1>
-        <p>Early signals for {customer?.name || 'you'} to help stay financially healthy — before small issues become big ones.</p>
+        <h1>{t('alertsNotifications')}</h1>
+        <p>{t('earlySignals')} {customer?.name || 'you'}.</p>
       </div>
 
       {loading ? (
@@ -120,10 +122,10 @@ export default function AlertsPage() {
           {/* Summary */}
           <div style={{ display: 'flex', gap: '0.875rem', marginBottom: '1.5rem', flexWrap: 'wrap' }}>
             {[
-              { label: 'Total Alerts', val: alerts.length, color: 'var(--color-navy)' },
-              { label: 'High Priority', val: highCount, color: 'var(--color-terracotta)' },
-              { label: 'Medium', val: mediumCount, color: 'var(--color-amber)' },
-              { label: 'Low', val: alerts.filter(a => a.severity === 'low').length, color: 'var(--color-text-muted)' },
+              { label: t('totalAlerts'), val: alerts.length, color: 'var(--color-navy)' },
+              { label: t('highPriority'), val: highCount, color: 'var(--color-terracotta)' },
+              { label: t('medium'), val: mediumCount, color: 'var(--color-amber)' },
+              { label: t('low'), val: alerts.filter(a => a.severity === 'low').length, color: 'var(--color-text-muted)' },
             ].map(({ label, val, color }) => (
               <div key={label} className="stat-card" style={{ minWidth: 120, flex: '1 1 120px' }}>
                 <div className="stat-card-label">{label}</div>
@@ -137,8 +139,8 @@ export default function AlertsPage() {
             {alerts.length === 0 ? (
               <div className="card" style={{ textAlign: 'center', padding: '2rem' }}>
                 <CheckCircle size={32} style={{ color: 'var(--color-green)', marginBottom: '0.5rem' }} />
-                <h3>No active alerts</h3>
-                <p style={{ color: 'var(--color-text-muted)' }}>Everything looks healthy with your finances right now!</p>
+                <h3>{t('noActiveAlerts')}</h3>
+                <p style={{ color: 'var(--color-text-muted)' }}>{t('healthyFinances')}</p>
               </div>
             ) : (
               alerts
@@ -151,6 +153,7 @@ export default function AlertsPage() {
                     key={alert.id}
                     alert={alert}
                     onTalkToSupport={() => navigate('/assistant')}
+                    t={t}
                     onReviewFinances={() => {
                       if (alert.type === 'cash_flow' || alert.type === 'unusual_spending' || alert.type === 'savings_decline' || alert.type === 'expense_surge') navigate('/spending')
                       else if (alert.type === 'missed_emi_risk') navigate('/borrowing')
