@@ -145,7 +145,8 @@ export default function NebulaBackground({
         }
 
         function onPointerMove(e: PointerEvent) {
-            const rect = canvas.getBoundingClientRect()
+            const rect = canvas?.getBoundingClientRect()
+            if (!rect) return
             mouseTarget.x = (e.clientX - rect.left) / rect.width
             mouseTarget.y = 1 - (e.clientY - rect.top) / rect.height
         }
